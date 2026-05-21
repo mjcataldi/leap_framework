@@ -4,11 +4,128 @@
 
 **Layer Execution & Assembly Protocol**.
 
-A framework for turning a layered solution concept into sequenced, governed, implementation-ready AI coding prompts.
+A framework for turning rough software intent into pressure-tested direction, sequenced plans, governed implementation prompts, and maintainable application documentation.
 
 ## Solution
 
 The system, product, platform, internal tool, data system, AI application, or infrastructure initiative being built.
+
+## Phase 0 Inception
+
+The mandatory LEAP project-start workflow for new software projects or major new product directions.
+
+Phase 0 turns vague software intent into a pressure-tested baseline direction before implementation planning begins.
+
+It includes:
+
+- idea intake
+- Socratic discovery
+- clarity scoring
+- market / alternative solution pressure testing
+- MVP boundary definition
+- strategic plan generation
+- documentation bootstrap
+- human approval before layer planning
+
+## Socratic Discovery
+
+The structured LEAP dialogue used to clarify an early software idea.
+
+It asks targeted questions about the user, problem, current workflow, MVP, risks, constraints, and success criteria.
+
+Socratic discovery should happen in small rounds rather than one giant question dump.
+
+## Clarity Threshold
+
+A directional readiness estimate used during Phase 0.
+
+Default clarity bands:
+
+```text
+Below 67% clarity:
+Continue discovery.
+
+67% to 79% clarity:
+Draft concept brief and continue pressure testing.
+
+80%+ clarity:
+Implementation strategy and layer planning allowed after approval.
+```
+
+The clarity threshold is not a precise mathematical measurement. It is a planning signal.
+
+## No-Build Gate
+
+A LEAP rule that blocks implementation planning and coding-agent prompts until minimum clarity and documentation requirements are met.
+
+At minimum, LEAP should not proceed to layer planning without:
+
+- project charter
+- discovery notes
+- pressure-test summary
+- MVP boundary
+- implementation strategy
+- source-of-truth index
+- initial layer map
+- open questions list
+- explicit human approval
+
+## Approval Gate
+
+The explicit human checkpoint between Phase 0 and layer planning.
+
+The user must approve the baseline product direction, MVP boundary, non-goals, risks, assumptions, documentation scaffold, and permission to begin layer planning.
+
+## Documentation Bootstrap
+
+The initial documentation scaffold created for a LEAP-managed application repository.
+
+Recommended minimum structure:
+
+```text
+docs/
+  README.md
+  source-of-truth.md
+
+  strategy/
+    project-charter.md
+    discovery-notes.md
+    pressure-test.md
+    mvp-boundary.md
+    implementation-strategy.md
+
+  architecture/
+    decision-log.md
+
+  layers/
+    README.md
+
+  execution/
+    execution-log.md
+```
+
+## Project Charter
+
+The baseline strategy document that defines what the product is, who it serves, what problem it solves, and what the first version should prove.
+
+## MVP Boundary
+
+The document that defines the smallest useful version of the product.
+
+It should include:
+
+- first useful user outcome
+- must-have features
+- should-have-if-easy features
+- explicit non-goals
+- later roadmap candidates
+- manual-for-now workflows
+- validation criteria
+- overbuild risks
+
+## Source-of-Truth Index
+
+The application-repo file, usually `docs/source-of-truth.md`, that identifies the canonical project strategy, MVP boundary, implementation strategy, layer map, execution log, and deprecated or archived docs.
 
 ## Layer
 
@@ -16,11 +133,13 @@ A major capability phase or architectural slice of the solution.
 
 Examples:
 
+- Layer 0 — Product foundation
+- Layer 1 — Core platform
 - Layer 2 — Intake & Parsing
+- Layer 3 — Evaluation & Artifacts
 - Layer 4 — Application Workflow
-- Layer 5 — Intelligence, Insights & Optimization
-- Layer 6 — Intelligent Decisioning
-- Layer 7 — Opportunity Model Strategy
+
+Project-specific layer names may vary.
 
 ## Build Unit
 
@@ -38,7 +157,7 @@ A Build Unit should be:
 
 ## Source-of-Truth Document
 
-An application-specific roadmap, layer status, domain model, architecture, or implementation-status document that governs repo-specific planning.
+An application-specific roadmap, layer status, domain model, architecture, project-charter, MVP-boundary, execution-state, or implementation-status document that governs repo-specific planning.
 
 LEAP uses source-of-truth documents to avoid relying on stale chat history and to prevent rebuilding capabilities that already exist.
 
@@ -52,12 +171,42 @@ A LEAP Recon section that compares source-of-truth claims against the actual rep
 
 If repo reality conflicts with the source-of-truth document, repo reality should guide implementation planning, and the documentation conflict should be reported.
 
+## Strategic Plan Reconciliation
+
+A LEAP Recon section that checks whether strategic or layer-planning documents remain aligned with current implementation reality.
+
+## Cross-Layer Impact Scan
+
+A LEAP Recon section that identifies whether work in the target layer affects shared entities, workflows, APIs, data models, architecture, future layers, or previous assumptions.
+
+## Cross-Layer Impact Map
+
+An application-repo dependency registry that tracks how shared concepts, models, workflows, and implementation decisions affect multiple layers.
+
+Recommended path:
+
+```text
+docs/architecture/cross-layer-impact-map.md
+```
+
+## Execution Log
+
+A per-run implementation record capturing what changed, what was discovered, and what follow-up is needed.
+
+Recommended directory:
+
+```text
+docs/execution/
+```
+
 ## Pressure-Test Findings
 
-A LEAP Recon section that evaluates whether the target layer and Build Units are safe, useful, properly bounded, and implementable.
+A LEAP assessment that evaluates whether the target concept, layer, or Build Units are safe, useful, properly bounded, and implementable.
 
-LEAP v1.2 pressure testing includes:
+Pressure testing may include:
 
+- market and alternative-solution review
+- simpler non-app alternatives
 - repo reality check
 - already-built collision check
 - branch drift check
@@ -72,9 +221,11 @@ LEAP v1.2 pressure testing includes:
 
 ## LEAP Recon
 
-The analysis, source-of-truth reconciliation, pressure-test, Build Unit generation/refinement, sequencing, and clarification stage.
+The analysis, source-of-truth reconciliation, repo reality reconciliation, pressure-test, Build Unit generation/refinement, sequencing, cross-layer impact review, and clarification stage.
 
 Recon is run before generating the implementation prompt.
+
+For new projects, Phase 0 must be completed and approved before Recon begins.
 
 ## LEAP Prompt
 
