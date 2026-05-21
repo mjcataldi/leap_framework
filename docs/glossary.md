@@ -373,3 +373,54 @@ LEAP treats structured scores as advisory. Scores must expose rationale, uncerta
 A LEAP Recon section that predicts the questions a coding agent might otherwise ask during implementation.
 
 The goal is to answer material questions before the coding run begins.
+
+---
+
+## LEAP v1.6 Addendum
+
+### Readiness Gate
+
+A user-facing operational gate that replaces fake-precision clarity scoring.
+
+Supported gates:
+
+- C0: Blocked
+- C1: Discovery Ready
+- C2: Concept Ready
+- C3: Pressure-Test Ready
+- C4: Layer-Planning Ready
+- C5: Coding-Prompt Ready
+
+### Source-of-Truth Manifest
+
+The active manifest that identifies canonical and active docs, stale/archived/do-not-use docs, target branch, base branch, relevant PRs, repo reality, known conflicts, and human owner/approver.
+
+### Documentation Lifecycle Status
+
+The v1.6 doc status system:
+
+- Canonical
+- Active
+- Draft
+- Stale
+- Archived
+- Delete Candidate
+- Unknown
+
+Generated docs are Draft until ratified.
+
+### Drift Ledger
+
+A record of strategy, documentation, implementation, branch/worktree/PR, or prompt drift.
+
+### Parallel-Agent Preflight
+
+A required ownership and merge-order review before multiple agents or worktrees operate at the same time.
+
+### Small Project Mode
+
+A lightweight LEAP mode for low-risk, clearly scoped tasks. It requires only goal, current state, scope, non-goals, likely files, acceptance criteria, tests/checks, and stop conditions.
+
+### Thinking Extended
+
+The model tier between Standard and Pro Standard. Use it for Phase 0 discovery, MVP/non-goal work, moderate Recon, bounded prompt drafting, and small architecture tradeoffs.
