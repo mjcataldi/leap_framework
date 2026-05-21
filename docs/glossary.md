@@ -20,12 +20,25 @@ It includes:
 
 - idea intake
 - Socratic discovery
-- clarity scoring
+- evidence labeling
+- clarity assessment
 - market / alternative solution pressure testing
 - MVP boundary definition
-- strategic plan generation
-- documentation bootstrap
-- human approval before layer planning
+- strategic plan generation when clarity is sufficient
+- documentation bootstrap recommendation
+- gate decision before Recon
+
+## Phase 0 Mode
+
+The discovery depth selected for Phase 0.
+
+Supported defaults:
+
+- Lite Inception
+- Standard Inception
+- Pro Inception
+
+Mode is selected by ambiguity, risk, and blast radius.
 
 ## Socratic Discovery
 
@@ -34,6 +47,20 @@ The structured LEAP dialogue used to clarify an early software idea.
 It asks targeted questions about the user, problem, current workflow, MVP, risks, constraints, and success criteria.
 
 Socratic discovery should happen in small rounds rather than one giant question dump.
+
+## Evidence Label
+
+A label that separates implementation truth from uncertainty.
+
+Supported labels:
+
+- Known
+- Assumed
+- Unknown
+- Contested
+- Needs Decision
+
+A polished assumption is still an assumption.
 
 ## Clarity Threshold
 
@@ -52,7 +79,21 @@ Draft concept brief and continue pressure testing.
 Implementation strategy and layer planning allowed after approval.
 ```
 
-The clarity threshold is not a precise mathematical measurement. It is a planning signal.
+The clarity threshold is not a precise mathematical measurement. It is a planning signal and must be paired with blockers, confidence notes, and evidence labels.
+
+## Gate Decision
+
+The explicit decision at the end of Phase 0 or Recon.
+
+Supported gate decisions:
+
+- Proceed to Recon
+- Pressure Test Further
+- Narrow MVP First
+- Needs Human Decision
+- Do Not Build Yet
+- Reconcile Docs First
+- Generate LEAP Prompt
 
 ## No-Build Gate
 
@@ -60,13 +101,10 @@ A LEAP rule that blocks implementation planning and coding-agent prompts until m
 
 At minimum, LEAP should not proceed to layer planning without:
 
-- project charter
-- discovery notes
-- pressure-test summary
-- MVP boundary
-- implementation strategy
-- source-of-truth index
-- initial layer map
+- project charter or equivalent baseline strategy
+- MVP boundary or explicit scope boundary
+- pressure-test summary when the idea is new or strategically material
+- source-of-truth index or explicit source-of-truth list
 - open questions list
 - explicit human approval
 
@@ -76,32 +114,40 @@ The explicit human checkpoint between Phase 0 and layer planning.
 
 The user must approve the baseline product direction, MVP boundary, non-goals, risks, assumptions, documentation scaffold, and permission to begin layer planning.
 
+## Human Checkpoint
+
+A point where LEAP must stop and ask for human approval before continuing.
+
+Human approval is required when the agent would otherwise need to guess about product direction, MVP expansion, source-of-truth changes, architecture, auth, permissions, sensitive data, monetization, destructive migrations, external integrations, AI behavior, or overlapping parallel-agent scopes.
+
 ## Documentation Bootstrap
 
 The initial documentation scaffold created for a LEAP-managed application repository.
 
-Recommended minimum structure:
+LEAP v1.5 separates required starter docs from conditional docs.
+
+Required starter docs for most new projects:
 
 ```text
 docs/
   README.md
   source-of-truth.md
-
   strategy/
     project-charter.md
-    discovery-notes.md
-    pressure-test.md
-    mvp-boundary.md
-    implementation-strategy.md
-
   architecture/
     decision-log.md
+```
 
-  layers/
-    README.md
+Conditional docs include:
 
-  execution/
-    execution-log.md
+```text
+docs/strategy/discovery-notes.md
+docs/strategy/pressure-test.md
+docs/strategy/mvp-boundary.md
+docs/strategy/implementation-strategy.md
+docs/layers/README.md
+docs/execution/execution-log.md
+docs/architecture/cross-layer-impact-map.md
 ```
 
 ## Project Charter
@@ -115,6 +161,9 @@ The document that defines the smallest useful version of the product.
 It should include:
 
 - first useful user outcome
+- primary user
+- primary workflow
+- primary success signal
 - must-have features
 - should-have-if-easy features
 - explicit non-goals
@@ -126,6 +175,21 @@ It should include:
 ## Source-of-Truth Index
 
 The application-repo file, usually `docs/source-of-truth.md`, that identifies the canonical project strategy, MVP boundary, implementation strategy, layer map, execution log, and deprecated or archived docs.
+
+In v1.5 it should also identify document owners, last meaningful update, doc status, truth owned, and conflict-resolution rules.
+
+## Source-of-Truth Status
+
+The classification for a planning document.
+
+Supported statuses:
+
+- Canonical
+- Supporting
+- Archived
+- Unknown
+
+No two canonical docs should own the same truth.
 
 ## Layer
 
@@ -165,11 +229,23 @@ LEAP uses source-of-truth documents to avoid relying on stale chat history and t
 
 A LEAP Recon section that extracts relevant decisions, constraints, current-status claims, and required documentation updates from application-specific source-of-truth documents.
 
+## Source-of-Truth Discovery
+
+A LEAP Recon section that identifies which docs exist, which docs are canonical, which docs are stale or archived, who owns each doc, and which source of truth governs the current task.
+
 ## Repo Reality Reconciliation
 
 A LEAP Recon section that compares source-of-truth claims against the actual repository state when repo access is available.
 
 If repo reality conflicts with the source-of-truth document, repo reality should guide implementation planning, and the documentation conflict should be reported.
+
+## Branch / Worktree Drift Review
+
+A LEAP Recon section that identifies whether the base branch, target branch, active branches, worktrees, or recent changes may conflict with the planned implementation.
+
+## Stale Assumption Scan
+
+A LEAP Recon section that identifies old docs, stale roadmap claims, unverified assumptions, conflicting claims, and assumptions that must be revalidated before implementation.
 
 ## Strategic Plan Reconciliation
 
@@ -221,7 +297,7 @@ Pressure testing may include:
 
 ## LEAP Recon
 
-The analysis, source-of-truth reconciliation, repo reality reconciliation, pressure-test, Build Unit generation/refinement, sequencing, cross-layer impact review, and clarification stage.
+The analysis, source-of-truth reconciliation, repo reality reconciliation, pressure-test, Build Unit generation/refinement, sequencing, cross-layer impact review, stale-assumption scan, and clarification stage.
 
 Recon is run before generating the implementation prompt.
 
@@ -229,9 +305,29 @@ For new projects, Phase 0 must be completed and approved before Recon begins.
 
 ## LEAP Prompt
 
-The final implementation prompt artifact given to Codex or another AI coding agent.
+The final implementation prompt artifact given to Codex-style or another AI coding agent.
 
 It tells the coding agent how to build the layer sequentially and safely.
+
+In v1.5, a LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, and stop conditions.
+
+## Stop Condition
+
+A rule inside a LEAP Prompt that tells the coding agent to stop and report instead of guessing.
+
+Stop conditions are required when docs conflict with code, architecture is unclear, sensitive data handling is unclear, implementation requires unapproved dependencies/migrations/auth/billing/AI behavior changes, or the task would violate non-goals.
+
+## Model-Effort Tier
+
+The LEAP process depth selected for the task.
+
+Supported defaults:
+
+- Standard
+- Pro Standard
+- Pro Extended
+
+Model-effort tier should match ambiguity, risk, and blast radius.
 
 ## Buildout mode
 
@@ -265,6 +361,12 @@ This helps prevent scope creep and accidental implementation of integrations, au
 A LEAP Prompt section that tells the coding agent whether and when to update application-specific roadmap/status documents after implementation changes reality.
 
 Generic LEAP methodology should not be updated from an application implementation prompt unless the prompt explicitly targets the LEAP repository.
+
+## Structured Scoring / STRIDE-style Evaluation
+
+A scoring or classification method used by a project to support decisions.
+
+LEAP treats structured scores as advisory. Scores must expose rationale, uncertainty, missing evidence, and assumptions instead of pretending incomplete evidence creates objective truth.
 
 ## Coding-agent question forecast
 

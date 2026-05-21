@@ -2,6 +2,71 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## LEAP v1.5 — Gate-based inception and agent-safe prompting
+
+### Added
+
+- Added a versioned **LEAP v1.5** framework plan in `docs/leap-v1.5.md`.
+- Added explicit Phase 0 gate decisions:
+  - Proceed to Recon
+  - Pressure Test Further
+  - Narrow MVP First
+  - Needs Human Decision
+  - Do Not Build Yet
+- Added Phase 0 modes:
+  - Lite Inception
+  - Standard Inception
+  - Pro Inception
+- Added evidence labels for separating implementation truth from uncertainty:
+  - Known
+  - Assumed
+  - Unknown
+  - Contested
+  - Needs Decision
+- Added model-effort tiers for scaling LEAP process depth:
+  - Standard
+  - Pro Standard
+  - Pro Extended
+- Added agent stop-condition requirements for implementation prompts.
+- Added stronger human-checkpoint rules for high-risk decisions.
+- Added source-of-truth ownership and stale-document governance rules.
+- Added operational prompt files for v1.5:
+  - `prompts/leap/phase-0/v1.5/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v1.5/leap-recon-standard.md`
+  - `prompts/leap/implementation/v1.5/leap-prompt-standard.md`
+  - `prompts/leap/governance/v1.5/strategic-reconciliation-pass.md`
+
+### Changed
+
+- Updated README to point to LEAP v1.5 as the current version.
+- Updated Phase 0 behavior from a single mandatory workflow to a mode-aware workflow with gate decisions.
+- Updated clarity scoring guidance to avoid false precision and preserve blocker rules.
+- Updated documentation bootstrap rules to distinguish required starter docs from conditional docs.
+- Updated Recon expectations to include stale-assumption scans, source-of-truth ownership, branch/worktree drift, and human checkpoint triggers.
+- Updated Prompt expectations to require objective, scope, constraints, non-goals, verification, stop conditions, and explicit output requirements.
+- Updated prompt library README to include v1.5 prompt directories.
+- Expanded glossary with v1.5 terminology.
+
+### Notes
+
+LEAP v1.5 is a minor-version hardening release. It keeps the v1.4 lifecycle:
+
+```text
+LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
+```
+
+The release tightens the gates, source-of-truth rules, documentation governance, and coding-agent safety model.
+
+The short rule:
+
+```text
+Clarity before code.
+Evidence before polish.
+Source of truth before prompt.
+Bounded task before agent handoff.
+Stop conditions before guessing.
+```
+
 ## LEAP v1.4 — Phase 0 inception and no-build gate
 
 ### Added
