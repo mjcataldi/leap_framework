@@ -10,14 +10,18 @@ The `templates/` directory contains compact request templates. The `prompts/` di
 prompts/
   leap/
     phase-0/
+      v1.6/
       v1.5/
     recon/
+      v1.6/
       v1.5/
       v1.3/
     implementation/
+      v1.6/
       v1.5/
       v1.3/
     governance/
+      v1.6/
       v1.5/
       v1.3/
 ```
@@ -26,11 +30,11 @@ prompts/
 
 ### Phase 0 prompts
 
-Use Phase 0 prompts before Recon when project direction, target user, current workflow, MVP boundary, risks, non-goals, or source-of-truth baseline are unclear.
+Use Phase 0 prompts before Recon when project direction, target user, current workflow, MVP boundary, risks, non-goals, no-build alternatives, or source-of-truth baseline are unclear.
 
 ### Recon prompts
 
-Use Recon prompts before implementation. They are designed to inspect source-of-truth documents, repository reality, branch/worktree drift, strategic-plan alignment, stale assumptions, and cross-layer impact before creating implementation prompts.
+Use Recon prompts before implementation. They inspect source-of-truth manifests, document lifecycle status, repository reality, branch/worktree/PR drift, strategic-plan alignment, stale assumptions, existing functionality, and cross-layer impact before creating implementation prompts.
 
 ### Implementation prompts
 
@@ -38,7 +42,7 @@ Use implementation prompts after Recon is complete and the Build Unit sequence h
 
 ### Governance prompts
 
-Use governance prompts outside normal layer implementation when the repo needs reconciliation, roadmap correction, branch/worktree drift review, cross-layer impact review, stale-plan cleanup, or source-of-truth ownership cleanup.
+Use governance prompts outside normal layer implementation when the repo needs reconciliation, roadmap correction, branch/worktree drift review, cross-layer impact review, stale-plan cleanup, stale-prompt cleanup, or source-of-truth ownership cleanup.
 
 ## Versioning
 
@@ -47,13 +51,20 @@ Prompt files are versioned by LEAP framework version.
 Example:
 
 ```text
-prompts/leap/recon/v1.5/leap-recon-standard.md
+prompts/leap/recon/v1.6/leap-recon-standard.md
 ```
 
 This allows stable prompts to coexist with newer experimental prompts as LEAP evolves.
 
-## Usage guidance
+## Model tier guidance
 
-Use the shortest suitable prompt that preserves the required governance. For quick requests, the templates may be enough. For repeatable or high-stakes workflows, use the full prompt files.
+Use the smallest tier that controls the risk:
 
-Use v1.5 prompts when you need gate decisions, evidence labels, model-effort tiers, stale-assumption scanning, source-of-truth ownership, branch/worktree drift review, or explicit coding-agent stop conditions.
+```text
+Standard — small, clear, low-risk tasks
+Thinking Extended — Phase 0 discovery, MVP/non-goal work, moderate Recon, bounded prompt drafting
+Pro Standard — existing repos, partial implementation, multiple docs, cross-layer review, significant refactor planning
+Pro Extended — strategic pivots, stale docs, branch drift, parallel agents, privacy/security-sensitive workflows, high-risk AI behavior
+```
+
+Use v1.6 prompts when you need readiness gates, source-of-truth manifests, doc lifecycle status, drift ledgers, branch/worktree/PR review, or strict coding-agent stop conditions.

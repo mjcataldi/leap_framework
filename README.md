@@ -2,19 +2,15 @@
 
 **LEAP — Layer Execution & Assembly Protocol** is a solution-level framework for turning rough software intent into pressure-tested direction, layered plans, and safe, bounded, implementation-ready AI coding prompts.
 
-LEAP is designed for systems that are built in layers, where each layer can be broken into independently committable **Build Units**. LEAP v1.5 tightens the framework into a gate-based, source-of-truth-aware, model-effort-aware workflow that keeps coding agents from turning vague intent into overbuilt software.
+LEAP v1.6 is an adversarial gate-hardening release. It keeps the three-stage lifecycle while tightening readiness gates, source-of-truth manifests, documentation lifecycle control, drift ledgers, and coding-agent handoff contracts.
 
 ## Core idea
 
 ```text
-Phase 0 Inception establishes what should be built and why.
-Phase 0 now runs in Lite, Standard, or Pro mode and ends with a gate decision.
-Solution strategy defines what the system needs.
-Application source-of-truth documents define repo-specific reality, constraints, and doc ownership.
-Layer intent defines the next major capability phase.
-Build Units define independently committable implementation subsections.
-LEAP Recon reconciles strategy, docs, branch state, stale assumptions, and repo reality.
-LEAP Prompt gives the coding agent a bounded task packet with constraints, verification, and stop conditions.
+Phase 0 Inception establishes what should be built, why, and whether it should be built at all.
+Source-of-truth manifests define repo-specific truth, doc status, ownership, freshness, and conflict rules.
+LEAP Recon reconciles strategy, docs, branch state, stale assumptions, and repo reality before implementation planning.
+LEAP Prompt gives the coding agent a bounded handoff contract with scope, non-goals, verification, and stop conditions.
 ```
 
 ## Three-stage workflow
@@ -25,94 +21,37 @@ LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 
 ### Phase 0: LEAP Inception
 
-LEAP Inception is the mandatory project-start phase for new software projects or major new product directions.
+Use Phase 0 for new software projects, major new product directions, unclear app ideas, and material feature bets.
 
-It converts rough ideas into a baseline project direction through:
-
-- idea intake
-- Socratic discovery
-- known / assumed / unknown / contested / needs-decision evidence labels
-- directional clarity scoring as a planning signal, not a false-precision score
-- market and alternative-solution pressure testing
-- simpler non-app solution review
-- MVP boundary definition
-- explicit non-goals
-- strategic plan generation
-- lean documentation bootstrap
-- human approval before layer planning
-
-Phase 0 ends with one gate decision:
+Phase 0 uses readiness gates instead of fake-precision clarity scores:
 
 ```text
-Proceed to Recon | Pressure Test Further | Narrow MVP First | Needs Human Decision | Do Not Build Yet
+C0 Blocked → C1 Discovery Ready → C2 Concept Ready → C3 Pressure-Test Ready → C4 Layer-Planning Ready → C5 Coding-Prompt Ready
 ```
 
-LEAP must not generate implementation plans or coding-agent prompts from vague app ideas.
+Phase 0 must pressure test no-build and simpler alternatives before allowing layer planning.
 
 ### Stage 1: LEAP Recon
 
-LEAP Recon is the analysis, source-of-truth reconciliation, repo scan, pressure-test, Build Unit generation, sequencing, cross-layer impact review, stale-assumption scan, and clarification stage.
+Recon checks whether the project has enough source truth and repo reality to safely generate Build Units or implementation prompts.
 
-It produces:
-
-- Phase 0 / source-of-truth gate check
-- solution and layer interpretation
-- source-of-truth document review
-- canonical / supporting / archived doc classification
-- repo reality reconciliation
-- branch and worktree drift review when available
-- strategic plan reconciliation
-- stale-doc and stale-assumption findings
-- cross-layer impact scan
-- formal pressure-test findings
-- generated or refined Build Unit inventory
-- recommended build sequence
-- dependency review
-- architecture right-sizing review
-- data/destructive-change review
-- infrastructure escalation review
-- layer boundary review
-- execution log expectations
-- coding-agent question forecast
-- human checkpoint requirements
-- clarification questions for the user
-- recommended model-effort and prompt settings
+Recon must inspect source-of-truth manifests, documentation lifecycle status, stale assumptions, repo reality, branch/worktree/PR drift, existing functionality, cross-layer impacts, layer boundaries, and human checkpoints.
 
 ### Stage 2: LEAP Prompt
 
-LEAP Prompt converts the approved LEAP Recon into a comprehensive implementation prompt for Codex-style or another AI coding agent.
+LEAP Prompt converts approved Recon into a bounded implementation handoff for Codex-style or another AI coding agent.
 
-It includes:
-
-- Phase 0 / source-of-truth gate status
-- source-of-truth instructions
-- branch, worktree, and commit rules
-- model-effort guidance
-- task objective and user-visible outcome
-- explicit in-scope and out-of-scope boundaries
-- files or areas to inspect and files or areas not to touch
-- non-goals
-- implementation constraints
-- verification plan
-- stop conditions
-- per-Build Unit execution contract
-- architecture escalation policy
-- destructive-change policy
-- layer boundary policy
-- source-of-truth update policy
-- execution log policy
-- cross-layer impact policy
-- completion report formats
-- final layer completion report
+A valid LEAP Prompt includes objective, current repo reality, source-of-truth instructions, scope, non-goals, constraints, implementation sequence, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, and completion report format.
 
 ## Current version
 
-Current framework version: **LEAP v1.5**
+Current framework version: **LEAP v1.6**
 
-See [`docs/leap-v1.5.md`](docs/leap-v1.5.md).
+See [`docs/leap-v1.6.md`](docs/leap-v1.6.md).
 
 Previous versions:
 
+- [`docs/leap-v1.5.md`](docs/leap-v1.5.md)
 - [`docs/leap-v1.4.md`](docs/leap-v1.4.md)
 - [`docs/leap-v1.3.md`](docs/leap-v1.3.md)
 - [`docs/leap-v1.2.md`](docs/leap-v1.2.md)
@@ -120,9 +59,9 @@ Previous versions:
 
 ## Quick start
 
-For a new software project or major new product direction, start with [`templates/leap-phase-0-template.md`](templates/leap-phase-0-template.md). Choose Lite, Standard, or Pro Inception based on ambiguity and risk.
+For a new software project or major new product direction, start with [`templates/leap-phase-0-template.md`](templates/leap-phase-0-template.md).
 
-After Phase 0 is approved, use [`templates/leap-recon-template.md`](templates/leap-recon-template.md) to request a Recon pass for the first target layer.
+After Phase 0 is approved, use [`templates/leap-recon-template.md`](templates/leap-recon-template.md) to request a Recon pass for the first target layer or task.
 
 After Recon is approved, use [`templates/leap-prompt-template.md`](templates/leap-prompt-template.md) to generate the final implementation prompt.
 
@@ -130,34 +69,15 @@ For repeatable workflows, use the operational prompt library under [`prompts/`](
 
 ## Source-of-truth document model
 
-LEAP v1.5 supports application-specific source-of-truth documents, such as project charters, MVP boundaries, roadmap/status docs, domain model docs, execution logs, and architecture decision docs.
+Every serious LEAP-managed application should maintain a source-of-truth manifest. The manifest identifies canonical and active docs, draft/stale/archived/delete-candidate docs, source ownership, current branch, relevant PRs, repo reality, doc-code conflicts, and the human owner/approver.
 
-When provided, LEAP Recon should read these documents first, classify them as canonical / supporting / archived, reconcile them against repo reality when repo access is available, and use them to avoid stale or duplicate implementation planning.
+Docs should be classified as:
 
-Every LEAP-managed application should maintain a `docs/source-of-truth.md` file that identifies the canonical strategy, MVP boundary, implementation strategy, layer map, execution state, doc owner, freshness expectations, and conflict-resolution rule.
+```text
+Canonical | Active | Draft | Stale | Archived | Delete Candidate | Unknown
+```
 
-Application-specific planning belongs in the application repo. Generic LEAP framework methodology belongs in this repo.
-
-## Terminology
-
-| Term | Meaning |
-|---|---|
-| Phase 0 Inception | Mandatory project-start workflow that turns rough intent into pressure-tested baseline direction before implementation planning. |
-| Phase 0 Mode | Lite, Standard, or Pro discovery depth selected by ambiguity, risk, and blast radius. |
-| Gate Decision | The explicit Phase 0 / Recon decision that determines whether LEAP proceeds, narrows scope, pressure-tests further, waits for human input, or stops. |
-| Evidence Label | Known, Assumed, Unknown, Contested, or Needs Decision. Used to prevent polished guesses from becoming implementation truth. |
-| Clarity Threshold | Directional readiness estimate used to decide whether LEAP should continue discovery, draft a concept brief, or allow implementation strategy. Not a precise score. |
-| No-Build Gate | Rule that blocks layer planning and coding-agent prompts until minimum project clarity, source-of-truth docs, and human approval exist. |
-| Documentation Bootstrap | Lean docs scaffold created for a LEAP-managed application, with required and conditional docs separated. |
-| Layer | A major system capability or architectural phase. |
-| Build Unit | A scoped subsection of a layer that can be implemented, tested, and committed independently. |
-| Source-of-Truth Document | An application-specific roadmap/status/domain/architecture file that governs repo-specific decisions. |
-| Repo Reality Reconciliation | Recon step that compares source-of-truth claims against current repository implementation. |
-| Pressure-Test Findings | Formal assessment of app necessity, simpler alternatives, repo reality, branch drift, layer boundaries, atomicity, dependencies, migrations, alignment, testability, grounding, user value, and solution viability. |
-| Model-Effort Tier | Standard, Pro Standard, or Pro Extended process depth selected by ambiguity, risk, and blast radius. |
-| Stop Condition | A rule that tells the coding agent to stop instead of guessing when requirements, docs, repo reality, security, privacy, or architecture are unclear. |
-| LEAP Recon | Analysis and clarification stage before implementation prompt generation. |
-| LEAP Prompt | Final bounded implementation prompt artifact for an AI coding agent. |
+Generated docs are Draft until explicitly ratified.
 
 ## Repository structure
 
@@ -165,6 +85,7 @@ Application-specific planning belongs in the application repo. Generic LEAP fram
 README.md
 CHANGELOG.md
 docs/
+  leap-v1.6.md
   leap-v1.5.md
   leap-v1.4.md
   leap-v1.3.md
@@ -180,16 +101,30 @@ prompts/
   README.md
   leap/
     phase-0/
+      v1.6/
       v1.5/
     recon/
+      v1.6/
       v1.5/
       v1.3/
     implementation/
+      v1.6/
       v1.5/
       v1.3/
     governance/
+      v1.6/
       v1.5/
       v1.3/
 examples/
   careero-layer5-recon-outline.md
+```
+
+## Short rule
+
+```text
+No clarity, no build.
+No source truth, no Recon.
+No repo reality, no prompt.
+No non-goals, no agent handoff.
+No stop conditions, no coding task.
 ```

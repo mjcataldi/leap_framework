@@ -2,6 +2,43 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## LEAP v1.6 — Adversarial gate hardening
+
+### Added
+
+- Added a versioned **LEAP v1.6** framework plan in `docs/leap-v1.6.md`.
+- Added readiness gates C0–C5 to replace user-facing fake-precision clarity thresholds.
+- Added Source-of-Truth Manifest requirements before Recon or prompt generation.
+- Added expanded documentation lifecycle states: Canonical, Active, Draft, Stale, Archived, Delete Candidate, Unknown.
+- Added Drift Ledger guidance for strategy, documentation, implementation, branch/worktree/PR, and prompt drift.
+- Added stronger agent-handoff contract requirements for Codex-style coding agents.
+- Added explicit Parallel-Agent Preflight and collision-zone rules.
+- Added Small Project Mode to prevent LEAP from becoming bureaucracy.
+- Added Thinking Extended as a model-selection tier between Standard and Pro Standard.
+- Added v1.6 operational prompts:
+  - `prompts/leap/phase-0/v1.6/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v1.6/leap-recon-standard.md`
+  - `prompts/leap/implementation/v1.6/leap-prompt-standard.md`
+  - `prompts/leap/governance/v1.6/strategic-reconciliation-pass.md`
+
+### Changed
+
+- Updated README to point to LEAP v1.6 as the current version.
+- Updated Phase 0, Recon, and Prompt templates to use readiness gates, source-of-truth manifests, doc lifecycle status, drift review, and stricter stop conditions.
+- Updated prompt library README to include v1.6 prompt directories and model-tier guidance.
+- Tightened prompt generation blockers around missing non-goals, stale docs, unresolved source conflicts, unknown repo reality, branch drift, missing verification, and missing stop conditions.
+
+### Notes
+
+LEAP v1.6 is a minor hardening release. It keeps the lifecycle:
+
+```text
+LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
+```
+
+The release makes the framework more willing to block unsafe implementation and less likely to launder vague intent into polished coding prompts.
+
+
 ## LEAP v1.5 — Gate-based inception and agent-safe prompting
 
 ### Added
