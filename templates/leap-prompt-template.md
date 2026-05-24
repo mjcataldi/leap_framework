@@ -5,7 +5,7 @@ Use this template after LEAP Recon has been completed and the user has answered 
 Do not use this template for vague app ideas. New projects must pass Phase 0 Inception and Recon before LEAP Prompt generation.
 
 ```text
-Generate the LEAP Prompt for <Target Layer or Task> under LEAP v1.6.
+Generate the LEAP Prompt for <Target Layer or Task> under LEAP v1.7.
 
 Use the LEAP Recon findings above.
 Use my answers/defaults below:
@@ -19,6 +19,8 @@ Preflight status:
 - Repo reality checked:
 - Branch/worktree/PR drift reviewed:
 - Human approvals granted:
+- Codex model selected or recommended:
+- Codex reasoning level selected or recommended:
 
 Source-of-truth instructions:
 Use these sources:
@@ -26,6 +28,17 @@ Use these sources:
 
 Do not use these sources:
 - <draft / stale / archived / superseded source paths>
+
+Codex execution configuration:
+- Model: <exact model name or recommended default>
+- Reasoning Level: <low / medium / high / extended>
+- Execution Mode: <recon-only / plan-first / implement-directly / implement-with-brief-plan>
+- Scope Scale: <small task / Build Unit / sublayer / entire layer / repo-wide maintenance>
+- Repository:
+- Branch / Worktree:
+- Permissions:
+- Validation:
+- Commit Guidance:
 
 Implementation target:
 - Objective:
@@ -41,7 +54,8 @@ Required gate:
 - Confirm source-of-truth review is complete.
 - Confirm repo reality has been checked when repo access exists.
 - Confirm scope, non-goals, verification, and stop conditions are defined.
-- If baseline direction, MVP boundary, source truth, Recon approval, implementation scope, verification plan, or stop conditions are missing, stop and explain what must be completed first.
+- Confirm the final prompt includes an explicit model and reasoning level.
+- If baseline direction, MVP boundary, source truth, Recon approval, implementation scope, verification plan, stop conditions, model, or reasoning level are missing, stop and explain what must be completed first.
 
 Create the final implementation prompt as a canvas/textdoc artifact.
 Do not include extra analysis inside the prompt unless it is operationally necessary for the coding agent.
@@ -52,19 +66,42 @@ Do not include extra analysis inside the prompt unless it is operationally neces
 ```text
 # <Solution Name> — LEAP Prompt — <Target Layer or Task>
 
-## 1. Objective
-## 2. Current Repo Reality
-## 3. Source-of-Truth Instructions
-## 4. Scope
-## 5. Non-Goals
-## 6. Constraints
-## 7. Implementation Sequence
-## 8. Verification
-## 9. Stop Conditions
-## 10. Branch / Worktree / Commit Instructions
-## 11. Source-of-Truth Update Policy
-## 12. Completion Report Format
+## 1. Codex Execution Configuration
+## 2. Objective
+## 3. Current Repo Reality
+## 4. Source-of-Truth Instructions
+## 5. Scope
+## 6. Non-Goals
+## 7. Constraints
+## 8. Implementation Sequence
+## 9. Verification
+## 10. Stop Conditions
+## 11. Branch / Worktree / Commit Instructions
+## 12. Source-of-Truth Update Policy
+## 13. Completion Report Format
 ```
+
+## Required Codex Execution Configuration
+
+Every LEAP Prompt must include this section near the top:
+
+```text
+## 1. Codex Execution Configuration
+
+| Field | Value |
+|---|---|
+| Model | <exact model name or approved project default> |
+| Reasoning Level | <low / medium / high / extended / project-approved enum> |
+| Execution Mode | <recon-only / plan-first / implement-directly / implement-with-brief-plan> |
+| Scope Scale | <small task / Build Unit / sublayer / entire layer / repo-wide maintenance> |
+| Repository | <owner/repo or local repo name> |
+| Branch / Worktree | <target branch/worktree> |
+| Permissions | <allowed modifications> |
+| Validation | <tests/lint/typecheck/build/manual checks> |
+| Commit Guidance | <commit message convention or none> |
+```
+
+If the model or reasoning level is unknown, recommend one explicitly instead of leaving the field blank.
 
 ## Required stop conditions
 
@@ -80,3 +117,5 @@ Every LEAP Prompt should instruct the coding agent to stop and report instead of
 - branch/worktree/PR drift creates unclear ownership
 - required tests or verification paths are unavailable or unclear
 - acceptance criteria are impossible as written
+- requested model is unavailable and no approved fallback is provided
+- requested reasoning level is unavailable and no approved fallback is provided
