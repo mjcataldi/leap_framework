@@ -5,7 +5,7 @@ Use this template when starting a new software project, major new product direct
 Phase 0 is for discovery, pressure testing, and baseline direction. It is not an implementation prompt.
 
 ```text
-Run LEAP Phase 0 Inception under LEAP v1.6.
+Run LEAP Phase 0 Inception under LEAP v1.7.
 
 Phase 0 mode:
 - Lite / Standard / Pro / Small Project Mode / you recommend
@@ -35,6 +35,7 @@ Discovery settings:
 - Use readiness gates C0–C5 instead of numeric clarity scores.
 - Pressure test whether this should be an app at all.
 - Consider simpler non-app alternatives such as manual workflow, spreadsheet, checklist, template, service, process change, integration, script, or no-code automation.
+- Identify downstream model/reasoning considerations only as planning signals, not as final Codex execution settings.
 
 Required Phase 0 workflow:
 1. Intake classification
@@ -46,7 +47,8 @@ Required Phase 0 workflow:
 7. Concrete non-goals
 8. Documentation bootstrap recommendation
 9. Source-of-truth manifest recommendation
-10. Gate decision
+10. Downstream model/reasoning considerations
+11. Gate decision
 
 Readiness gates:
 - C0 Blocked: discovery questions only.
@@ -54,7 +56,7 @@ Readiness gates:
 - C2 Concept Ready: concept draft and assumption ledger allowed.
 - C3 Pressure-Test Ready: no-build and MVP pressure test allowed.
 - C4 Layer-Planning Ready: Recon/layer planning allowed after approval.
-- C5 Coding-Prompt Ready: only after Recon/source truth/repo reality/scope/tests/stop conditions are clear.
+- C5 Coding-Prompt Ready: only after Recon/source truth/repo reality/scope/tests/stop conditions/model/reasoning level are clear.
 
 Gate decision options:
 - Continue Discovery
@@ -93,5 +95,18 @@ If more information is needed, ask the next discovery round instead of producing
 ## 12. Starter Documentation Bootstrap Recommendation
 ## 13. Source-of-Truth Manifest Recommendation
 ## 14. Human Checkpoints Required
-## 15. Gate Decision / Next Step
+## 15. Downstream Model / Reasoning Considerations
+## 16. Gate Decision / Next Step
 ```
+
+## Downstream model / reasoning considerations
+
+Phase 0 may flag likely downstream execution posture, but the final Codex model and reasoning level should be selected during Recon or Prompt generation after source truth and repo reality have been reviewed.
+
+Use this section for early signals such as:
+
+- likely LEAP process tier
+- likely implementation risk
+- expected scope scale
+- sensitive data / AI behavior / architecture risk
+- whether whole-layer work may require high or extended reasoning
