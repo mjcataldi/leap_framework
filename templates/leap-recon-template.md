@@ -3,7 +3,7 @@
 Use this template to request a LEAP Recon pass after Phase 0 is complete or when an existing project already has sufficient source-of-truth documentation.
 
 ```text
-Run LEAP Recon under LEAP v1.6.
+Run LEAP Recon under LEAP v1.7.
 
 Phase 0 / project baseline status:
 - Phase 0 complete? yes/no/not applicable because existing project
@@ -43,7 +43,10 @@ Repo / branch context:
 
 Buildout settings:
 - Buildout mode: Rapid POC / Standard / Production-safe / Refactor
-- Model tier: Standard / Thinking Extended / Pro Standard / Pro Extended / you recommend
+- LEAP process tier: Standard / Thinking Extended / Pro Standard / Pro Extended / you recommend
+- Codex model: <exact model name or you recommend>
+- Codex reasoning level: Low / Medium / High / Extended / you recommend
+- Codex execution mode: recon-only / plan-first / implement-directly / implement-with-brief-plan / you recommend
 - Production compatibility required: yes/no/unknown
 - Destructive changes allowed: yes/no/you recommend
 - One Build Unit per commit: yes/no
@@ -56,8 +59,10 @@ Required gate:
 - Classify docs as Canonical, Active, Draft, Stale, Archived, Delete Candidate, or Unknown.
 - Inspect repo reality before implementation planning when repo access exists.
 - Search for already-existing functionality before recommending new work.
+- Recommend an explicit Codex execution configuration before LEAP Prompt generation.
 - If docs and repo reality conflict, report the conflict before generating a coding-agent prompt.
 - If branch/worktree/PR drift affects ownership or merge order, require resolution before prompt generation.
+- If model or reasoning level is missing, recommend safe defaults based on scope, ambiguity, and implementation risk.
 
 Return only the LEAP Recon output first. Do not generate the LEAP Prompt yet.
 At the end, ask any material clarification questions that should be answered before generating the LEAP Prompt.
@@ -87,7 +92,21 @@ Then remind me that I can say: “Generate the LEAP Prompt.”
 ## 16. Human Checkpoints Required
 ## 17. Execution Log / Drift Ledger Expectations
 ## 18. Coding-Agent Risk Forecast
-## 19. Recommended Model Tier
+## 19. Recommended Codex Execution Configuration
 ## 20. Clarification Questions Before LEAP Prompt Generation
 ## 21. Gate Decision / Next Step
+```
+
+## Recommended Codex Execution Configuration section
+
+```text
+## 19. Recommended Codex Execution Configuration
+
+| Field | Recommendation | Rationale |
+|---|---|---|
+| Model | <exact model name or project default> | <why> |
+| Reasoning Level | <low / medium / high / extended> | <why> |
+| Execution Mode | <plan-first / implement-directly / implement-with-brief-plan> | <why> |
+| Scope Scale | <small task / Build Unit / sublayer / entire layer / repo-wide maintenance> | <why> |
+| Validation | <tests/lint/typecheck/build/manual checks> | <why> |
 ```

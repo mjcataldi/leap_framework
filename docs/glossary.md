@@ -21,7 +21,7 @@ It includes:
 - idea intake
 - Socratic discovery
 - evidence labeling
-- clarity assessment
+- clarity/readiness assessment
 - market / alternative solution pressure testing
 - MVP boundary definition
 - strategic plan generation when clarity is sufficient
@@ -37,6 +37,7 @@ Supported defaults:
 - Lite Inception
 - Standard Inception
 - Pro Inception
+- Small Project Mode
 
 Mode is selected by ambiguity, risk, and blast radius.
 
@@ -59,33 +60,36 @@ Supported labels:
 - Unknown
 - Contested
 - Needs Decision
+- Deprecated
 
 A polished assumption is still an assumption.
 
+## Readiness Gate
+
+A user-facing operational gate that replaced fake-precision clarity scoring in v1.6.
+
+Supported gates:
+
+- C0: Blocked
+- C1: Discovery Ready
+- C2: Concept Ready
+- C3: Pressure-Test Ready
+- C4: Layer-Planning Ready
+- C5: Coding-Prompt Ready
+
+In v1.7, C5 requires source truth, repo reality, scope, tests, stop conditions, explicit model, and explicit reasoning level.
+
 ## Clarity Threshold
 
-A directional readiness estimate used during Phase 0.
+A legacy directional readiness estimate used during earlier Phase 0 versions.
 
-Default clarity bands:
-
-```text
-Below 67% clarity:
-Continue discovery.
-
-67% to 79% clarity:
-Draft concept brief and continue pressure testing.
-
-80%+ clarity:
-Implementation strategy and layer planning allowed after approval.
-```
-
-The clarity threshold is not a precise mathematical measurement. It is a planning signal and must be paired with blockers, confidence notes, and evidence labels.
+v1.6+ uses readiness gates for user-facing decisions instead of numeric clarity thresholds. Numeric clarity may still be used privately as a thinking aid, but it must not override hard blockers.
 
 ## Gate Decision
 
 The explicit decision at the end of Phase 0 or Recon.
 
-Supported gate decisions:
+Supported gate decisions include:
 
 - Proceed to Recon
 - Pressure Test Further
@@ -93,6 +97,7 @@ Supported gate decisions:
 - Needs Human Decision
 - Do Not Build Yet
 - Reconcile Docs First
+- Resolve Branch Drift First
 - Generate LEAP Prompt
 
 ## No-Build Gate
@@ -104,7 +109,7 @@ At minimum, LEAP should not proceed to layer planning without:
 - project charter or equivalent baseline strategy
 - MVP boundary or explicit scope boundary
 - pressure-test summary when the idea is new or strategically material
-- source-of-truth index or explicit source-of-truth list
+- source-of-truth manifest or explicit source-of-truth list
 - open questions list
 - explicit human approval
 
@@ -118,13 +123,11 @@ The user must approve the baseline product direction, MVP boundary, non-goals, r
 
 A point where LEAP must stop and ask for human approval before continuing.
 
-Human approval is required when the agent would otherwise need to guess about product direction, MVP expansion, source-of-truth changes, architecture, auth, permissions, sensitive data, monetization, destructive migrations, external integrations, AI behavior, or overlapping parallel-agent scopes.
+Human approval is required when the agent would otherwise need to guess about product direction, MVP expansion, source-of-truth changes, architecture, auth, permissions, sensitive data, monetization, destructive migrations, external integrations, AI behavior, overlapping parallel-agent scopes, or execution configuration.
 
 ## Documentation Bootstrap
 
 The initial documentation scaffold created for a LEAP-managed application repository.
-
-LEAP v1.5 separates required starter docs from conditional docs.
 
 Required starter docs for most new projects:
 
@@ -172,24 +175,40 @@ It should include:
 - validation criteria
 - overbuild risks
 
+## Source-of-Truth Manifest
+
+The active manifest that identifies canonical and active docs, stale/archived/do-not-use docs, target branch, base branch, relevant PRs, repo reality, known conflicts, and human owner/approver.
+
 ## Source-of-Truth Index
 
 The application-repo file, usually `docs/source-of-truth.md`, that identifies the canonical project strategy, MVP boundary, implementation strategy, layer map, execution log, and deprecated or archived docs.
 
-In v1.5 it should also identify document owners, last meaningful update, doc status, truth owned, and conflict-resolution rules.
+In v1.5+ it should also identify document owners, last meaningful update, doc status, truth owned, and conflict-resolution rules.
 
 ## Source-of-Truth Status
 
 The classification for a planning document.
 
-Supported statuses:
+Legacy statuses:
 
 - Canonical
 - Supporting
 - Archived
 - Unknown
 
+v1.6+ documentation lifecycle statuses:
+
+- Canonical
+- Active
+- Draft
+- Stale
+- Archived
+- Delete Candidate
+- Unknown
+
 No two canonical docs should own the same truth.
+
+Generated docs are Draft until ratified.
 
 ## Layer
 
@@ -297,7 +316,7 @@ Pressure testing may include:
 
 ## LEAP Recon
 
-The analysis, source-of-truth reconciliation, repo reality reconciliation, pressure-test, Build Unit generation/refinement, sequencing, cross-layer impact review, stale-assumption scan, and clarification stage.
+The analysis, source-of-truth reconciliation, repo reality reconciliation, pressure-test, Build Unit generation/refinement, sequencing, cross-layer impact review, stale-assumption scan, execution-configuration recommendation, and clarification stage.
 
 Recon is run before generating the implementation prompt.
 
@@ -309,25 +328,88 @@ The final implementation prompt artifact given to Codex-style or another AI codi
 
 It tells the coding agent how to build the layer sequentially and safely.
 
-In v1.5, a LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, and stop conditions.
+In v1.7, a LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, stop conditions, and explicit Codex execution configuration.
+
+## Codex Execution Configuration
+
+The explicit runtime handoff block required in every Codex-ready LEAP Prompt.
+
+It must include:
+
+- Model
+- Reasoning Level
+- Execution Mode
+- Scope Scale
+- Repository
+- Branch / Worktree
+- Permissions
+- Validation
+- Commit Guidance
+
+A prompt is not Codex-ready unless it tells the user exactly which model and reasoning level to use.
+
+## Model
+
+The exact model or approved project default the user should select when running the Codex prompt.
+
+If the project convention uses model minor versions, the model field must include the minor version.
+
+## Reasoning Level
+
+The intended reasoning depth for the coding agent.
+
+Common guidance:
+
+- Low — tiny localized edits, typo fixes, obvious one-file changes
+- Medium — small bounded implementation, clear UI fixes, simple tests, isolated refactors
+- High — Build Units, sublayers, multi-file features, state workflows, cross-component UX, meaningful test updates
+- Extended — full-layer implementation, architecture-sensitive work, repo-wide refactors, parallel-agent sequencing, stale-doc reconciliation, destructive schema/data-model changes, sensitive AI behavior
+
+## Execution Mode
+
+The intended coding-agent posture.
+
+Common values:
+
+- recon-only
+- plan-first
+- implement-directly
+- implement-with-brief-plan
+
+## Scope Scale
+
+The size of the target task.
+
+Common values:
+
+- small task
+- Build Unit
+- sublayer
+- entire layer
+- repo-wide maintenance
+
+## LEAP Process Tier
+
+The LEAP analysis depth selected for the task.
+
+Supported defaults:
+
+- Standard
+- Thinking Extended
+- Pro Standard
+- Pro Extended
+
+LEAP process tier controls how much framework analysis happens before prompt generation.
+
+## Model-Effort Tier
+
+Legacy term for LEAP process depth. Prefer **LEAP Process Tier** in v1.7+ to avoid confusing process depth with the final Codex reasoning level.
 
 ## Stop Condition
 
 A rule inside a LEAP Prompt that tells the coding agent to stop and report instead of guessing.
 
-Stop conditions are required when docs conflict with code, architecture is unclear, sensitive data handling is unclear, implementation requires unapproved dependencies/migrations/auth/billing/AI behavior changes, or the task would violate non-goals.
-
-## Model-Effort Tier
-
-The LEAP process depth selected for the task.
-
-Supported defaults:
-
-- Standard
-- Pro Standard
-- Pro Extended
-
-Model-effort tier should match ambiguity, risk, and blast radius.
+Stop conditions are required when docs conflict with code, architecture is unclear, sensitive data handling is unclear, implementation requires unapproved dependencies/migrations/auth/billing/AI behavior changes, model or reasoning level is unavailable without an approved fallback, or the task would violate non-goals.
 
 ## Buildout mode
 
@@ -374,53 +456,28 @@ A LEAP Recon section that predicts the questions a coding agent might otherwise 
 
 The goal is to answer material questions before the coding run begins.
 
+## Prompt Drift
+
+A LEAP drift type where a prompt assumes stale files, stale branch state, old decisions, missing model, or missing reasoning level.
+
+Prompt drift requires a prompt freshness check and regenerated handoff.
+
 ---
 
-## LEAP v1.6 Addendum
+## LEAP v1.7 Addendum
 
-### Readiness Gate
+### Codex Execution Configuration
 
-A user-facing operational gate that replaces fake-precision clarity scoring.
+The mandatory model/reasoning/execution block for final implementation prompts.
 
-Supported gates:
+### LEAP Process Tier vs Codex Reasoning Level
 
-- C0: Blocked
-- C1: Discovery Ready
-- C2: Concept Ready
-- C3: Pressure-Test Ready
-- C4: Layer-Planning Ready
-- C5: Coding-Prompt Ready
+LEAP process tier controls analysis depth before prompt generation.
 
-### Source-of-Truth Manifest
+Codex reasoning level controls how the implementation agent should be run after prompt generation.
 
-The active manifest that identifies canonical and active docs, stale/archived/do-not-use docs, target branch, base branch, relevant PRs, repo reality, known conflicts, and human owner/approver.
+They are related but not interchangeable.
 
-### Documentation Lifecycle Status
+### Prompt-readiness blocker
 
-The v1.6 doc status system:
-
-- Canonical
-- Active
-- Draft
-- Stale
-- Archived
-- Delete Candidate
-- Unknown
-
-Generated docs are Draft until ratified.
-
-### Drift Ledger
-
-A record of strategy, documentation, implementation, branch/worktree/PR, or prompt drift.
-
-### Parallel-Agent Preflight
-
-A required ownership and merge-order review before multiple agents or worktrees operate at the same time.
-
-### Small Project Mode
-
-A lightweight LEAP mode for low-risk, clearly scoped tasks. It requires only goal, current state, scope, non-goals, likely files, acceptance criteria, tests/checks, and stop conditions.
-
-### Thinking Extended
-
-The model tier between Standard and Pro Standard. Use it for Phase 0 discovery, MVP/non-goal work, moderate Recon, bounded prompt drafting, and small architecture tradeoffs.
+A LEAP Prompt is not Codex-ready unless it tells the user exactly which model and reasoning level to use.

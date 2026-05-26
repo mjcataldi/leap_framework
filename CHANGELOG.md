@@ -2,6 +2,61 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## LEAP v1.7 — Codex execution configuration hardening
+
+### Added
+
+- Added a versioned **LEAP v1.7** framework plan in `docs/leap-v1.7.md`.
+- Added mandatory **Codex Execution Configuration** requirements for final LEAP implementation prompts.
+- Added the hard rule that a prompt is not Codex-ready unless it includes an explicit model and reasoning level.
+- Added clear separation between **LEAP process tier** and **Codex reasoning level**.
+- Added Codex execution fields for:
+  - Model
+  - Reasoning Level
+  - Execution Mode
+  - Scope Scale
+  - Repository
+  - Branch / Worktree
+  - Permissions
+  - Validation
+  - Commit Guidance
+- Added reasoning-level guidance for Low, Medium, High, and Extended execution settings.
+- Added model/reasoning prompt-readiness blockers to stop conditions.
+- Added v1.7 operational prompts:
+  - `prompts/leap/phase-0/v1.7/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v1.7/leap-recon-standard.md`
+  - `prompts/leap/implementation/v1.7/leap-prompt-standard.md`
+  - `prompts/leap/governance/v1.7/strategic-reconciliation-pass.md`
+
+### Changed
+
+- Updated README to point to LEAP v1.7 as the current version.
+- Updated Phase 0, Recon, and Prompt templates to reference LEAP v1.7.
+- Updated Recon templates and prompts to recommend explicit Codex execution settings before LEAP Prompt generation.
+- Updated Prompt templates and implementation prompts to include the Codex Execution Configuration block near the top of the final handoff.
+- Updated prompt library README to document v1.7 prompt directories and distinguish process tier from reasoning level.
+- Updated glossary with v1.7 terminology for Codex Execution Configuration, Model, Reasoning Level, Execution Mode, Scope Scale, and Prompt Drift.
+
+### Notes
+
+LEAP v1.7 is a minor hardening release. It keeps the lifecycle:
+
+```text
+LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
+```
+
+The release closes a practical handoff gap: v1.6 knew how to recommend model tiers, but Codex-ready prompts also need concrete model and reasoning-level instructions at the point of use.
+
+The short rule:
+
+```text
+No model, no handoff.
+No reasoning level, no Codex-ready prompt.
+No source truth, no Recon.
+No repo reality, no implementation plan.
+No stop conditions, no coding task.
+```
+
 ## LEAP v1.6 — Adversarial gate hardening
 
 ### Added
