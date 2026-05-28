@@ -13,41 +13,13 @@ For users who prefer the traditional two-file approach, see:
 
 - [Separate Global + Repo AGENTS.md Method](/docs/LEAP_AGENTS_Separate_Global_and_Repo_Method.md)
 
----
-
-## LEAP reference links
-
-Primary framework reference:
-
-- [LEAP Framework — main branch](https://github.com/mjcataldi/leap_framework/tree/main)
-
-Useful starting points:
-
-- [Start Here](https://github.com/mjcataldi/leap_framework/blob/main/docs/00_start_here.md)
-- [LEAP for Humans](https://github.com/mjcataldi/leap_framework/blob/main/docs/leap-for-humans.md)
-- [Quick LEAP Brief](https://github.com/mjcataldi/leap_framework/blob/main/docs/quick-leap-brief.md)
-- [Current LEAP Framework Document](https://github.com/mjcataldi/leap_framework/blob/main/docs/leap.md)
-- [LEAP Recon Template](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-recon-template.md)
-- [LEAP Prompt Template](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-prompt-template.md)
-
-AGENTS.md local-trial template links:
-
-- [Master Repo AGENTS.md local-trial template](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-master-repo-AGENTS-file/AGENTS.md)
-- [Master Repo AGENTS.md population prompt](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-master-repo-AGENTS-file/AGENTS_Population_Prompt.md)
-
-Optional advanced setup:
-
-- [Separate Global + Repo AGENTS.md Method](PLACEHOLDER_LINK_TO_SEPARATE_GLOBAL_AND_REPO_METHOD_DOC)
-
----
-
-## What the user does
+# User Actions
 
 There are two setup actions, then one first-use action.
 
 ### 1. Install the Master Repo AGENTS.md file
 
-Download the Master Repo AGENTS.md local-trial template and place it at the root of the project repository:
+Download the [Master Repo AGENTS.md local-trial template](/templates/leap-repo-AGENTS-file-complete/AGENTS.md) and place it at the root of the project repository:
 
 ```text
 <repo-root>/AGENTS.md
@@ -66,11 +38,7 @@ This is the recommended starter method because it lets the user test LEAP in one
 
 Open the repository in the user's coding agent or code editor.
 
-Then use the Master Repo AGENTS.md population prompt:
-
-```text
-templates/leap-master-repo-AGENTS-file/AGENTS_Population_Prompt.md
-```
+Then use the [Master Repo AGENTS.md population prompt](/templates/leap-repo-AGENTS-file-complete/AGENTS_Population_Prompt.md):
 
 The prompt instructs the code assistant to:
 
@@ -124,3 +92,31 @@ The editable repo section teaches the agent how LEAP applies to this project.
 Recon verifies reality before implementation.
 Prompt only after Recon.
 ```
+
+---
+
+## LEAP reference links
+
+Primary framework reference:
+
+- [LEAP Framework — main branch](https://github.com/mjcataldi/leap_framework/tree/main)
+
+Useful starting points:
+
+- [Start Here](/docs/00_start_here.md)
+- [LEAP for Humans](/docs/leap-for-humans.md)
+- [Quick LEAP Brief](/docs/quick-leap-brief.md)
+- [Current LEAP Framework Document](/docs/leap.md)
+- [LEAP Recon Template](/templates/leap-recon-template.md)
+- [LEAP Prompt Template](/templates/leap-prompt-template.md)
+
+AGENTS.md local-trial template links:
+
+- [Master Repo AGENTS.md local-trial template](/templates/leap-repo-AGENTS-file-complete/AGENTS.md)
+- [Master Repo AGENTS.md population prompt](/templates/leap-repo-AGENTS-file-complete/AGENTS_Population_Prompt.md)
+
+Optional advanced setup:
+
+- [Separate Global + Repo AGENTS.md Method](/docs/LEAP_AGENTS_Separate_Global_and_Repo_Method.md)
+
+---
