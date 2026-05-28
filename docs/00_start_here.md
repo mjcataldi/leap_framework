@@ -47,7 +47,7 @@ That picture can feel complete, but the missing pieces are often connected by em
 
 A coding agent cannot safely build from that.
 
-LEAP helps expose the gaps before implementation begins.
+LEAP helps expose the gaps before major implementation begins.
 
 ---
 

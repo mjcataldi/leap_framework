@@ -1,4 +1,6 @@
-# LEAP Framework Plan v1.9
+# LEAP Framework
+
+This file represents the current canonical LEAP framework document. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
 
 ## Framework name
 
@@ -8,13 +10,13 @@ LEAP is a software delivery framework for turning rough software intent into pre
 
 LEAP is software-delivery-first. It uses AI-agent governance as part of the delivery system, and many of its underlying ideas can later generalize into broader decision and execution workflows.
 
-LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the v1.8 lifecycle:
+The current LEAP framework uses this lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 ```
 
-v1.9 keeps readiness gates, source-of-truth manifests, drift controls, agent-handoff contracts, the public front door, tool-agnostic agent language, risk examples, and the explicit **Ideation Loop** from v1.8. It changes the repository shape so the current framework document has one canonical path and current operational prompts live at the top of `prompts/`.
+The current framework keeps readiness gates, source-of-truth manifests, drift controls, agent-handoff contracts, the public front door, tool-agnostic agent language, risk examples, and the explicit **Ideation Loop**. The active repository uses one canonical framework document path and current operational prompts at the top of `prompts/`.
 
 ---
 
@@ -123,7 +125,7 @@ Questions are the source of answers. LEAP uses questions to expose the differenc
 
 ### 3.3 Minimum clarity threshold
 
-LEAP v1.9 keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
+The current framework keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
 
 A useful planning heuristic:
 
@@ -151,13 +153,13 @@ What would make this not worth building?
 
 Every LEAP run starts by classifying the request.
 
-| Request Type | Default LEAP Path | Escalate When |
-|---|---|---|
-| Small task | Small Project Mode → bounded prompt | Scope is unclear, shared contracts change, tests are missing, or repo/docs conflict |
-| New product idea | Phase 0 Inception | User/problem/workflow/MVP/non-goals are vague |
-| Major new feature | Phase 0 Lite/Standard → Recon | User-facing workflow, data model, AI behavior, auth, billing, or privacy changes |
-| Existing repo layer | Source-of-Truth Manifest → Recon | Stale docs, open PRs, branch drift, partial implementation, or unclear layer boundary |
-| Strategic pivot | Partial Phase 0 rerun → Drift Ledger → Recon | User, MVP, architecture, monetization, risk, or layer sequence changes |
+| Request Type        | Default LEAP Path                                 | Escalate When                                                                                  |
+| ------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Small task          | Small Project Mode → bounded prompt               | Scope is unclear, shared contracts change, tests are missing, or repo/docs conflict            |
+| New product idea    | Phase 0 Inception                                 | User/problem/workflow/MVP/non-goals are vague                                                  |
+| Major new feature   | Phase 0 Lite/Standard → Recon                     | User-facing workflow, data model, AI behavior, auth, billing, or privacy changes               |
+| Existing repo layer | Source-of-Truth Manifest → Recon                  | Stale docs, open PRs, branch drift, partial implementation, or unclear layer boundary          |
+| Strategic pivot     | Partial Phase 0 rerun → Drift Ledger → Recon      | User, MVP, architecture, monetization, risk, or layer sequence changes                         |
 | Parallel-agent work | Parallel-Agent Preflight → per-agent Recon/Prompt | Shared files, schemas, APIs, generated types, migrations, auth, or state machines are involved |
 
 Default rule:
@@ -172,14 +174,14 @@ Ask the fewest questions needed to make the next safe gate decision.
 
 LEAP uses readiness gates for user-facing decisions.
 
-| Gate | Meaning | Allowed Output |
-|---|---|---|
-| C0: Blocked | Idea or task is too vague for safe progress | Discovery questions only |
-| C1: Discovery Ready | Enough context exists to explore the problem | Phase 0 discovery note |
-| C2: Concept Ready | User, problem, and current workflow are understandable | Concept draft and assumption ledger |
-| C3: Pressure-Test Ready | Concept is specific enough to challenge | Alternatives/no-build/MVP pressure test |
-| C4: Layer-Planning Ready | MVP boundary, non-goals, risks, and approval are clear | Layer plan or Recon request |
-| C5: Coding-Prompt Ready | Source truth, repo reality, scope, tests, stop conditions, and execution profile are clear | Bounded coding-agent prompt |
+| Gate                     | Meaning                                                                                    | Allowed Output                          |
+| ------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------- |
+| C0: Blocked              | Idea or task is too vague for safe progress                                                | Discovery questions only                |
+| C1: Discovery Ready      | Enough context exists to explore the problem                                               | Phase 0 discovery note                  |
+| C2: Concept Ready        | User, problem, and current workflow are understandable                                     | Concept draft and assumption ledger     |
+| C3: Pressure-Test Ready  | Concept is specific enough to challenge                                                    | Alternatives/no-build/MVP pressure test |
+| C4: Layer-Planning Ready | MVP boundary, non-goals, risks, and approval are clear                                     | Layer plan or Recon request             |
+| C5: Coding-Prompt Ready  | Source truth, repo reality, scope, tests, stop conditions, and execution profile are clear | Bounded coding-agent prompt             |
 
 Hard blocker rule:
 
@@ -312,13 +314,13 @@ Old plans are not source truth unless explicitly reactivated.
 
 Recon coverage is directional, not mathematical. Hard blockers still override confidence estimates.
 
-| Work Type | Suggested Confidence Before Prompt |
-|---|---:|
-| New product / Layer 0 baseline | 90–95% |
-| Whole layer | 80–90% |
-| Sublayer | 75–85% |
-| Single Build Unit / LEAP LHS | 60–75%, default around 67% |
-| Tiny local fix | 50–60%, if no shared contracts are touched |
+| Work Type                      |         Suggested Confidence Before Prompt |
+| ------------------------------ | -----------------------------------------: |
+| New product / Layer 0 baseline |                                     90–95% |
+| Whole layer                    |                                     80–90% |
+| Sublayer                       |                                     75–85% |
+| Single Build Unit / LEAP LHS   |                 60–75%, default around 67% |
+| Tiny local fix                 | 50–60%, if no shared contracts are touched |
 
 Use the lightest LEAP mode that controls the actual risk.
 
@@ -372,17 +374,17 @@ Different agents need different constraints. Weak repo awareness requires strong
 
 LEAP risk categories:
 
-| Risk Area | Example | Control |
-|---|---|---|
-| Product risk | Building the wrong workflow | Phase 0 / no-build review |
-| Source-truth risk | Agent follows stale docs | Manifest + doc lifecycle |
-| Architecture risk | Feature forced into bad structure | Recon + architecture right-sizing |
-| Data risk | Destructive migration or data loss | Human approval + rollback plan |
-| Security risk | Auth/session/permission changes | Mandatory checkpoint |
-| Privacy risk | Sensitive user data exposed | Sensitive-area approval |
-| AI behavior risk | Fabricated claims or unsafe automation | AI behavior constraints |
-| UX risk | Flow becomes confusing or inaccessible | Acceptance criteria + manual checks |
-| Collaboration risk | Agents touch same files/contracts | Ownership map + merge order |
+| Risk Area          | Example                                | Control                             |
+| ------------------ | -------------------------------------- | ----------------------------------- |
+| Product risk       | Building the wrong workflow            | Phase 0 / no-build review           |
+| Source-truth risk  | Agent follows stale docs               | Manifest + doc lifecycle            |
+| Architecture risk  | Feature forced into bad structure      | Recon + architecture right-sizing   |
+| Data risk          | Destructive migration or data loss     | Human approval + rollback plan      |
+| Security risk      | Auth/session/permission changes        | Mandatory checkpoint                |
+| Privacy risk       | Sensitive user data exposed            | Sensitive-area approval             |
+| AI behavior risk   | Fabricated claims or unsafe automation | AI behavior constraints             |
+| UX risk            | Flow becomes confusing or inaccessible | Acceptance criteria + manual checks |
+| Collaboration risk | Agents touch same files/contracts      | Ownership map + merge order         |
 
 Sensitive-area rule:
 
@@ -520,29 +522,30 @@ LEAP should guard against:
 
 ---
 
-## 17. Versioning
+## 17. Canonical current documentation
 
-Current version:
+The active repository uses canonical current files instead of versioned active filenames.
 
 ```text
-LEAP v1.9
+docs/leap.md
+prompts/leap-phase-0-standard.md
+prompts/leap-recon-standard.md
+prompts/leap-prompt-standard.md
+prompts/leap-governance-pass-standard.md
 ```
 
-LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the LEAP identity, lifecycle, readiness gates, source-of-truth controls, drift governance, agent-safety posture, public entry path, tool-agnostic agent language, question-loop mechanics, risk examples, and contribution scaffolding from v1.8 while moving the current framework and prompt library to canonical paths.
+Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
 
 ---
 
-## 18. v1.9 change summary
+## 18. Repository maintenance rule
 
-LEAP v1.9 adds:
+Active framework and prompt files should use canonical current paths:
 
-- canonical current framework document path: `docs/leap.md`
-- flattened current operational prompts under `prompts/`
-- detailed release history in `docs/release-history.md`
-- current version marker in `VERSION.md`
-- removal of old versioned framework docs from the active repo
-- removal of nested historical prompt directories from the active repo
-- preservation of historical version visibility through `CHANGELOG.md`, Git history, and the `leap-v1.8` tag
+- keep the current framework at `docs/leap.md`
+- keep current operational prompts under `prompts/`
+- do not restore old versioned framework files unless there is a specific compatibility reason
+- preserve release history through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`
 
 The short rule:
 

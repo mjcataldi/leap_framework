@@ -1,6 +1,6 @@
-# LEAP Prompt — Standard Implementation Prompt — v1.9
+# LEAP Prompt — Standard Implementation Prompt
 
-Generate the LEAP Prompt under LEAP v1.9.
+Generate the LEAP Prompt using the current LEAP framework.
 
 The LEAP Recon pass must already be complete, and the user must have approved the required decisions or accepted safe defaults.
 

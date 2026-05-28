@@ -17,7 +17,7 @@ prompts/
 
 ## Current public workflow
 
-Use the current top-level templates for LEAP v1.9:
+Use the current top-level templates:
 
 ```text
 templates/leap-phase-0-template.md
@@ -41,7 +41,7 @@ docs/risk-taxonomy.md
 
 Use Phase 0 prompts before Recon when project direction, target user, current workflow, MVP boundary, risks, non-goals, no-build alternatives, or source-of-truth baseline are unclear.
 
-In LEAP v1.9, Phase 0 includes the Ideation Loop: targeted question cycles that turn vague human intent into buildable mechanisms.
+Phase 0 includes the Ideation Loop: targeted question cycles that turn vague human intent into buildable mechanisms.
 
 ### Recon prompts
 
@@ -51,7 +51,7 @@ Use Recon prompts before implementation. They inspect source-of-truth manifests,
 
 Use implementation prompts after Recon is complete and the Build Unit sequence has been approved or defaults have been accepted. These prompts are intended for Codex-style or another coding agent.
 
-A v1.9 implementation prompt is not agent-ready unless it includes an explicit agent/tool, model, reasoning level, execution mode, validation plan, and stop conditions.
+An implementation prompt is not agent-ready unless it includes an explicit agent/tool, model, reasoning level, execution mode, validation plan, and stop conditions.
 
 ### Governance prompts
 
@@ -70,7 +70,7 @@ prompts/leap-prompt-standard.md
 prompts/leap-governance-pass-standard.md
 ```
 
-Older versioned prompt files are preserved in Git history and summarized in `docs/release-history.md`.
+Operational prompt files represent the current canonical LEAP workflow. Historical prompt versions are preserved through Git tags and Git history.
 
 ## LEAP process tier guidance
 
@@ -96,7 +96,7 @@ Extended — full-layer implementation, architecture-sensitive work, repo-wide r
 
 LEAP process tier and agent reasoning level are related, but they are not the same thing. LEAP process tier controls how much framework analysis happens before prompt generation. Agent reasoning level controls how the implementation agent should be run after the prompt is generated.
 
-## v1.9 public rule
+## Public rule
 
 ```text
 Ask until the idea becomes buildable.

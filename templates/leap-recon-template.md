@@ -3,7 +3,7 @@
 Use this template to request a LEAP Recon pass after Phase 0 is complete or when an existing project already has sufficient source-of-truth documentation.
 
 ```text
-Run LEAP Recon under LEAP v1.9.
+Run LEAP Recon using the current LEAP framework.
 
 Phase 0 / project baseline status:
 - Phase 0 complete? yes/no/not applicable because existing project
