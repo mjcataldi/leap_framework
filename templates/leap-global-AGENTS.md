@@ -59,6 +59,34 @@ Prefer evidence from the repository over assumptions.
 
 ---
 
+## LEAP Command Shortcuts
+
+When the user says:
+
+```text
+Run LEAP Recon for the following functionality:
+[feature, layer, bugfix, workflow, or functional area]
+```
+
+treat that as a request to run the current LEAP Recon standard.
+
+Default behavior:
+
+1. Use the repository-level `AGENTS.md` first.
+2. Inspect the current repository state.
+3. Use the current LEAP Recon Standard Operational Prompt from the LEAP framework repository:
+   `https://github.com/mjcataldi/leap_framework/blob/main/prompts/leap-recon-standard.md`
+4. Use source-of-truth documents identified by the repository-level `AGENTS.md`.
+5. Return Recon only.
+6. Do not implement code changes.
+7. Do not generate the final LEAP implementation prompt unless the user asks after Recon.
+
+If the LEAP Recon standard or repository-level `AGENTS.md` cannot be read, stop and explain what source is unavailable.
+
+The user should not need to paste the full Recon rules when using standard AGENTS.md behavior. The shortcut above exists so the user can launch Recon with only the functionality description.
+
+---
+
 ## Planning Standard
 
 For meaningful work, produce a short plan before implementation.
