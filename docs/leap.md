@@ -1,4 +1,4 @@
-# LEAP Framework Plan v1.8
+# LEAP Framework Plan v1.9
 
 ## Framework name
 
@@ -8,13 +8,13 @@ LEAP is a software delivery framework for turning rough software intent into pre
 
 LEAP is software-delivery-first. It uses AI-agent governance as part of the delivery system, and many of its underlying ideas can later generalize into broader decision and execution workflows.
 
-LEAP v1.8 is an adoption and ideation hardening release. It preserves the v1.7 lifecycle:
+LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the v1.8 lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 ```
 
-v1.8 keeps readiness gates, source-of-truth manifests, drift controls, and agent-handoff contracts, then adds a clearer public front door, tool-agnostic agent language, risk examples, and an explicit **Ideation Loop** for turning vague human intent into buildable mechanisms.
+v1.9 keeps readiness gates, source-of-truth manifests, drift controls, agent-handoff contracts, the public front door, tool-agnostic agent language, risk examples, and the explicit **Ideation Loop** from v1.8. It changes the repository shape so the current framework document has one canonical path and current operational prompts live at the top of `prompts/`.
 
 ---
 
@@ -123,7 +123,7 @@ Questions are the source of answers. LEAP uses questions to expose the differenc
 
 ### 3.3 Minimum clarity threshold
 
-LEAP v1.8 keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
+LEAP v1.9 keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
 
 A useful planning heuristic:
 
@@ -525,30 +525,24 @@ LEAP should guard against:
 Current version:
 
 ```text
-LEAP v1.8
+LEAP v1.9
 ```
 
-LEAP v1.8 is an adoption and ideation hardening release. It preserves the LEAP identity, lifecycle, readiness gates, source-of-truth controls, drift governance, and agent-safety posture from v1.7 while adding a clearer public entry path, tool-agnostic agent language, question-loop mechanics, risk examples, and contribution scaffolding.
+LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the LEAP identity, lifecycle, readiness gates, source-of-truth controls, drift governance, agent-safety posture, public entry path, tool-agnostic agent language, question-loop mechanics, risk examples, and contribution scaffolding from v1.8 while moving the current framework and prompt library to canonical paths.
 
 ---
 
-## 18. v1.8 change summary
+## 18. v1.9 change summary
 
-LEAP v1.8 adds:
+LEAP v1.9 adds:
 
-- renamed expansion: **Layered Execution & Alignment Protocol**
-- explicit Ideation Loop
-- question-loop rule for repeated clarification until the next safe gate decision is possible
-- beginner-facing adoption docs
-- tool-agnostic Agent Execution Configuration language
-- agent profile guidance
-- risk taxonomy
-- destructive-change protocol
-- agent failure modes
-- minimum viable source-truth guidance
-- Recon confidence heuristics
-- Build Unit sizing heuristics
-- lightweight contribution guidance
+- canonical current framework document path: `docs/leap.md`
+- flattened current operational prompts under `prompts/`
+- detailed release history in `docs/release-history.md`
+- current version marker in `VERSION.md`
+- removal of old versioned framework docs from the active repo
+- removal of nested historical prompt directories from the active repo
+- preservation of historical version visibility through `CHANGELOG.md`, Git history, and the `leap-v1.8` tag
 
 The short rule:
 

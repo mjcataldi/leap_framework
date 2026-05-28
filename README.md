@@ -4,7 +4,7 @@
 
 LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
 
-LEAP v1.8 is an adoption and ideation hardening release. It keeps the three-stage lifecycle from v1.7 while making the framework easier to understand, more tool-agnostic, and clearer about how repeated question loops turn vague human intent into buildable mechanisms.
+LEAP v1.9 is a repository canonicalization and prompt flattening release. It keeps the v1.8 methodology while making the current framework document and operational prompts easier to find and use.
 
 ## Core idea
 
@@ -72,19 +72,11 @@ A prompt is not ready for a coding agent unless it tells the user exactly which 
 
 ## Current version
 
-Current framework version: **LEAP v1.8**
+Current framework version: **LEAP v1.9**
 
-See [`docs/leap-v1.8.md`](docs/leap-v1.8.md).
+See [`docs/leap.md`](docs/leap.md).
 
-Previous versions:
-
-- [`docs/leap-v1.7.md`](docs/leap-v1.7.md)
-- [`docs/leap-v1.6.md`](docs/leap-v1.6.md)
-- [`docs/leap-v1.5.md`](docs/leap-v1.5.md)
-- [`docs/leap-v1.4.md`](docs/leap-v1.4.md)
-- [`docs/leap-v1.3.md`](docs/leap-v1.3.md)
-- [`docs/leap-v1.2.md`](docs/leap-v1.2.md)
-- [`docs/leap-v1.1.md`](docs/leap-v1.1.md)
+Historical version summaries are maintained in [`docs/release-history.md`](docs/release-history.md) and [`CHANGELOG.md`](CHANGELOG.md). Full historical files remain available through Git history and the `leap-v1.8` tag.
 
 ## Quick start
 
@@ -120,12 +112,13 @@ Generated docs are Draft until explicitly ratified.
 README.md
 CHANGELOG.md
 CONTRIBUTING.md
+VERSION.md
 docs/
   00_start_here.md
   leap-for-humans.md
   quick-leap-brief.md
-  leap-v1.8.md
-  leap-v1.7.md
+  leap.md
+  release-history.md
   glossary.md
   agent-profiles.md
   risk-taxonomy.md
@@ -138,26 +131,10 @@ templates/
   leap-prompt-template.md
 prompts/
   README.md
-  leap/
-    phase-0/
-      v1.7/
-      v1.6/
-      v1.5/
-    recon/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
-    implementation/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
-    governance/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
+  leap-phase-0-standard.md
+  leap-recon-standard.md
+  leap-prompt-standard.md
+  leap-governance-pass-standard.md
 ```
 
 ## Short rule
