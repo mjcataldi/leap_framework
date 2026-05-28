@@ -10,20 +10,24 @@ The `templates/` directory contains compact request templates. The `prompts/` di
 prompts/
   leap/
     phase-0/
+      v1.8/
       v1.7/
       v1.6/
       v1.5/
     recon/
+      v1.8/
       v1.7/
       v1.6/
       v1.5/
       v1.3/
     implementation/
+      v1.8/
       v1.7/
       v1.6/
       v1.5/
       v1.3/
     governance/
+      v1.8/
       v1.7/
       v1.6/
       v1.5/
@@ -79,7 +83,7 @@ Prompt files are versioned by LEAP framework version.
 Example:
 
 ```text
-prompts/leap/recon/v1.7/leap-recon-standard.md
+prompts/leap/recon/v1.8/leap-recon-standard.md
 ```
 
 This allows stable prompts to coexist with newer experimental prompts as LEAP evolves.
