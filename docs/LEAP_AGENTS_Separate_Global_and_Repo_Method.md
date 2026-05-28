@@ -10,13 +10,13 @@ For first-time evaluation inside one local repo, prefer the **Master Repo AGENTS
 
 Primary framework reference:
 
-- [LEAP Framework — main branch](https://github.com/mjcataldi/leap_framework/tree/main)
+- [LEAP Framework — main branch](/)
 
 Template links:
 
-- [Global AGENTS.md template](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-global-AGENTS.md)
-- [Repo AGENTS.md template](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-repo-AGENTS.md)
-- [Repository AGENTS.md Population Prompt](https://github.com/mjcataldi/leap_framework/blob/main/templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md)
+- [Global AGENTS.md template](/templates/leap-global-AGENTS-file/AGENTS.md)
+- [Repo AGENTS.md template](/templates/leap-repo-AGENTS-file/AGENTS.md)
+- [Repository AGENTS.md Population Prompt](/templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md)
 
 ---
 

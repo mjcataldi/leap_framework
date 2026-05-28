@@ -75,7 +75,7 @@ Default behavior:
 1. Use the repository-level `AGENTS.md` first.
 2. Inspect the current repository state.
 3. Use the current LEAP Recon Standard Operational Prompt from the LEAP framework repository:
-   `https://github.com/mjcataldi/leap_framework/blob/main/prompts/leap-recon-standard.md`
+   `/prompts/leap-recon-standard.md`
 4. Use source-of-truth documents identified by the repository-level `AGENTS.md`.
 5. Return Recon only.
 6. Do not implement code changes.

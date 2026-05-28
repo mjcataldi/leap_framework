@@ -99,7 +99,7 @@ Prompt only after Recon.
 
 Primary framework reference:
 
-- [LEAP Framework — main branch](https://github.com/mjcataldi/leap_framework/tree/main)
+- [LEAP Framework — main branch](/)
 
 Useful starting points:
 

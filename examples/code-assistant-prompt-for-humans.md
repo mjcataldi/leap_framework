@@ -39,7 +39,7 @@ If the idea is still unclear, run a LEAP Layer 0 / Phase 0 pass first.
 Run a LEAP Recon on this codebase.
 
 Use the LEAP Framework from:
-https://github.com/mjcataldi/leap_framework
+/
 
 Target feature or functionality:
 <DESCRIBE THE FEATURE OR FUNCTIONALITY>

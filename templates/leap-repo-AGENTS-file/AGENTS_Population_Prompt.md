@@ -24,7 +24,7 @@ Target file:
 
 Framework reference:
 - Use the LEAP Framework main branch as the stable reference:
-  https://github.com/mjcataldi/leap_framework/tree/main
+  /
 
 Goal:
 Populate this repository's AGENTS.md file with project-specific operating context so future LEAP Recon and LEAP Prompt work can be accurate, bounded, and source-grounded.
