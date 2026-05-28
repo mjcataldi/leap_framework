@@ -8,35 +8,16 @@ The `templates/` directory contains compact request templates. The `prompts/` di
 
 ```text
 prompts/
-  leap/
-    phase-0/
-      v1.8/
-      v1.7/
-      v1.6/
-      v1.5/
-    recon/
-      v1.8/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
-    implementation/
-      v1.8/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
-    governance/
-      v1.8/
-      v1.7/
-      v1.6/
-      v1.5/
-      v1.3/
+  README.md
+  leap-phase-0-standard.md
+  leap-recon-standard.md
+  leap-prompt-standard.md
+  leap-governance-pass-standard.md
 ```
 
 ## Current public workflow
 
-Use the current top-level templates for LEAP v1.8:
+Use the current top-level templates for LEAP v1.9:
 
 ```text
 templates/leap-phase-0-template.md
@@ -60,7 +41,7 @@ docs/risk-taxonomy.md
 
 Use Phase 0 prompts before Recon when project direction, target user, current workflow, MVP boundary, risks, non-goals, no-build alternatives, or source-of-truth baseline are unclear.
 
-In LEAP v1.8, Phase 0 also includes the Ideation Loop: targeted question cycles that turn vague human intent into buildable mechanisms.
+In LEAP v1.9, Phase 0 includes the Ideation Loop: targeted question cycles that turn vague human intent into buildable mechanisms.
 
 ### Recon prompts
 
@@ -70,23 +51,26 @@ Use Recon prompts before implementation. They inspect source-of-truth manifests,
 
 Use implementation prompts after Recon is complete and the Build Unit sequence has been approved or defaults have been accepted. These prompts are intended for Codex-style or another coding agent.
 
-A v1.8 implementation prompt is not agent-ready unless it includes an explicit agent/tool, model, reasoning level, execution mode, validation plan, and stop conditions.
+A v1.9 implementation prompt is not agent-ready unless it includes an explicit agent/tool, model, reasoning level, execution mode, validation plan, and stop conditions.
 
 ### Governance prompts
 
 Use governance prompts outside normal layer implementation when the repo needs reconciliation, roadmap correction, branch/worktree drift review, cross-layer impact review, stale-plan cleanup, stale-prompt cleanup, source-of-truth ownership cleanup, or agent/model/reasoning guidance cleanup.
 
-## Versioning
+## Current prompt files
 
-Prompt files are versioned by LEAP framework version.
+The active prompt library uses canonical root-level files under `prompts/`.
 
-Example:
+Current files:
 
 ```text
-prompts/leap/recon/v1.8/leap-recon-standard.md
+prompts/leap-phase-0-standard.md
+prompts/leap-recon-standard.md
+prompts/leap-prompt-standard.md
+prompts/leap-governance-pass-standard.md
 ```
 
-This allows stable prompts to coexist with newer experimental prompts as LEAP evolves.
+Older versioned prompt files are preserved in Git history and summarized in `docs/release-history.md`.
 
 ## LEAP process tier guidance
 
@@ -112,7 +96,7 @@ Extended — full-layer implementation, architecture-sensitive work, repo-wide r
 
 LEAP process tier and agent reasoning level are related, but they are not the same thing. LEAP process tier controls how much framework analysis happens before prompt generation. Agent reasoning level controls how the implementation agent should be run after the prompt is generated.
 
-## v1.8 public rule
+## v1.9 public rule
 
 ```text
 Ask until the idea becomes buildable.

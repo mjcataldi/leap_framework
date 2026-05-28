@@ -1,6 +1,6 @@
-# LEAP Recon — Standard Operational Prompt — v1.8
+# LEAP Recon — Standard Operational Prompt — v1.9
 
-Run LEAP Recon under LEAP v1.8.
+Run LEAP Recon under LEAP v1.9.
 
 Recon is the source-of-truth, repo-reality, drift, dependency, risk, execution-configuration, and implementation-safety pass before prompt generation. It is not the coding-agent prompt.
 

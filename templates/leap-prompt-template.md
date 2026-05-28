@@ -5,7 +5,7 @@ Use this template after LEAP Recon has been completed and the user has answered 
 Do not use this template for vague app ideas. New projects must pass Phase 0 Inception and Recon before LEAP Prompt generation.
 
 ```text
-Generate the LEAP Prompt for <Target Layer or Task> under LEAP v1.8.
+Generate the LEAP Prompt for <Target Layer or Task> under LEAP v1.9.
 
 Use the LEAP Recon findings above.
 Use my answers/defaults below:

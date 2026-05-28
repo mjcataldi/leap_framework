@@ -1,6 +1,6 @@
-# LEAP Prompt — Standard Implementation Prompt — v1.7
+# LEAP Prompt — Standard Implementation Prompt — v1.9
 
-Generate the LEAP Prompt under LEAP v1.7.
+Generate the LEAP Prompt under LEAP v1.9.
 
 The LEAP Recon pass must already be complete, and the user must have approved the required decisions or accepted safe defaults.
 
@@ -12,6 +12,7 @@ Confirm before writing the prompt:
 
 ```text
 - Phase 0 complete or not applicable
+- Ideation Loop complete or residual questions resolved
 - Source-of-truth manifest complete
 - Recon approved
 - Repo reality checked when repo access exists
@@ -22,8 +23,10 @@ Confirm before writing the prompt:
 - Acceptance criteria defined
 - Verification path defined
 - Stop conditions defined
-- Codex model selected or recommended
-- Codex reasoning level selected or recommended
+- Destructive-change permission stated
+- Agent / Tool selected or recommended
+- Model selected or recommended
+- Reasoning level selected or recommended
 ```
 
 If any item is missing, stop and explain what must happen first.
@@ -33,10 +36,11 @@ If any item is missing, stop and explain what must happen first.
 ```text
 # <Solution Name> — LEAP Prompt — <Target Layer or Task>
 
-## 1. Codex Execution Configuration
+## 1. Agent Execution Configuration
 
 | Field | Value |
 |---|---|
+| Agent / Tool | <Codex / Claude Code / Cursor / other> |
 | Model | <exact model name or approved project default> |
 | Reasoning Level | <low / medium / high / extended / project-approved enum> |
 | Execution Mode | <recon-only / plan-first / implement-directly / implement-with-brief-plan> |
@@ -83,6 +87,8 @@ If any source conflict appears, stop and report.
 - API/schema/state constraints:
 - AI behavior constraints, if relevant:
 - UX/accessibility constraints, if relevant:
+- Destructive changes: allowed / not allowed / allowed only in these areas:
+- Rollback/data preservation requirements:
 
 ## 7. Implementation Sequence
 - Suggested sequence:
@@ -107,9 +113,11 @@ Stop and report instead of guessing if:
 - task requires architecture not approved
 - task requires touching forbidden files
 - task requires new dependency, migration, auth/permission change, billing change, AI behavior change, or sensitive-data handling not approved
+- destructive changes are required but not explicitly authorized
 - branch/worktree drift creates unclear ownership
 - verification cannot be performed or is undefined
 - acceptance criteria are impossible as written
+- requested agent/tool is unavailable and no approved fallback is provided
 - requested model is unavailable and no approved fallback is provided
 - requested reasoning level is unavailable and no approved fallback is provided
 

@@ -1,6 +1,6 @@
-# LEAP Phase 0 — Standard Operational Prompt — v1.8
+# LEAP Phase 0 — Standard Operational Prompt — v1.9
 
-Run LEAP Phase 0 Inception under LEAP v1.8.
+Run LEAP Phase 0 Inception under LEAP v1.9.
 
 This is a discovery, ideation, pressure-test, and gate-decision pass. It is not an implementation prompt.
 

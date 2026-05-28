@@ -5,7 +5,7 @@ Use this template when starting a new software project, major new product direct
 Phase 0 is for discovery, ideation, pressure testing, and baseline direction. It is not an implementation prompt.
 
 ```text
-Run LEAP Phase 0 Inception under LEAP v1.8.
+Run LEAP Phase 0 Inception under LEAP v1.9.
 
 Phase 0 mode:
 - Lite / Standard / Pro / Small Project Mode / you recommend

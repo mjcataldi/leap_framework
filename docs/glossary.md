@@ -306,7 +306,7 @@ A Build Unit is too large when it requires the agent to modify multiple unrelate
 
 A lightweight LEAP handoff style for a single Build Unit or small bounded implementation task.
 
-In v1.8, prefer the term **Quick LEAP Brief** for public documentation, while allowing LEAP LHS as a project-specific shorthand when already established.
+Prefer the term **Quick LEAP Brief** for public documentation, while allowing LEAP LHS as a project-specific shorthand when already established.
 
 ## Source-of-Truth Document
 
