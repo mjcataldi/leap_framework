@@ -2,6 +2,57 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## LEAP v1.8 — Adoption and ideation hardening
+
+### Added
+
+- Added a versioned **LEAP v1.8** framework plan in `docs/leap-v1.8.md`.
+- Renamed LEAP expansion to **Layered Execution & Alignment Protocol**.
+- Added the **Ideation Loop** for turning vague human intent into buildable mechanisms.
+- Added the question-loop rule: ask the fewest questions needed to make the next safe gate decision, then keep looping while hard blockers remain.
+- Added beginner-facing adoption docs:
+  - `docs/00_start_here.md`
+  - `docs/leap-for-humans.md`
+  - `docs/quick-leap-brief.md`
+- Added tool-agnostic agent support docs:
+  - `docs/agent-profiles.md`
+- Added lightweight risk and destructive-change guidance:
+  - `docs/risk-taxonomy.md`
+- Added examples:
+  - `docs/examples/small-build-unit.md`
+  - `docs/examples/full-layer-recon.md`
+- Added lightweight contribution guidance in `CONTRIBUTING.md`.
+
+### Changed
+
+- Updated README to point to LEAP v1.8 as the current version.
+- Updated public framing from Codex-specific handoff language toward tool-agnostic **Agent Execution Configuration** language.
+- Added minimum viable source-truth guidance.
+- Added Recon confidence heuristics for Layer 0, whole layers, sublayers, Build Units, and tiny fixes.
+- Added Build Unit sizing heuristics and red flags.
+- Added agent failure-mode guidance.
+
+### Notes
+
+LEAP v1.8 is an adoption and ideation hardening release. It keeps the lifecycle:
+
+```text
+LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
+```
+
+The release clarifies how LEAP helps ideation: it does not assume the first expression of an idea is buildable. It cycles through targeted questions, evidence labeling, assumption tracking, pressure testing, and gate decisions until the next safe step is clear.
+
+The short rule:
+
+```text
+No clarity, no build.
+No source truth, no Recon.
+No repo reality, no implementation plan.
+No stop conditions, no coding task.
+No execution profile, no agent-ready prompt.
+Ask until the idea becomes buildable, then stop asking and build only the bounded task.
+```
+
 ## LEAP v1.7 — Codex execution configuration hardening
 
 ### Added
