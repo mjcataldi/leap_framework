@@ -2,9 +2,11 @@
 
 ## LEAP
 
-**Layer Execution & Assembly Protocol**.
+**Layered Execution & Alignment Protocol**.
 
-A framework for turning rough software intent into pressure-tested direction, sequenced plans, governed implementation prompts, and maintainable application documentation.
+A software delivery framework for turning rough software intent into pressure-tested direction, sequenced plans, governed implementation prompts, and maintainable application documentation.
+
+LEAP is software-delivery-first. It uses AI-agent governance as part of the delivery system, and many of its underlying ideas can later generalize into broader decision and execution workflows.
 
 ## Solution
 
@@ -12,21 +14,47 @@ The system, product, platform, internal tool, data system, AI application, or in
 
 ## Phase 0 Inception
 
-The mandatory LEAP project-start workflow for new software projects or major new product directions.
+The LEAP project-start workflow for new software projects, major new product directions, or unclear feature bets.
 
-Phase 0 turns vague software intent into a pressure-tested baseline direction before implementation planning begins.
+Phase 0 turns vague software intent into pressure-tested baseline direction before implementation planning begins.
 
 It includes:
 
 - idea intake
+- Ideation Loop
 - Socratic discovery
 - evidence labeling
-- clarity/readiness assessment
-- market / alternative solution pressure testing
+- readiness assessment
+- no-build / alternative-solution pressure testing
 - MVP boundary definition
-- strategic plan generation when clarity is sufficient
+- non-goal definition
 - documentation bootstrap recommendation
 - gate decision before Recon
+
+## Ideation Loop
+
+The repeated LEAP clarification cycle that turns vague human intent into buildable mechanisms.
+
+```text
+Intent → Questions → Evidence labels → Assumption ledger → Pressure test → Revised intent → Gate decision
+```
+
+The Ideation Loop continues while hard blockers remain.
+
+The loop exists because humans often begin with an emotional or intuitive picture of a solution. That picture may feel complete, but the gaps are often filled by assumptions, urgency, preference, or frustration rather than logic and mechanisms.
+
+LEAP uses targeted questions to expose those gaps before implementation begins.
+
+## Question-Loop Rule
+
+The rule that LEAP should ask the fewest questions needed to make the next safe gate decision.
+
+If hard blockers remain, LEAP should ask another small question round instead of generating implementation plans or coding-agent prompts.
+
+```text
+Ask until the idea becomes buildable.
+Then stop asking and build only the bounded task.
+```
 
 ## Phase 0 Mode
 
@@ -66,7 +94,7 @@ A polished assumption is still an assumption.
 
 ## Readiness Gate
 
-A user-facing operational gate that replaced fake-precision clarity scoring in v1.6.
+A user-facing operational gate that replaced fake-precision clarity scoring.
 
 Supported gates:
 
@@ -77,13 +105,19 @@ Supported gates:
 - C4: Layer-Planning Ready
 - C5: Coding-Prompt Ready
 
-In v1.7, C5 requires source truth, repo reality, scope, tests, stop conditions, explicit model, and explicit reasoning level.
+C5 requires source truth, repo reality, scope, tests, stop conditions, explicit agent/tool, explicit model, and explicit reasoning level.
 
 ## Clarity Threshold
 
-A legacy directional readiness estimate used during earlier Phase 0 versions.
+A directional readiness estimate used as a private thinking aid.
 
-v1.6+ uses readiness gates for user-facing decisions instead of numeric clarity thresholds. Numeric clarity may still be used privately as a thinking aid, but it must not override hard blockers.
+LEAP uses readiness gates for user-facing decisions instead of numeric clarity thresholds. Numeric estimates may help internally, but they must not override hard blockers.
+
+Useful heuristic:
+
+```text
+Phase 0 is required when the project cannot answer core product questions with roughly 80% confidence.
+```
 
 ## Gate Decision
 
@@ -91,14 +125,16 @@ The explicit decision at the end of Phase 0 or Recon.
 
 Supported gate decisions include:
 
+- Continue Discovery
+- Draft Concept Brief
 - Proceed to Recon
 - Pressure Test Further
 - Narrow MVP First
 - Needs Human Decision
-- Do Not Build Yet
 - Reconcile Docs First
 - Resolve Branch Drift First
 - Generate LEAP Prompt
+- Do Not Build Yet
 
 ## No-Build Gate
 
@@ -124,6 +160,29 @@ The user must approve the baseline product direction, MVP boundary, non-goals, r
 A point where LEAP must stop and ask for human approval before continuing.
 
 Human approval is required when the agent would otherwise need to guess about product direction, MVP expansion, source-of-truth changes, architecture, auth, permissions, sensitive data, monetization, destructive migrations, external integrations, AI behavior, overlapping parallel-agent scopes, or execution configuration.
+
+## Sensitive Area
+
+A part of the system where mistakes can affect money, identity, privacy, data durability, legal exposure, or user trust.
+
+Examples:
+
+- authentication
+- sessions
+- permissions
+- billing
+- credits
+- private user data
+- AI-generated user-facing claims
+- production infrastructure
+- secrets
+- destructive migrations
+
+Rule:
+
+```text
+If the change can affect money, identity, privacy, data durability, legal exposure, or user trust, stop and ask.
+```
 
 ## Documentation Bootstrap
 
@@ -168,10 +227,9 @@ It should include:
 - primary workflow
 - primary success signal
 - must-have features
-- should-have-if-easy features
+- manual-for-now workflows
 - explicit non-goals
 - later roadmap candidates
-- manual-for-now workflows
 - validation criteria
 - overbuild risks
 
@@ -179,24 +237,28 @@ It should include:
 
 The active manifest that identifies canonical and active docs, stale/archived/do-not-use docs, target branch, base branch, relevant PRs, repo reality, known conflicts, and human owner/approver.
 
+Minimum viable source truth:
+
+```text
+1. Strategic plan or project charter
+2. Source-of-truth manifest or explicit source list
+3. Current layer/task description
+4. Repo reality summary when repo exists
+5. Explicit stale/do-not-use docs list
+6. LEAP framework version being used
+```
+
 ## Source-of-Truth Index
 
 The application-repo file, usually `docs/source-of-truth.md`, that identifies the canonical project strategy, MVP boundary, implementation strategy, layer map, execution log, and deprecated or archived docs.
 
-In v1.5+ it should also identify document owners, last meaningful update, doc status, truth owned, and conflict-resolution rules.
+It should also identify document owners, last meaningful update, doc status, truth owned, and conflict-resolution rules.
 
 ## Source-of-Truth Status
 
 The classification for a planning document.
 
-Legacy statuses:
-
-- Canonical
-- Supporting
-- Archived
-- Unknown
-
-v1.6+ documentation lifecycle statuses:
+Current statuses:
 
 - Canonical
 - Active
@@ -238,19 +300,19 @@ A Build Unit should be:
 - aligned to source-of-truth documents when provided
 - checked against repo reality when repo access is available
 
+A Build Unit is too large when it requires the agent to modify multiple unrelated capabilities, make unapproved architecture decisions, touch shared contracts without ownership clarity, or compress durable design into “good enough for now” implementation.
+
+## LEAP LHS
+
+A lightweight LEAP handoff style for a single Build Unit or small bounded implementation task.
+
+In v1.8, prefer the term **Quick LEAP Brief** for public documentation, while allowing LEAP LHS as a project-specific shorthand when already established.
+
 ## Source-of-Truth Document
 
 An application-specific roadmap, layer status, domain model, architecture, project-charter, MVP-boundary, execution-state, or implementation-status document that governs repo-specific planning.
 
 LEAP uses source-of-truth documents to avoid relying on stale chat history and to prevent rebuilding capabilities that already exist.
-
-## Source-of-Truth Review
-
-A LEAP Recon section that extracts relevant decisions, constraints, current-status claims, and required documentation updates from application-specific source-of-truth documents.
-
-## Source-of-Truth Discovery
-
-A LEAP Recon section that identifies which docs exist, which docs are canonical, which docs are stale or archived, who owns each doc, and which source of truth governs the current task.
 
 ## Repo Reality Reconciliation
 
@@ -300,8 +362,7 @@ A LEAP assessment that evaluates whether the target concept, layer, or Build Uni
 
 Pressure testing may include:
 
-- market and alternative-solution review
-- simpler non-app alternatives
+- no-build alternatives
 - repo reality check
 - already-built collision check
 - branch drift check
@@ -322,20 +383,35 @@ Recon is run before generating the implementation prompt.
 
 For new projects, Phase 0 must be completed and approved before Recon begins.
 
+## Recon Confidence Guidance
+
+A directional heuristic for deciding how much source truth and repo reality should be inspected before prompt generation.
+
+Suggested confidence before prompt:
+
+- New product / Layer 0 baseline: 90–95%
+- Whole layer: 80–90%
+- Sublayer: 75–85%
+- Single Build Unit / LEAP LHS: 60–75%, default around 67%
+- Tiny local fix: 50–60%, if no shared contracts are touched
+
+Hard blockers override confidence impressions.
+
 ## LEAP Prompt
 
-The final implementation prompt artifact given to Codex-style or another AI coding agent.
+The final implementation prompt artifact given to a coding agent.
 
-It tells the coding agent how to build the layer sequentially and safely.
+It tells the coding agent how to build the layer or Build Unit sequentially and safely.
 
-In v1.7, a LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, stop conditions, and explicit Codex execution configuration.
+A LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, stop conditions, and explicit Agent Execution Configuration.
 
-## Codex Execution Configuration
+## Agent Execution Configuration
 
-The explicit runtime handoff block required in every Codex-ready LEAP Prompt.
+The explicit runtime handoff block required in every agent-ready LEAP Prompt.
 
 It must include:
 
+- Agent / Tool
 - Model
 - Reasoning Level
 - Execution Mode
@@ -346,13 +422,39 @@ It must include:
 - Validation
 - Commit Guidance
 
-A prompt is not Codex-ready unless it tells the user exactly which model and reasoning level to use.
+A prompt is not agent-ready unless it tells the user exactly which execution profile to use.
+
+## Agent / Tool
+
+The specific implementation environment or coding assistant that will receive the LEAP Prompt, such as Codex, Claude Code, Cursor, or another tool.
+
+LEAP is tool-agnostic. Agent-specific requirements should be captured in an Agent Execution Profile.
+
+## Agent Execution Profile
+
+A reusable profile describing how a specific coding agent should be used.
+
+It may include:
+
+- agent/tool
+- model
+- reasoning level
+- context size
+- repo browsing ability
+- shell access
+- autonomous edit behavior
+- preferred handoff style
+- strengths
+- known failure modes
+- required stop conditions
+- validation commands
+- commit behavior
 
 ## Model
 
-The exact model or approved project default the user should select when running the Codex prompt.
+The exact model or approved project default the user should select when running the prompt.
 
-If the project convention uses model minor versions, the model field must include the minor version.
+If the project convention uses model minor versions, the model field should include the minor version.
 
 ## Reasoning Level
 
@@ -403,15 +505,15 @@ LEAP process tier controls how much framework analysis happens before prompt gen
 
 ## Model-Effort Tier
 
-Legacy term for LEAP process depth. Prefer **LEAP Process Tier** in v1.7+ to avoid confusing process depth with the final Codex reasoning level.
+Legacy term for LEAP process depth. Prefer **LEAP Process Tier** to avoid confusing process depth with the final agent reasoning level.
 
 ## Stop Condition
 
 A rule inside a LEAP Prompt that tells the coding agent to stop and report instead of guessing.
 
-Stop conditions are required when docs conflict with code, architecture is unclear, sensitive data handling is unclear, implementation requires unapproved dependencies/migrations/auth/billing/AI behavior changes, model or reasoning level is unavailable without an approved fallback, or the task would violate non-goals.
+Stop conditions are required when docs conflict with code, architecture is unclear, sensitive data handling is unclear, implementation requires unapproved dependencies/migrations/auth/billing/AI behavior changes, model or reasoning level is unavailable without an approved fallback, destructive changes are not authorized, or the task would violate non-goals.
 
-## Buildout mode
+## Buildout Mode
 
 The execution posture for the layer.
 
@@ -422,11 +524,11 @@ Supported defaults:
 - Production-safe
 - Refactor
 
-## Architecture right-sizing
+## Architecture Right-Sizing
 
 The rule that implementation should neither force new work into a bad architecture nor overbuild speculative infrastructure.
 
-## Hand-jamming
+## Hand-Jamming
 
 Forcing a new capability into an unsuitable existing architecture because it is convenient in the short term.
 
@@ -450,7 +552,7 @@ A scoring or classification method used by a project to support decisions.
 
 LEAP treats structured scores as advisory. Scores must expose rationale, uncertainty, missing evidence, and assumptions instead of pretending incomplete evidence creates objective truth.
 
-## Coding-agent question forecast
+## Coding-Agent Question Forecast
 
 A LEAP Recon section that predicts the questions a coding agent might otherwise ask during implementation.
 
@@ -458,26 +560,61 @@ The goal is to answer material questions before the coding run begins.
 
 ## Prompt Drift
 
-A LEAP drift type where a prompt assumes stale files, stale branch state, old decisions, missing model, or missing reasoning level.
+A LEAP drift type where a prompt assumes stale files, stale branch state, old decisions, missing agent/tool, missing model, or missing reasoning level.
 
 Prompt drift requires a prompt freshness check and regenerated handoff.
 
----
+## Risk Taxonomy
 
-## LEAP v1.7 Addendum
+A lightweight classification of risks that determines how much clarification, Recon, approval, and verification are needed.
 
-### Codex Execution Configuration
+Core risk categories:
 
-The mandatory model/reasoning/execution block for final implementation prompts.
+- Product risk
+- Source-truth risk
+- Architecture risk
+- Data risk
+- Security risk
+- Privacy risk
+- AI behavior risk
+- UX risk
+- Collaboration risk
+- Verification risk
 
-### LEAP Process Tier vs Codex Reasoning Level
+Risk does not automatically block work. Unacknowledged risk blocks work.
 
-LEAP process tier controls analysis depth before prompt generation.
+## Destructive Change
 
-Codex reasoning level controls how the implementation agent should be run after prompt generation.
+Anything that can break, delete, rewrite, or invalidate existing state in a way that is not trivially reversible.
 
-They are related but not interchangeable.
+Examples include dropping database columns, deleting records, replacing data models, rewriting migrations, changing auth/session behavior, changing availability-impacting infrastructure, or removing user-visible workflows.
 
-### Prompt-readiness blocker
+Default rule:
 
-A LEAP Prompt is not Codex-ready unless it tells the user exactly which model and reasoning level to use.
+```text
+Destructive changes are not allowed unless explicitly authorized.
+```
+
+## Agent Failure Mode
+
+A predictable way a coding agent may fail.
+
+Common examples:
+
+- hallucinating files, APIs, or business rules
+- obeying stale docs over current code
+- broad refactors disguised as cleanup
+- silent schema or contract changes
+- adding dependencies without approval
+- passing tests by weakening them
+- overfitting to prompt wording instead of repo reality
+- completing the task while violating non-goals
+- making product decisions inside implementation
+
+## Quick LEAP Brief
+
+The smallest useful public LEAP workflow.
+
+Use it for small, bounded work where full Phase 0 and Recon would be heavier than the task.
+
+Escalate from Quick LEAP Brief to Phase 0 or Recon when product discovery, architecture decisions, source-truth reconciliation, sensitive data, or branch drift are involved.

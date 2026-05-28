@@ -1,16 +1,22 @@
 # LEAP Framework
 
-**LEAP — Layer Execution & Assembly Protocol** is a solution-level framework for turning rough software intent into pressure-tested direction, layered plans, and safe, bounded, implementation-ready AI coding prompts.
+**LEAP — Layered Execution & Alignment Protocol** is a software delivery framework for turning rough intent into pressure-tested direction, source-grounded plans, and safe, bounded, implementation-ready AI coding-agent handoffs.
 
-LEAP v1.7 is a Codex execution-configuration hardening release. It keeps the three-stage lifecycle while tightening readiness gates, source-of-truth manifests, documentation lifecycle control, drift ledgers, coding-agent handoff contracts, and explicit model/reasoning execution settings for Codex-ready prompts.
+LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
+
+LEAP v1.8 is an adoption and ideation hardening release. It keeps the three-stage lifecycle from v1.7 while making the framework easier to understand, more tool-agnostic, and clearer about how repeated question loops turn vague human intent into buildable mechanisms.
 
 ## Core idea
 
 ```text
-Phase 0 Inception establishes what should be built, why, and whether it should be built at all.
+People often begin with a feeling for what they want built.
+LEAP turns that feeling into a testable delivery path.
+
+Phase 0 Inception clarifies what should be built, who it serves, why it matters, and whether it should be built at all.
+The Ideation Loop keeps asking targeted questions until the solution is clear enough to reason about mechanically.
 Source-of-truth manifests define repo-specific truth, doc status, ownership, freshness, and conflict rules.
 LEAP Recon reconciles strategy, docs, branch state, stale assumptions, and repo reality before implementation planning.
-LEAP Prompt gives the coding agent a bounded handoff contract with scope, non-goals, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, completion report format, and Codex execution configuration.
+LEAP Prompt gives the coding agent a bounded handoff contract with scope, non-goals, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, completion report format, and explicit agent execution settings.
 ```
 
 ## Three-stage workflow
@@ -31,23 +37,26 @@ C0 Blocked → C1 Discovery Ready → C2 Concept Ready → C3 Pressure-Test Read
 
 Phase 0 must pressure test no-build and simpler alternatives before allowing layer planning.
 
+Phase 0 also includes the **Ideation Loop**: repeated, targeted question cycles that expose gaps between the user's imagined solution and the mechanisms required to deliver it. LEAP continues the loop while hard blockers remain.
+
 ### Stage 1: LEAP Recon
 
 Recon checks whether the project has enough source truth and repo reality to safely generate Build Units or implementation prompts.
 
-Recon must inspect source-of-truth manifests, documentation lifecycle status, stale assumptions, repo reality, branch/worktree/PR drift, existing functionality, cross-layer impacts, layer boundaries, human checkpoints, and the recommended Codex execution configuration.
+Recon must inspect source-of-truth manifests, documentation lifecycle status, stale assumptions, repo reality, branch/worktree/PR drift, existing functionality, cross-layer impacts, layer boundaries, human checkpoints, and the recommended agent execution configuration.
 
 ### Stage 2: LEAP Prompt
 
 LEAP Prompt converts approved Recon into a bounded implementation handoff for Codex-style or another AI coding agent.
 
-A valid LEAP Prompt includes objective, current repo reality, source-of-truth instructions, scope, non-goals, constraints, implementation sequence, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, completion report format, and a required Codex Execution Configuration block.
+A valid LEAP Prompt includes objective, current repo reality, source-of-truth instructions, scope, non-goals, constraints, implementation sequence, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, completion report format, and a required Agent Execution Configuration block.
 
-## Codex execution configuration
+## Agent execution configuration
 
-Every Codex-ready LEAP Prompt must explicitly state:
+Every agent-ready LEAP Prompt must explicitly state:
 
 ```text
+- Agent / Tool
 - Model
 - Reasoning Level
 - Execution Mode
@@ -59,16 +68,17 @@ Every Codex-ready LEAP Prompt must explicitly state:
 - Commit Guidance
 ```
 
-A prompt is not Codex-ready unless it tells the user exactly which model and reasoning level to use. If either value is unknown, LEAP must recommend one instead of leaving the field blank.
+A prompt is not ready for a coding agent unless it tells the user exactly which execution profile to use. If the exact model or reasoning level is unknown, LEAP must recommend one instead of leaving the field blank.
 
 ## Current version
 
-Current framework version: **LEAP v1.7**
+Current framework version: **LEAP v1.8**
 
-See [`docs/leap-v1.7.md`](docs/leap-v1.7.md).
+See [`docs/leap-v1.8.md`](docs/leap-v1.8.md).
 
 Previous versions:
 
+- [`docs/leap-v1.7.md`](docs/leap-v1.7.md)
 - [`docs/leap-v1.6.md`](docs/leap-v1.6.md)
 - [`docs/leap-v1.5.md`](docs/leap-v1.5.md)
 - [`docs/leap-v1.4.md`](docs/leap-v1.4.md)
@@ -77,6 +87,12 @@ Previous versions:
 - [`docs/leap-v1.1.md`](docs/leap-v1.1.md)
 
 ## Quick start
+
+Start here:
+
+- [`docs/00_start_here.md`](docs/00_start_here.md) — the plain-English front door
+- [`docs/leap-for-humans.md`](docs/leap-for-humans.md) — the simple explanation of how LEAP thinks
+- [`docs/quick-leap-brief.md`](docs/quick-leap-brief.md) — the smallest useful LEAP workflow
 
 For a new software project or major new product direction, start with [`templates/leap-phase-0-template.md`](templates/leap-phase-0-template.md).
 
@@ -103,16 +119,19 @@ Generated docs are Draft until explicitly ratified.
 ```text
 README.md
 CHANGELOG.md
+CONTRIBUTING.md
 docs/
+  00_start_here.md
+  leap-for-humans.md
+  quick-leap-brief.md
+  leap-v1.8.md
   leap-v1.7.md
-  leap-v1.6.md
-  leap-v1.5.md
-  leap-v1.4.md
-  leap-v1.3.md
-  leap-v1.3-prompt-library.md
-  leap-v1.2.md
-  leap-v1.1.md
   glossary.md
+  agent-profiles.md
+  risk-taxonomy.md
+  examples/
+    small-build-unit.md
+    full-layer-recon.md
 templates/
   leap-phase-0-template.md
   leap-recon-template.md
@@ -139,8 +158,6 @@ prompts/
       v1.6/
       v1.5/
       v1.3/
-examples/
-  careero-layer5-recon-outline.md
 ```
 
 ## Short rule
@@ -151,6 +168,6 @@ No source truth, no Recon.
 No repo reality, no prompt.
 No non-goals, no agent handoff.
 No stop conditions, no coding task.
-No model, no Codex handoff.
-No reasoning level, no Codex-ready prompt.
+No execution profile, no agent-ready prompt.
+Ask until the idea becomes buildable, then stop asking and build only the bounded task.
 ```
