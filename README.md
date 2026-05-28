@@ -4,7 +4,7 @@
 
 LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
 
-LEAP v1.9 is a repository canonicalization and prompt flattening release. It keeps the v1.8 methodology while making the current framework document and operational prompts easier to find and use.
+The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
 
 ## Core idea
 
@@ -70,13 +70,11 @@ Every agent-ready LEAP Prompt must explicitly state:
 
 A prompt is not ready for a coding agent unless it tells the user exactly which execution profile to use. If the exact model or reasoning level is unknown, LEAP must recommend one instead of leaving the field blank.
 
-## Current version
+## Current framework
 
-Current framework version: **LEAP v1.9**
+Canonical framework document: [`docs/leap.md`](docs/leap.md).
 
-See [`docs/leap.md`](docs/leap.md).
-
-Historical version summaries are maintained in [`docs/release-history.md`](docs/release-history.md) and [`CHANGELOG.md`](CHANGELOG.md). Full historical files remain available through Git history and the `leap-v1.8` tag.
+Historical versions are preserved through Git tags, Git history, [`CHANGELOG.md`](CHANGELOG.md), and [`docs/release-history.md`](docs/release-history.md).
 
 ## Quick start
 

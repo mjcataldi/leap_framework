@@ -17,10 +17,10 @@ All notable changes to the LEAP Framework will be documented here.
 
 ### Changed
 
-- Updated README and prompt-library documentation to describe LEAP v1.9 as the current version.
+- Updated README and prompt-library documentation to describe the canonical-current repository model.
 - Replaced the active versioned framework-doc model with a canonical current framework document.
 - Replaced nested current prompt paths with root-level prompt files under `prompts/`.
-- Updated templates and current prompt files to reference LEAP v1.9.
+- Updated templates and current prompt files to use version-neutral current-framework wording.
 
 ### Removed
 
@@ -32,7 +32,7 @@ All notable changes to the LEAP Framework will be documented here.
 
 LEAP v1.9 is a repository-structure release. It does not change the Ideation Loop, readiness gates, source-of-truth discipline, risk taxonomy, or agent execution configuration semantics from v1.8.
 
-Historical version visibility is preserved through this changelog, `docs/release-history.md`, Git history, and the `leap-v1.8` tag.
+Historical version visibility is preserved through Git tags, Git history, this changelog, and `docs/release-history.md`.
 
 ## LEAP v1.8 — Adoption and ideation hardening
 

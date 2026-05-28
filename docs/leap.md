@@ -1,4 +1,6 @@
-# LEAP Framework Plan v1.9
+# LEAP Framework
+
+This file represents the current canonical LEAP framework document. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
 
 ## Framework name
 
@@ -8,13 +10,13 @@ LEAP is a software delivery framework for turning rough software intent into pre
 
 LEAP is software-delivery-first. It uses AI-agent governance as part of the delivery system, and many of its underlying ideas can later generalize into broader decision and execution workflows.
 
-LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the v1.8 lifecycle:
+The current LEAP framework uses this lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 ```
 
-v1.9 keeps readiness gates, source-of-truth manifests, drift controls, agent-handoff contracts, the public front door, tool-agnostic agent language, risk examples, and the explicit **Ideation Loop** from v1.8. It changes the repository shape so the current framework document has one canonical path and current operational prompts live at the top of `prompts/`.
+The current framework keeps readiness gates, source-of-truth manifests, drift controls, agent-handoff contracts, the public front door, tool-agnostic agent language, risk examples, and the explicit **Ideation Loop**. The active repository uses one canonical framework document path and current operational prompts at the top of `prompts/`.
 
 ---
 
@@ -123,7 +125,7 @@ Questions are the source of answers. LEAP uses questions to expose the differenc
 
 ### 3.3 Minimum clarity threshold
 
-LEAP v1.9 keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
+The current framework keeps readiness gates as the user-facing mechanism. Numeric clarity estimates may be used as private thinking aids, but they must not override hard blockers.
 
 A useful planning heuristic:
 
@@ -520,29 +522,30 @@ LEAP should guard against:
 
 ---
 
-## 17. Versioning
+## 17. Canonical current documentation
 
-Current version:
+The active repository uses canonical current files instead of versioned active filenames.
 
 ```text
-LEAP v1.9
+docs/leap.md
+prompts/leap-phase-0-standard.md
+prompts/leap-recon-standard.md
+prompts/leap-prompt-standard.md
+prompts/leap-governance-pass-standard.md
 ```
 
-LEAP v1.9 is a repository canonicalization and prompt flattening release. It preserves the LEAP identity, lifecycle, readiness gates, source-of-truth controls, drift governance, agent-safety posture, public entry path, tool-agnostic agent language, question-loop mechanics, risk examples, and contribution scaffolding from v1.8 while moving the current framework and prompt library to canonical paths.
+Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
 
 ---
 
-## 18. v1.9 change summary
+## 18. Repository maintenance rule
 
-LEAP v1.9 adds:
+Active framework and prompt files should use canonical current paths:
 
-- canonical current framework document path: `docs/leap.md`
-- flattened current operational prompts under `prompts/`
-- detailed release history in `docs/release-history.md`
-- current version marker in `VERSION.md`
-- removal of old versioned framework docs from the active repo
-- removal of nested historical prompt directories from the active repo
-- preservation of historical version visibility through `CHANGELOG.md`, Git history, and the `leap-v1.8` tag
+- keep the current framework at `docs/leap.md`
+- keep current operational prompts under `prompts/`
+- do not restore old versioned framework files unless there is a specific compatibility reason
+- preserve release history through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`
 
 The short rule:
 

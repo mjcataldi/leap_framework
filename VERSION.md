@@ -1,12 +1,20 @@
 # LEAP Version
 
-Current framework version: **LEAP v1.9**
+LEAP release versions are managed by Git tags.
 
-Canonical framework document: [`docs/leap.md`](docs/leap.md)
+Canonical framework document:
 
-Release history:
+```text
+docs/leap.md
+```
 
-- [`docs/release-history.md`](docs/release-history.md)
-- [`CHANGELOG.md`](CHANGELOG.md)
-- Git history
-- `leap-v1.8` tag for the final v1.8 repository state before canonicalization
+Release history is preserved through:
+
+```text
+CHANGELOG.md
+docs/release-history.md
+Git tags
+Git commit history
+```
+
+Active framework and prompt files should not use versioned filenames.

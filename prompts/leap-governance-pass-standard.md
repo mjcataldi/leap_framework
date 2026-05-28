@@ -1,6 +1,6 @@
-# LEAP Governance Pass — Standard Operational Prompt — v1.9
+# LEAP Governance Pass — Standard Operational Prompt
 
-Run a LEAP v1.9 strategic reconciliation pass.
+Run a LEAP strategic reconciliation pass using the current LEAP framework.
 
 Use this prompt when the repo, docs, branch state, implementation reality, and public framework language may have drifted.
 
