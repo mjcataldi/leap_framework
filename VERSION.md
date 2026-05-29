@@ -4,6 +4,14 @@ LEAP release versions should be managed by Git tags. If tags are missing, use Gi
 
 LEAP AGENTS.md templates are released as a separate Agent Pack because downstream repositories copy and customize those files.
 
+Current framework baseline:
+
+```text
+Version: 0.1.9
+Release tag: leap-v0.1.9
+Status: historical baseline; current branch changes remain unreleased
+```
+
 Current Agent Pack:
 
 ```text

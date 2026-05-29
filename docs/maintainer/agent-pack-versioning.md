@@ -93,7 +93,7 @@ Agent Pack updates are notify/manual-merge only.
 
 LEAP should use two tag streams:
 
-- Framework tags: `leap-vX.Y.Z`
+- Framework tags: `leap-v0.1.X` while LEAP remains pre-1.0, then `leap-vX.Y.Z` after a stable 1.0 release.
 - Agent Pack tags: `leap-agent-pack-vX.Y.Z`
 
 Agent Pack semantic versioning:

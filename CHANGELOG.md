@@ -19,6 +19,8 @@ All notable changes to the LEAP Framework will be documented here.
 - Added `docs/README.md` as the documentation source-of-truth map.
 - Added maintainer documentation governance guidance.
 - Removed unreleased moved-path stubs for AGENTS.md documentation and repointed active references to the live docs.
+- Normalized framework release-history labels to pre-1.0 `v0.1.x` versioning.
+- Clarified the current framework baseline and pre-1.0 framework tag shape.
 
 ## Unreleased - LEAP Prompt taxonomy and LHS clarification
 
@@ -60,7 +62,7 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 - Kept `prompts/leap-phase-0-standard.md` and `templates/leap-phase-0-template.md` as compatibility stubs for older links.
 
-## LEAP v1.9 — Repository canonicalization and prompt flattening
+## LEAP v0.1.9 — Repository canonicalization and prompt flattening
 
 ### Added
 
@@ -84,19 +86,19 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 - Removed old versioned framework docs from the active repository.
 - Removed nested historical prompt directories from the active repository.
-- Removed the old v1.3 prompt-library document from the active repository.
+- Removed the old v0.1.3 prompt-library document from the active repository.
 
 ### Notes
 
-LEAP v1.9 is a repository-structure release. It does not change the Ideation Loop, readiness gates, source-of-truth discipline, risk taxonomy, or agent execution configuration semantics from v1.8.
+LEAP v0.1.9 is a repository-structure release. It does not change the Ideation Loop, readiness gates, source-of-truth discipline, risk taxonomy, or agent execution configuration semantics from v0.1.8.
 
 Historical version visibility is preserved through Git history, this changelog, `docs/release-history.md`, and release tags when present.
 
-## LEAP v1.8 — Adoption and ideation hardening
+## LEAP v0.1.8 — Adoption and ideation hardening
 
 ### Added
 
-- Added a versioned **LEAP v1.8** framework plan in `docs/leap-v1.8.md`.
+- Added a versioned **LEAP v0.1.8** framework plan in `docs/leap-v0.1.8.md`.
 - Renamed LEAP expansion to **Layered Execution & Alignment Protocol**.
 - Added the **Ideation Loop** for turning vague human intent into buildable mechanisms.
 - Added the question-loop rule: ask the fewest questions needed to make the next safe gate decision, then keep looping while hard blockers remain.
@@ -115,7 +117,7 @@ Historical version visibility is preserved through Git history, this changelog, 
 
 ### Changed
 
-- Updated README to point to LEAP v1.8 as the current version.
+- Updated README to point to LEAP v0.1.8 as the current version.
 - Updated public framing from Codex-specific handoff language toward tool-agnostic **Agent Execution Configuration** language.
 - Added minimum viable source-truth guidance.
 - Added Recon confidence heuristics for Layer 0, whole layers, sublayers, Build Units, and tiny fixes.
@@ -124,7 +126,7 @@ Historical version visibility is preserved through Git history, this changelog, 
 
 ### Notes
 
-LEAP v1.8 is an adoption and ideation hardening release. It keeps the lifecycle:
+LEAP v0.1.8 is an adoption and ideation hardening release. It keeps the lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
@@ -143,11 +145,11 @@ No execution profile, no agent-ready prompt.
 Ask until the idea becomes buildable, then stop asking and build only the bounded task.
 ```
 
-## LEAP v1.7 — Codex execution configuration hardening
+## LEAP v0.1.7 — Codex execution configuration hardening
 
 ### Added
 
-- Added a versioned **LEAP v1.7** framework plan in `docs/leap-v1.7.md`.
+- Added a versioned **LEAP v0.1.7** framework plan in `docs/leap-v0.1.7.md`.
 - Added mandatory **Codex Execution Configuration** requirements for final LEAP implementation prompts.
 - Added the hard rule that a prompt is not Codex-ready unless it includes an explicit model and reasoning level.
 - Added clear separation between **LEAP process tier** and **Codex reasoning level**.
@@ -163,30 +165,30 @@ Ask until the idea becomes buildable, then stop asking and build only the bounde
   - Commit Guidance
 - Added reasoning-level guidance for Low, Medium, High, and Extended execution settings.
 - Added model/reasoning prompt-readiness blockers to stop conditions.
-- Added v1.7 operational prompts:
-  - `prompts/leap/phase-0/v1.7/leap-phase-0-standard.md`
-  - `prompts/leap/recon/v1.7/leap-recon-standard.md`
-  - `prompts/leap/implementation/v1.7/leap-prompt-standard.md`
-  - `prompts/leap/governance/v1.7/strategic-reconciliation-pass.md`
+- Added v0.1.7 operational prompts:
+  - `prompts/leap/phase-0/v0.1.7/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v0.1.7/leap-recon-standard.md`
+  - `prompts/leap/implementation/v0.1.7/leap-prompt-standard.md`
+  - `prompts/leap/governance/v0.1.7/strategic-reconciliation-pass.md`
 
 ### Changed
 
-- Updated README to point to LEAP v1.7 as the current version.
-- Updated Phase 0, Recon, and Prompt templates to reference LEAP v1.7.
+- Updated README to point to LEAP v0.1.7 as the current version.
+- Updated Phase 0, Recon, and Prompt templates to reference LEAP v0.1.7.
 - Updated Recon templates and prompts to recommend explicit Codex execution settings before LEAP Prompt generation.
 - Updated Prompt templates and implementation prompts to include the Codex Execution Configuration block near the top of the final handoff.
-- Updated prompt library README to document v1.7 prompt directories and distinguish process tier from reasoning level.
-- Updated glossary with v1.7 terminology for Codex Execution Configuration, Model, Reasoning Level, Execution Mode, Scope Scale, and Prompt Drift.
+- Updated prompt library README to document v0.1.7 prompt directories and distinguish process tier from reasoning level.
+- Updated glossary with v0.1.7 terminology for Codex Execution Configuration, Model, Reasoning Level, Execution Mode, Scope Scale, and Prompt Drift.
 
 ### Notes
 
-LEAP v1.7 is a minor hardening release. It keeps the lifecycle:
+LEAP v0.1.7 is a minor hardening release. It keeps the lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 ```
 
-The release closes a practical handoff gap: v1.6 knew how to recommend model tiers, but Codex-ready prompts also need concrete model and reasoning-level instructions at the point of use.
+The release closes a practical handoff gap: v0.1.6 knew how to recommend model tiers, but Codex-ready prompts also need concrete model and reasoning-level instructions at the point of use.
 
 The short rule:
 
@@ -198,11 +200,11 @@ No repo reality, no implementation plan.
 No stop conditions, no coding task.
 ```
 
-## LEAP v1.6 — Adversarial gate hardening
+## LEAP v0.1.6 — Adversarial gate hardening
 
 ### Added
 
-- Added a versioned **LEAP v1.6** framework plan in `docs/leap-v1.6.md`.
+- Added a versioned **LEAP v0.1.6** framework plan in `docs/leap-v0.1.6.md`.
 - Added readiness gates C0–C5 to replace user-facing fake-precision clarity thresholds.
 - Added Source-of-Truth Manifest requirements before Recon or prompt generation.
 - Added expanded documentation lifecycle states: Canonical, Active, Draft, Stale, Archived, Delete Candidate, Unknown.
@@ -211,22 +213,22 @@ No stop conditions, no coding task.
 - Added explicit Parallel-Agent Preflight and collision-zone rules.
 - Added Small Project Mode to prevent LEAP from becoming bureaucracy.
 - Added Thinking Extended as a model-selection tier between Standard and Pro Standard.
-- Added v1.6 operational prompts:
-  - `prompts/leap/phase-0/v1.6/leap-phase-0-standard.md`
-  - `prompts/leap/recon/v1.6/leap-recon-standard.md`
-  - `prompts/leap/implementation/v1.6/leap-prompt-standard.md`
-  - `prompts/leap/governance/v1.6/strategic-reconciliation-pass.md`
+- Added v0.1.6 operational prompts:
+  - `prompts/leap/phase-0/v0.1.6/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v0.1.6/leap-recon-standard.md`
+  - `prompts/leap/implementation/v0.1.6/leap-prompt-standard.md`
+  - `prompts/leap/governance/v0.1.6/strategic-reconciliation-pass.md`
 
 ### Changed
 
-- Updated README to point to LEAP v1.6 as the current version.
+- Updated README to point to LEAP v0.1.6 as the current version.
 - Updated Phase 0, Recon, and Prompt templates to use readiness gates, source-of-truth manifests, doc lifecycle status, drift review, and stricter stop conditions.
-- Updated prompt library README to include v1.6 prompt directories and model-tier guidance.
+- Updated prompt library README to include v0.1.6 prompt directories and model-tier guidance.
 - Tightened prompt generation blockers around missing non-goals, stale docs, unresolved source conflicts, unknown repo reality, branch drift, missing verification, and missing stop conditions.
 
 ### Notes
 
-LEAP v1.6 is a minor hardening release. It keeps the lifecycle:
+LEAP v0.1.6 is a minor hardening release. It keeps the lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
@@ -234,11 +236,11 @@ LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 
 The release makes the framework more willing to block unsafe implementation and less likely to launder vague intent into polished coding prompts.
 
-## LEAP v1.5 — Gate-based inception and agent-safe prompting
+## LEAP v0.1.5 — Gate-based inception and agent-safe prompting
 
 ### Added
 
-- Added a versioned **LEAP v1.5** framework plan in `docs/leap-v1.5.md`.
+- Added a versioned **LEAP v0.1.5** framework plan in `docs/leap-v0.1.5.md`.
 - Added explicit Phase 0 gate decisions:
   - Proceed to Recon
   - Pressure Test Further
@@ -262,26 +264,26 @@ The release makes the framework more willing to block unsafe implementation and 
 - Added agent stop-condition requirements for implementation prompts.
 - Added stronger human-checkpoint rules for high-risk decisions.
 - Added source-of-truth ownership and stale-document governance rules.
-- Added operational prompt files for v1.5:
-  - `prompts/leap/phase-0/v1.5/leap-phase-0-standard.md`
-  - `prompts/leap/recon/v1.5/leap-recon-standard.md`
-  - `prompts/leap/implementation/v1.5/leap-prompt-standard.md`
-  - `prompts/leap/governance/v1.5/strategic-reconciliation-pass.md`
+- Added operational prompt files for v0.1.5:
+  - `prompts/leap/phase-0/v0.1.5/leap-phase-0-standard.md`
+  - `prompts/leap/recon/v0.1.5/leap-recon-standard.md`
+  - `prompts/leap/implementation/v0.1.5/leap-prompt-standard.md`
+  - `prompts/leap/governance/v0.1.5/strategic-reconciliation-pass.md`
 
 ### Changed
 
-- Updated README to point to LEAP v1.5 as the current version.
+- Updated README to point to LEAP v0.1.5 as the current version.
 - Updated Phase 0 behavior from a single mandatory workflow to a mode-aware workflow with gate decisions.
 - Updated clarity scoring guidance to avoid false precision and preserve blocker rules.
 - Updated documentation bootstrap rules to distinguish required starter docs from conditional docs.
 - Updated Recon expectations to include stale-assumption scans, source-of-truth ownership, branch/worktree drift, and human checkpoint triggers.
 - Updated Prompt expectations to require objective, scope, constraints, non-goals, verification, stop conditions, and explicit output requirements.
-- Updated prompt library README to include v1.5 prompt directories.
-- Expanded glossary with v1.5 terminology.
+- Updated prompt library README to include v0.1.5 prompt directories.
+- Expanded glossary with v0.1.5 terminology.
 
 ### Notes
 
-LEAP v1.5 is a minor-version hardening release. It keeps the v1.4 lifecycle:
+LEAP v0.1.5 is a minor-version hardening release. It keeps the v0.1.4 lifecycle:
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
@@ -299,7 +301,7 @@ Bounded task before agent handoff.
 Stop conditions before guessing.
 ```
 
-## LEAP v1.4 — Phase 0 inception and no-build gate
+## LEAP v0.1.4 — Phase 0 inception and no-build gate
 
 ### Added
 
@@ -322,7 +324,7 @@ Stop conditions before guessing.
 
 ### Changed
 
-- Updated README to point to LEAP v1.4 as the current version.
+- Updated README to point to LEAP v0.1.4 as the current version.
 - Updated README workflow from two stages to three stages.
 - Updated Recon template to check Phase 0 / source-of-truth readiness before layer planning.
 - Updated Prompt template to require Phase 0 and approved Recon before coding-agent prompt generation.
@@ -330,13 +332,13 @@ Stop conditions before guessing.
 
 ### Notes
 
-LEAP v1.4 changes the framework lifecycle. LEAP still uses Recon and Prompt for implementation, but it now requires project inception and pressure-tested direction before implementation planning for new projects.
+LEAP v0.1.4 changes the framework lifecycle. LEAP still uses Recon and Prompt for implementation, but it now requires project inception and pressure-tested direction before implementation planning for new projects.
 
 ```text
 LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 ```
 
-## LEAP v1.3 — Living architecture governance
+## LEAP v0.1.3 — Living architecture governance
 
 ### Added
 
@@ -356,13 +358,13 @@ LEAP Phase 0 Inception → LEAP Recon → LEAP Prompt
 
 ### Notes
 
-LEAP v1.3 kept the same two-stage model as v1.2:
+LEAP v0.1.3 kept the same two-stage model as v0.1.2:
 
 ```text
 LEAP Recon → LEAP Prompt
 ```
 
-## LEAP v1.2 — Source-of-truth and pressure-test hardening
+## LEAP v0.1.2 — Source-of-truth and pressure-test hardening
 
 ### Added
 
@@ -388,14 +390,14 @@ LEAP Recon → LEAP Prompt
 
 ### Changed
 
-- Updated the README to point to LEAP v1.2 as the current version.
+- Updated the README to point to LEAP v0.1.2 as the current version.
 - Updated the LEAP Recon template to include source-of-truth documents, repo reality reconciliation, and pressure-test expectations.
 - Updated the LEAP Prompt template to include source-of-truth instructions and update policy.
-- Expanded the glossary with v1.2 terms.
+- Expanded the glossary with v0.1.2 terms.
 
 ### Notes
 
-LEAP v1.2 keeps the same two-stage model as v1.1:
+LEAP v0.1.2 keeps the same two-stage model as v0.1.1:
 
 ```text
 LEAP Recon → LEAP Prompt
@@ -403,7 +405,7 @@ LEAP Recon → LEAP Prompt
 
 This is a minor-version hardening release, not a major framework redesign.
 
-## LEAP v1.1 — Initial repository version
+## LEAP v0.1.1 — Initial repository version
 
 ### Added
 
