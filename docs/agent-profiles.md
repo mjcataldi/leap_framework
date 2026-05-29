@@ -105,6 +105,14 @@ A LEAP Prompt is not ready for an implementation agent unless it includes:
 
 If a field is unknown, LEAP should recommend a safe default and label it as a recommendation rather than leaving the field blank.
 
+Every generated implementation prompt should also state its prompt type:
+
+```text
+Standard LEAP Prompt / LHS Prompt / Fix Prompt / Refactor Prompt / Validation Prompt / other clearly named type
+```
+
+Use LEAP LHS only when implementation gravity warrants staged execution. LHS is a LEAP Prompt format, not a required lifecycle stage after every prompt.
+
 ---
 
 ## Codex profile example

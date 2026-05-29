@@ -2,7 +2,7 @@
 
 Use this template after LEAP Recon has been completed and the user has answered questions or approved safe defaults.
 
-Do not use this template for vague app ideas. New projects must pass Phase 0 Inception and Recon before LEAP Prompt generation.
+Do not use this template for vague app ideas or unreconciled brownfield docs. New projects must pass LEAP Charter and Recon before LEAP Prompt generation unless the baseline is explicitly not applicable.
 
 ```text
 Generate the LEAP Prompt for <Target Layer or Task> using the current LEAP framework.
@@ -13,7 +13,9 @@ Use my answers/defaults below:
 - <answer/default 2>
 
 Preflight status:
-- Phase 0 complete or not applicable:
+- LEAP Charter complete or not applicable:
+- Prompt type selected:
+- LHS decision gate completed:
 - Ideation Loop complete or remaining questions resolved:
 - Source-of-truth manifest complete:
 - Recon approved:
@@ -31,7 +33,11 @@ Use these sources:
 Do not use these sources:
 - <draft / stale / archived / superseded source paths>
 
+Archived docs are historical unless a canonical document explicitly references them.
+
 Agent execution configuration:
+- Prompt Type: Standard LEAP Prompt / LHS Prompt / Fix Prompt / Refactor Prompt / Validation Prompt / other clearly named type
+- LHS Decision: Use LHS / Do not use LHS
 - Agent / Tool: <Codex / Claude Code / Cursor / other>
 - Model: <exact model name or recommended default>
 - Reasoning Level: <low / medium / high / extended>
@@ -56,9 +62,10 @@ Implementation target:
 - Rollback/data preservation requirements:
 
 Required gate:
-- Confirm source-of-truth review is complete.
+- Confirm LEAP Charter / source-of-truth review is complete.
 - Confirm repo reality has been checked when repo access exists.
 - Confirm scope, non-goals, verification, stop conditions, and execution profile are defined.
+- Confirm whether implementation gravity warrants LHS.
 - Confirm the final prompt includes an explicit agent/tool, model, and reasoning level.
 - If baseline direction, MVP boundary, source truth, Recon approval, implementation scope, verification plan, stop conditions, agent/tool, model, or reasoning level are missing, stop and explain what must be completed first.
 
@@ -71,19 +78,20 @@ Do not include extra analysis inside the prompt unless it is operationally neces
 ```text
 # <Solution Name> — LEAP Prompt — <Target Layer or Task>
 
-## 1. Agent Execution Configuration
-## 2. Objective
-## 3. Current Repo Reality
-## 4. Source-of-Truth Instructions
-## 5. Scope
-## 6. Non-Goals
-## 7. Constraints
-## 8. Implementation Sequence
-## 9. Verification
-## 10. Stop Conditions
-## 11. Branch / Worktree / Commit Instructions
-## 12. Source-of-Truth Update Policy
-## 13. Completion Report Format
+## 1. Prompt Type and LHS Decision
+## 2. Agent Execution Configuration
+## 3. Objective
+## 4. Current Repo Reality
+## 5. Source-of-Truth Instructions
+## 6. Scope
+## 7. Non-Goals
+## 8. Constraints
+## 9. Implementation Sequence
+## 10. Verification
+## 11. Stop Conditions
+## 12. Branch / Worktree / Commit Instructions
+## 13. Source-of-Truth Update Policy
+## 14. Completion Report Format
 ```
 
 ## Required Agent Execution Configuration
@@ -91,7 +99,13 @@ Do not include extra analysis inside the prompt unless it is operationally neces
 Every LEAP Prompt must include this section near the top:
 
 ```text
-## 1. Agent Execution Configuration
+## 1. Prompt Type and LHS Decision
+
+- Prompt type: <Standard LEAP Prompt / LHS Prompt / Fix Prompt / Refactor Prompt / Validation Prompt / other clearly named type>
+- LHS decision: <Use LHS / Do not use LHS>
+- Rationale:
+
+## 2. Agent Execution Configuration
 
 | Field | Value |
 |---|---|
@@ -108,6 +122,8 @@ Every LEAP Prompt must include this section near the top:
 ```
 
 If the agent/tool, model, or reasoning level is unknown, recommend one explicitly instead of leaving the field blank.
+
+Use LHS only when the work needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination.
 
 ## Required stop conditions
 
@@ -127,3 +143,4 @@ Every LEAP Prompt should instruct the coding agent to stop and report instead of
 - requested agent/tool is unavailable and no approved fallback is provided
 - requested model is unavailable and no approved fallback is provided
 - requested reasoning level is unavailable and no approved fallback is provided
+- archived docs appear to be treated as current source truth

@@ -1,27 +1,34 @@
 # LEAP Recon Request Template
 
-Use this template to request a LEAP Recon pass after Phase 0 is complete or when an existing project already has sufficient source-of-truth documentation.
+Use this template to request a LEAP Recon pass after LEAP Charter is complete, not needed, or an existing project already has sufficient source-of-truth documentation.
+
+Recon investigates a focused area, gap, risk, feature, or architectural question.
 
 ```text
 Run LEAP Recon using the current LEAP framework.
 
-Phase 0 / project baseline status:
-- Phase 0 complete? yes/no/not applicable because existing project
-- Phase 0 mode used: Lite / Standard / Pro / Small Project Mode / unknown / not applicable
-- Gate decision from Phase 0:
+LEAP Charter / project baseline status:
+- LEAP Charter complete? yes/no/not applicable because source truth is already sufficient
+- Charter mode used: Greenfield / Brownfield / unknown / not applicable
+- Gate decision from Charter:
 - Ideation Loop status: complete / still unclear / not applicable
 - Human approvals already granted:
 - Known open questions:
 
 Source-of-truth manifest:
 - Manifest path or pasted manifest:
-- Project charter path:
-- MVP boundary path:
+- Charter output path:
+- Product strategy / project charter path:
+- MVP or scope boundary path:
 - Pressure-test summary path:
 - Implementation strategy path:
 - Layer map path:
+- Prompt backlog path:
 - Execution log path:
 - Cross-layer impact map path:
+- Brownfield document inventory path:
+- Gap register path:
+- Migration map path:
 - Stale / archived / do-not-use docs:
 
 Solution/system overview:
@@ -31,8 +38,8 @@ Solution/system overview:
 - Current state:
 - Known constraints:
 
-Target layer or target task:
-- <Layer number + layer name, or bounded task name>
+Target area:
+- <Focused area, gap, risk, feature, architectural question, layer number + layer name, or bounded task name>
 
 Repo / branch context:
 - Repository:
@@ -57,29 +64,33 @@ Buildout settings:
 - Cross-layer impact map update required: yes/no/you recommend
 
 Required gate:
-- Verify whether the Phase 0 baseline and source-of-truth manifest are sufficient.
+- Verify whether the LEAP Charter baseline and source-of-truth manifest are sufficient.
 - Confirm whether more Ideation Loop questions are needed before planning implementation.
-- Classify docs as Canonical, Active, Draft, Stale, Archived, Delete Candidate, or Unknown.
+- Treat Brownfield Charter outputs as valid source-truth inputs when present.
+- Classify docs as Canonical, Supporting, Current but poorly organized, Partially useful, Stale, Conflicting, Duplicate, Completed implementation plan, Misleading, Archived, or Unknown.
+- Treat archived docs as historical unless a canonical doc explicitly references them.
 - Inspect repo reality before implementation planning when repo access exists.
 - Search for already-existing functionality before recommending new work.
 - Recommend an explicit Agent Execution Configuration before LEAP Prompt generation.
+- Recommend LHS only when implementation gravity warrants staged execution.
+- Keep Recon investigative and non-mutating unless I explicitly authorize changes.
 - If docs and repo reality conflict, report the conflict before generating a coding-agent prompt.
 - If branch/worktree/PR drift affects ownership or merge order, require resolution before prompt generation.
 - If agent/tool, model, or reasoning level is missing, recommend safe defaults based on scope, ambiguity, and implementation risk.
 
 Return only the LEAP Recon output first. Do not generate the LEAP Prompt yet.
 At the end, ask any material clarification questions that should be answered before generating the LEAP Prompt.
-Then remind me that I can say: “Generate the LEAP Prompt.”
+Then remind me that I can say: "Generate the LEAP Prompt."
 ```
 
 ## Expected Recon sections
 
 ```text
-# LEAP Recon — <Target Layer or Task>
+# LEAP Recon - <Target Area, Layer, Feature, Risk, or Question>
 
 ## 1. Framework Interpretation
 ## 2. Source-of-Truth Manifest Check
-## 3. Phase 0 / Baseline Gate Check
+## 3. LEAP Charter / Baseline Gate Check
 ## 4. Ideation Loop Residual Questions
 ## 5. Repo Reality Reconciliation
 ## 6. Branch / Worktree / PR Drift Review
@@ -122,11 +133,15 @@ Then remind me that I can say: “Generate the LEAP Prompt.”
 Use confidence as a heuristic, not as a blocker override:
 
 ```text
-New product / Layer 0 baseline: 90–95%
-Whole layer: 80–90%
-Sublayer: 75–85%
-Single Build Unit / LEAP LHS: 60–75%, default around 67%
-Tiny local fix: 50–60%, if no shared contracts are touched
+New product / baseline: 90-95%
+Whole layer: 80-90%
+Sublayer: 75-85%
+Single Build Unit / LEAP LHS: 60-75%, default around 67%
+Tiny local fix: 50-60%, if no shared contracts are touched
 ```
 
 Hard blockers override confidence impressions.
+
+## LHS note
+
+Recon usually should not use LHS. Recon may recommend an LHS prompt, but should not default to LHS and should not mutate runtime code or broad repo structure unless explicitly authorized.

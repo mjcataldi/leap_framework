@@ -8,6 +8,12 @@ Canonical framework document:
 docs/leap.md
 ```
 
+Canonical Charter reference:
+
+```text
+docs/leap-charter.md
+```
+
 Release history is preserved through:
 
 ```text

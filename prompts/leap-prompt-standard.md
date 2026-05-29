@@ -6,12 +6,66 @@ The LEAP Recon pass must already be complete, and the user must have approved th
 
 A LEAP Prompt is a bounded coding-agent handoff contract. It must not ask the agent to infer product behavior, silently resolve source conflicts, improvise architecture, or guess the execution profile.
 
+## Prompt family taxonomy
+
+LEAP Prompt is the broad category of Codex-ready or agent-ready instruction artifacts generated from Charter, Recon, user intent, or approved implementation scope.
+
+| Prompt Type | Purpose | Use LHS? |
+| --- | --- | --- |
+| Charter Prompt | Establish or reconcile direction, docs, roadmap, baseline | Sometimes |
+| Recon Prompt | Investigate focused risk, repo reality, or implementation uncertainty | Usually no |
+| Standard Implementation Prompt | Small or medium implementation change | Sometimes no |
+| Fix Prompt | Specific bug or remediation | Usually no |
+| Refactor Prompt | Larger structural change | Often yes |
+| Governance Prompt | Repo/process/source-of-truth cleanup | Sometimes |
+| Validation Prompt | Verify tests/docs/acceptance and summarize handoff | Usually no |
+| LHS Prompt | Staged implementation sequence | Yes |
+
+The generated prompt must state its prompt type:
+
+```text
+Standard LEAP Prompt
+LHS Prompt
+Fix Prompt
+Refactor Prompt
+Validation Prompt
+Other clearly named prompt type
+```
+
+Use an LHS Prompt only when implementation gravity warrants staged execution.
+
+LHS decision gate:
+
+```text
+Use LHS when two or more are true:
+- The task touches more than 3 files.
+- The task affects more than one system area.
+- The task has dependency order.
+- The task needs tests and docs.
+- The task should be committed in phases.
+- The task has meaningful rollback risk.
+- The task changes architecture, data contracts, or user workflows.
+- The task is part of a named layer.
+- The task may generate follow-up work.
+- The task needs explicit acceptance criteria.
+
+Do not use LHS when:
+- The work is pure analysis.
+- The work is early brainstorming.
+- The work is a one-file edit.
+- The work is a small copy/doc fix.
+- The work is a quick bug fix with obvious scope.
+- The work would add ceremony without reducing risk.
+```
+
 ## Required preflight
 
 Confirm before writing the prompt:
 
 ```text
-- Phase 0 complete or not applicable
+- LEAP Charter complete or not applicable
+- Prompt type selected
+- LHS decision gate completed
 - Ideation Loop complete or residual questions resolved
 - Source-of-truth manifest complete
 - Recon approved
@@ -36,7 +90,12 @@ If any item is missing, stop and explain what must happen first.
 ```text
 # <Solution Name> — LEAP Prompt — <Target Layer or Task>
 
-## 1. Agent Execution Configuration
+## 1. Prompt Type and LHS Decision
+- Prompt type: <Standard LEAP Prompt / LHS Prompt / Fix Prompt / Refactor Prompt / Validation Prompt / other clearly named type>
+- LHS decision: <Use LHS / Do not use LHS>
+- Rationale:
+
+## 2. Agent Execution Configuration
 
 | Field | Value |
 |---|---|
@@ -51,35 +110,37 @@ If any item is missing, stop and explain what must happen first.
 | Validation | <tests/lint/typecheck/build/manual checks> |
 | Commit Guidance | <commit message convention or none> |
 
-## 2. Objective
+## 3. Objective
 - Objective:
 - User-visible outcome:
 - Definition of done:
 
-## 3. Current Repo Reality
+## 4. Current Repo Reality
 - Target branch:
 - Base branch:
 - Existing implementation summary:
 - Known doc-code conflicts:
 - Existing functionality to reuse:
 
-## 4. Source-of-Truth Instructions
+## 5. Source-of-Truth Instructions
 Use these sources:
 - <canonical / active sources>
 
 Do not use these sources:
 - <draft / stale / archived / superseded sources>
 
+Archived docs are historical unless a canonical document explicitly references them.
+
 If any source conflict appears, stop and report.
 
-## 5. Scope
+## 6. Scope
 - In scope:
 - Out of scope:
 - Non-goals:
 - Files/areas to inspect:
 - Files/areas not to touch:
 
-## 6. Constraints
+## 7. Constraints
 - Existing patterns to follow:
 - Dependencies allowed/disallowed:
 - Architecture constraints:
@@ -90,7 +151,7 @@ If any source conflict appears, stop and report.
 - Destructive changes: allowed / not allowed / allowed only in these areas:
 - Rollback/data preservation requirements:
 
-## 7. Implementation Sequence
+## 8. Implementation Sequence
 - Suggested sequence:
 - Build Unit order:
 - One Build Unit per commit where feasible:
@@ -98,13 +159,13 @@ If any source conflict appears, stop and report.
 - Error handling:
 - Backward compatibility:
 
-## 8. Verification
+## 9. Verification
 - Tests to run:
 - Manual checks:
 - Expected result:
 - Verification evidence to report:
 
-## 9. Stop Conditions
+## 10. Stop Conditions
 Stop and report instead of guessing if:
 - required files or sources are missing
 - docs conflict with repo reality
@@ -120,19 +181,20 @@ Stop and report instead of guessing if:
 - requested agent/tool is unavailable and no approved fallback is provided
 - requested model is unavailable and no approved fallback is provided
 - requested reasoning level is unavailable and no approved fallback is provided
+- archived docs appear to be treated as current source truth
 
-## 10. Branch / Worktree / Commit Instructions
+## 11. Branch / Worktree / Commit Instructions
 - Branch/worktree:
 - Commit guidance:
 - One Build Unit per commit:
 - Merge/order notes:
 
-## 11. Source-of-Truth Update Policy
+## 12. Source-of-Truth Update Policy
 - Docs to update:
 - Execution log / drift ledger update required:
 - Cross-layer impact map update required:
 
-## 12. Completion Report Format
+## 13. Completion Report Format
 Return:
 - Summary of changes
 - Files changed
@@ -142,6 +204,7 @@ Return:
 - Stop conditions encountered
 - Docs updated or needing update
 - Follow-up required
+- Recommended next LEAP Recon / LEAP Prompt / LEAP LHS, if needed
 ```
 
 ## Reasoning-level selection guidance

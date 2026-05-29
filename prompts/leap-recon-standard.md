@@ -1,29 +1,58 @@
-# LEAP Recon — Standard Operational Prompt
+# LEAP Recon - Standard Operational Prompt
 
 Run LEAP Recon using the current LEAP framework.
 
-Recon is the source-of-truth, repo-reality, drift, dependency, risk, execution-configuration, and implementation-safety pass before prompt generation. It is not the coding-agent prompt.
+Recon investigates a focused area, gap, risk, feature, or architectural question. It is the source-of-truth, repo-reality, drift, dependency, risk, execution-configuration, and implementation-safety pass before prompt generation. It is not the coding-agent prompt.
+
+Recon is normally investigative and non-mutating unless the user explicitly authorizes changes. Recon may recommend LHS prompts, but it should not default to LHS and should not mutate runtime code or broad repo structure unless explicitly authorized.
+
+Current lifecycle:
+
+```text
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
 
 ## Required behavior
 
 You must:
 
-1. verify Phase 0 / baseline readiness before planning implementation
+1. verify LEAP Charter / baseline readiness before planning implementation
 2. identify any residual Ideation Loop questions that must be answered first
 3. require or construct a source-of-truth manifest
-4. classify docs as Canonical, Active, Draft, Stale, Archived, Delete Candidate, or Unknown
-5. inspect repo reality before implementation planning when repo access exists
-6. treat repo reality as operational truth when docs conflict, unless a human decides otherwise
-7. inspect branch, PR, and worktree drift when available
-8. search for already-existing functionality before recommending new work
-9. detect stale assumptions, stale docs, stale prompts, and stale layer claims
-10. identify cross-layer impacts and downstream assumptions
-11. evaluate risk, sensitive areas, and destructive-change implications
-12. define or refine Build Units only after the above checks
-13. identify human checkpoints
-14. distinguish LEAP process tier from agent execution configuration
-15. recommend the explicit agent/tool, model, reasoning level, execution mode, validation, and commit posture when prompt generation is allowed
-16. end with a gate decision
+4. treat Brownfield Charter outputs as valid source-truth inputs when present
+5. classify docs as Canonical, Supporting, Current but poorly organized, Partially useful, Stale, Conflicting, Duplicate, Completed implementation plan, Misleading, Archived, or Unknown
+6. inspect repo reality before implementation planning when repo access exists
+7. treat repo reality as operational truth when docs conflict, unless a human decides otherwise
+8. treat archived docs as historical unless a current canonical document explicitly references them
+9. inspect branch, PR, and worktree drift when available
+10. search for already-existing functionality before recommending new work
+11. detect stale assumptions, stale docs, stale prompts, and stale layer claims
+12. identify cross-layer impacts and downstream assumptions
+13. evaluate risk, sensitive areas, and destructive-change implications
+14. define or refine Build Units only after the above checks
+15. identify human checkpoints
+16. distinguish LEAP process tier from agent execution configuration
+17. recommend the explicit agent/tool, model, reasoning level, execution mode, validation, and commit posture when prompt generation is allowed
+18. recommend LHS only when implementation gravity warrants staged execution
+19. end with a gate decision
+
+## Brownfield Charter inputs
+
+When present, use these Brownfield Charter outputs as source-truth inputs:
+
+```text
+- document inventory
+- canonical docs list
+- supporting docs list
+- stale / archived / do-not-use docs list
+- gap register
+- reconciliation notes
+- migration map
+- prompt backlog
+- recommended next LEAP Recon / LEAP Prompt / LEAP LHS sequence
+```
+
+If these are missing and source truth is unclear, use the gate decision `Reconcile Docs First` or `Continue LEAP Charter`.
 
 ## Required source-of-truth manifest check
 
@@ -34,13 +63,18 @@ You must:
 - Date:
 - Target branch:
 - Base branch:
-- Current layer / task:
+- Current area / layer / task:
+- Charter output path:
 - Canonical strategic docs:
 - Canonical architecture docs:
 - Active ADRs / decision records:
 - Active layer plan:
+- Prompt backlog path:
 - Execution log path:
 - Cross-layer impact map path:
+- Brownfield document inventory path:
+- Gap register path:
+- Migration map path:
 - Stale / archived docs:
 - Do-not-use docs:
 - Open branches / PRs affecting this work:
@@ -116,7 +150,7 @@ Use one of these decisions:
 
 ```text
 Generate LEAP Prompt
-Continue Phase 0
+Continue LEAP Charter
 Pressure Test Further
 Narrow Scope First
 Needs Human Decision
@@ -128,11 +162,11 @@ Do Not Build Yet
 ## Required output
 
 ```text
-# LEAP Recon — <Target Layer or Task>
+# LEAP Recon - <Target Area, Layer, Feature, Risk, or Question>
 
 ## 1. Framework Interpretation
 ## 2. Source-of-Truth Manifest Check
-## 3. Phase 0 / Baseline Gate Check
+## 3. LEAP Charter / Baseline Gate Check
 ## 4. Ideation Loop Residual Questions
 ## 5. Repo Reality Reconciliation
 ## 6. Branch / Worktree / PR Drift Review

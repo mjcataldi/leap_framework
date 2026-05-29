@@ -1,10 +1,10 @@
-# Repository AGENTS.md — LEAP Project Template
+# Repository AGENTS.md - LEAP Project Template
 
 ## Project Identity
 
 This repository uses LEAP for agent-assisted software delivery.
 
-LEAP work must be grounded in the repository’s actual code, tests, documentation, architecture, and product intent. Do not treat prompts as permission to bypass established project rules.
+LEAP work must be grounded in the repository's actual code, tests, documentation, architecture, and product intent. Do not treat prompts as permission to bypass established project rules.
 
 Project name:
 
@@ -14,6 +14,22 @@ Project summary:
 
 `{{ONE_PARAGRAPH_PROJECT_DESCRIPTION}}`
 
+Current lifecycle:
+
+```text
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+LEAP Charter establishes or reconciles project direction, source-of-truth docs, roadmap, and implementation posture.
+
+LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
+
+LEAP Prompt is the instruction artifact family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts. Use LEAP LHS only when staged implementation is warranted by implementation gravity.
+
+## Documentation Starting Point
+
+Start with `docs/00_start_here.md` when present.
+
 Primary product/architecture docs:
 
 - `{{PATH_TO_PRIMARY_STRATEGY_DOC}}`
@@ -21,25 +37,39 @@ Primary product/architecture docs:
 - `{{PATH_TO_LAYER_OR_ROADMAP_DOCS}}`
 - `{{PATH_TO_API_OR_DATA_CONTRACT_DOCS}}`
 
-Read the relevant docs before implementing layer, architecture, workflow, data model, or user-facing changes.
+Canonical docs:
 
----
+- `{{CANONICAL_DOC_1}}`
+- `{{CANONICAL_DOC_2}}`
+- `{{CANONICAL_DOC_3}}`
+
+Archived, stale, superseded, or do-not-use docs:
+
+- `{{ARCHIVED_OR_STALE_DOC_1}}`
+- `{{ARCHIVED_OR_STALE_DOC_2}}`
+- `{{ARCHIVED_OR_STALE_DOC_3}}`
+
+Treat canonical docs as source of truth. Treat archived docs as historical unless a current canonical document explicitly references them.
+
+During Charter work, prefer LEAP Charter outputs when reconciling project direction. Create LEAP Recon or LEAP Prompt recommendations instead of making risky implementation changes during Charter work.
+
+Use LEAP Recon outputs for focused investigation findings. Use LEAP LHS only when the task needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination. Do not treat LHS as a mandatory stage after every LEAP Prompt.
+
+Read the relevant docs before implementing layer, architecture, workflow, data model, or user-facing changes.
 
 ## Repository Layout
 
 Update this section to match the actual repository.
 
-- `{{FRONTEND_PATH}}` — Frontend application.
-- `{{BACKEND_PATH}}` — API/backend service.
-- `{{SHARED_PATH}}` — Shared types, schemas, utilities, or contracts.
-- `{{DOCS_PATH}}` — Product, architecture, LEAP, and roadmap documentation.
-- `{{TESTS_PATH}}` — Test suites.
-- `{{SCRIPTS_PATH}}` — Development and operational scripts.
-- `{{INFRA_PATH}}` — Infrastructure-as-code or deployment configuration.
+- `{{FRONTEND_PATH}}` - Frontend application.
+- `{{BACKEND_PATH}}` - API/backend service.
+- `{{SHARED_PATH}}` - Shared types, schemas, utilities, or contracts.
+- `{{DOCS_PATH}}` - Product, architecture, LEAP, and roadmap documentation.
+- `{{TESTS_PATH}}` - Test suites.
+- `{{SCRIPTS_PATH}}` - Development and operational scripts.
+- `{{INFRA_PATH}}` - Infrastructure-as-code or deployment configuration.
 
 If the repository structure changes, update this section.
-
----
 
 ## Technology Stack
 
@@ -55,11 +85,9 @@ Update this section to match the actual project.
 
 Use the existing stack unless the user explicitly requests evaluation or migration.
 
----
-
 ## Setup Commands
 
-Use the repository’s existing setup process.
+Use the repository's existing setup process.
 
 ```bash
 {{INSTALL_COMMAND}}
@@ -74,8 +102,6 @@ Use the repository’s existing setup process.
 ```
 
 Do not invent setup commands. If the command is unclear, inspect the repo first.
-
----
 
 ## Validation Commands
 
@@ -105,8 +131,6 @@ If only part of the repo changed, prefer targeted checks first. Run broader chec
 
 If a command is missing, broken, or too expensive to run, explain that in the final response.
 
----
-
 ## LEAP Project Rules
 
 This repository should be implemented in bounded LEAP units.
@@ -119,11 +143,9 @@ When a task references a layer, phase, subsection, milestone, or roadmap item:
 4. Implement only the requested layer/subsection unless a prerequisite is required.
 5. Preserve compatibility with completed prior layers.
 6. Update relevant tests and docs.
-7. Summarize remaining gaps.
+7. Complete Validation/Handoff with remaining gaps and follow-up prompt recommendations.
 
 Do not skip ahead into later layers unless the user explicitly asks.
-
----
 
 ## Project Source of Truth
 
@@ -132,19 +154,40 @@ Use this order of truth when making decisions:
 1. Explicit user instruction for the current task.
 2. Current repository code and tests.
 3. Repository `AGENTS.md` and scoped `AGENTS.md` / `AGENTS.override.md` files.
-4. Product strategy and architecture docs.
-5. Layer/roadmap docs.
+4. Canonical product strategy and architecture docs.
+5. Canonical layer/roadmap docs.
 6. README and setup docs.
 7. Existing issue/task text.
-8. Reasonable inference from nearby patterns.
+8. Archived docs, only when explicitly referenced by canonical docs.
+9. Reasonable inference from nearby patterns.
 
 If these conflict, call out the conflict and prefer the more specific, more recent, and safer source.
 
----
+## LEAP Charter Rules
+
+Use LEAP Charter when project direction, roadmap, source-truth status, documentation structure, implementation posture, or brownfield reconciliation is unclear.
+
+Brownfield Charter policy:
+
+```text
+Canonicalize forward.
+Archive backward.
+Preserve traceability.
+Never let stale docs compete with source-of-truth docs.
+```
+
+During Charter work:
+
+- Identify canonical, supporting, stale, conflicting, duplicate, and archived docs.
+- Compare docs against repo reality when applicable.
+- Produce or update a gap register and prompt backlog.
+- Preserve legacy docs in an archive when superseded.
+- Avoid runtime implementation changes unless explicitly requested.
+- Capture risky code, schema, API, UI, auth, workflow, or infrastructure work as follow-up LEAP Recon, LEAP Prompt, or LEAP LHS recommendations.
 
 ## Architecture Rules
 
-Follow the project’s existing architecture.
+Follow the project's existing architecture.
 
 Default expectations:
 
@@ -164,8 +207,6 @@ Project-specific architecture constraints:
 - `{{ARCHITECTURE_CONSTRAINT_2}}`
 - `{{ARCHITECTURE_CONSTRAINT_3}}`
 
----
-
 ## Data and Migration Rules
 
 Before changing schemas, migrations, seed data, or persistence behavior:
@@ -183,8 +224,6 @@ Project-specific data rules:
 - `{{DATA_RULE_2}}`
 - `{{DATA_RULE_3}}`
 
----
-
 ## API and Contract Rules
 
 When changing APIs, contracts, schemas, or shared types:
@@ -200,8 +239,6 @@ Project-specific contract rules:
 
 - `{{CONTRACT_RULE_1}}`
 - `{{CONTRACT_RULE_2}}`
-
----
 
 ## UI/UX Rules
 
@@ -221,8 +258,6 @@ Project-specific UX rules:
 - `{{UX_RULE_2}}`
 - `{{UX_RULE_3}}`
 
----
-
 ## AI / Automation Rules
 
 If the project uses AI-assisted parsing, evaluation, generation, recommendations, or automation:
@@ -239,8 +274,6 @@ Project-specific AI rules:
 - `{{AI_RULE_1}}`
 - `{{AI_RULE_2}}`
 - `{{AI_RULE_3}}`
-
----
 
 ## Security and Privacy Rules
 
@@ -260,8 +293,6 @@ Project-specific security/privacy rules:
 - `{{SECURITY_RULE_2}}`
 - `{{SECURITY_RULE_3}}`
 
----
-
 ## Testing Expectations
 
 When behavior changes:
@@ -273,39 +304,15 @@ When behavior changes:
 - Do not rewrite test infrastructure unless requested.
 - Do not delete failing tests without explaining why.
 
-Testing priorities:
-
-1. Contract/schema tests.
-2. Service/domain logic tests.
-3. API route tests.
-4. UI behavior tests.
-5. Regression tests for bugs.
-6. Smoke tests for critical workflows.
-
----
-
 ## Documentation Expectations
 
-Update docs when changes affect:
-
-- Product behavior.
-- User workflows.
-- API contracts.
-- Data models.
-- Setup.
-- Commands.
-- Environment variables.
-- Architecture.
-- Layer status.
-- Roadmap assumptions.
+Update docs when changes affect product behavior, user workflows, API contracts, data models, setup, commands, environment variables, architecture, layer status, or roadmap assumptions.
 
 Project-specific docs to keep aligned:
 
 - `{{DOC_PATH_1}}`
 - `{{DOC_PATH_2}}`
 - `{{DOC_PATH_3}}`
-
----
 
 ## Commit and Branch Expectations
 
@@ -319,15 +326,7 @@ When the user asks for commits:
 
 Preferred LEAP commit message:
 
-`{{LAYER_OR_PHASE}} — {{SUBSECTION_OR_FEATURE_TITLE}}`
-
-Examples:
-
-`Layer 4B — Application Timeline and Notes Workflow`
-
-`Layer 6C — Versioning, Review, and Submitted-State Workflow`
-
----
+`{{LAYER_OR_PHASE}} - {{SUBSECTION_OR_FEATURE_TITLE}}`
 
 ## Stop Conditions
 
@@ -341,6 +340,7 @@ Stop and ask before:
 - Removing major existing functionality.
 - Replacing established architecture.
 - Implementing unclear business rules with material product impact.
+- Treating archived docs as current source truth.
 - Weakening privacy, traceability, auditability, or security controls.
 
 Project-specific stop conditions:
@@ -348,8 +348,6 @@ Project-specific stop conditions:
 - `{{STOP_CONDITION_1}}`
 - `{{STOP_CONDITION_2}}`
 - `{{STOP_CONDITION_3}}`
-
----
 
 ## Completion Requirements
 
@@ -361,6 +359,7 @@ A task is complete when:
 - Docs were updated if needed.
 - Risks and follow-ups are called out.
 - The implementation stays within the requested LEAP layer/scope.
+- Validation/Handoff includes follow-up LEAP Recon, LEAP Prompt, or LEAP LHS recommendations when needed.
 
 Final response should include:
 

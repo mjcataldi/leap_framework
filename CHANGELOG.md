@@ -2,6 +2,46 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## Unreleased - LEAP Prompt taxonomy and LHS clarification
+
+### Changed
+
+- Clarified that LEAP LHS is a structured implementation-prompt format within the LEAP Prompt family, not a mandatory lifecycle phase.
+- Updated lifecycle language to use `LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff`.
+- Added guidance for when Charter, Recon, and implementation prompts should or should not use LHS.
+- Added LHS decision rules based on implementation gravity, staged execution, tests, docs, compatibility risk, and commit boundaries.
+
+## Unreleased - LEAP Charter and brownfield reconciliation
+
+### Added
+
+- Added `docs/leap-charter.md` as the canonical LEAP Charter reference.
+- Added `prompts/leap-charter-standard.md` and `templates/leap-charter-template.md`.
+- Added Greenfield and Brownfield Charter modes.
+- Added the Brownfield documentation reconciliation policy:
+  - Canonicalize forward.
+  - Archive backward.
+  - Preserve traceability.
+  - Never let stale docs compete with source-of-truth docs.
+- Added legacy document classification rules, migration map guidance, archive README guidance, status-header metadata convention, and LLM-friendly documentation guidance.
+
+### Changed
+
+- Updated the active lifecycle to:
+
+```text
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+- Replaced active "Phase 0" terminology with LEAP Charter terminology.
+- Clarified that LEAP LHS is a structured LEAP Prompt format for layered House Standard-style implementation work, not a mandatory lifecycle stage.
+- Updated Recon and Prompt standards to treat Brownfield Charter outputs as source-truth inputs.
+- Updated AGENTS templates to start with `docs/00_start_here.md` when present, prefer canonical docs, treat archived docs as historical, and recommend Recon/Prompt follow-ups instead of risky implementation changes during Charter work.
+
+### Compatibility
+
+- Kept `prompts/leap-phase-0-standard.md` and `templates/leap-phase-0-template.md` as compatibility stubs for older links.
+
 ## LEAP v1.9 — Repository canonicalization and prompt flattening
 
 ### Added

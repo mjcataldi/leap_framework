@@ -4,8 +4,6 @@ LEAP is for people who want to build software without letting confusion become c
 
 It is especially useful when AI coding agents are involved, because agents are very good at turning instructions into changes. They are not automatically good at knowing whether the instructions are complete, current, safe, or wise.
 
----
-
 ## The human problem LEAP solves
 
 Humans often describe solutions from the outside:
@@ -30,12 +28,34 @@ What should stay manual for now?
 What must never happen?
 What data is sensitive?
 What already exists in the codebase?
+Which docs are canonical?
+Which docs are stale or archived?
 What does success look like?
 ```
 
 LEAP helps uncover those missing details before implementation begins.
 
----
+## Lifecycle
+
+```text
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+LEAP Charter establishes or reconciles the project direction, source-of-truth docs, roadmap, baseline assumptions, and implementation posture.
+
+LEAP Recon investigates a focused area, gap, risk, feature, or architectural question.
+
+LEAP Prompt produces Codex-ready instructions for analysis, documentation, implementation, or remediation.
+
+Implementation is the execution of the approved LEAP Prompt by Codex or another coding agent.
+
+Validation/Handoff is the required completion step where Codex verifies changes, checks docs/tests, summarizes work, and recommends follow-up prompts.
+
+LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
+
+LEAP Prompt is a family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts.
+
+Use LHS when the implementation has enough gravity to need staged execution: multiple files or system areas, dependency order, tests and docs, phased commits, rollback risk, architecture/data/workflow changes, named-layer work, follow-up work, or explicit acceptance criteria. Do not use LHS for pure analysis, early brainstorming, one-file edits, small copy/doc fixes, obvious quick bugs, or ceremony that does not reduce risk.
 
 ## Questions are the source of answers
 
@@ -64,23 +84,21 @@ What is manual for now?
 What would make this not worth building?
 What part of the repo already handles this?
 What would break if this changed?
+Which docs are source truth?
+Which docs should be archived?
 ```
-
----
 
 ## The Ideation Loop
 
 LEAP's ideation loop is:
 
 ```text
-Intent → Questions → Evidence labels → Assumptions → Pressure test → Revised intent → Gate decision
+Intent -> Questions -> Evidence labels -> Assumptions -> Pressure test -> Revised intent -> Gate decision
 ```
 
 This loop continues while the next step is unsafe.
 
 The goal is not endless discussion. The goal is to reach the next safe gate.
-
----
 
 ## Evidence labels
 
@@ -97,8 +115,6 @@ Deprecated: used to be true, but no longer governs
 
 This matters because a polished assumption is still an assumption.
 
----
-
 ## Readiness gates
 
 LEAP uses gates instead of fake precision scores.
@@ -108,7 +124,7 @@ C0 Blocked: only ask questions
 C1 Discovery Ready: enough to explore
 C2 Concept Ready: enough to draft the concept
 C3 Pressure-Test Ready: enough to challenge the idea
-C4 Layer-Planning Ready: enough to plan the work
+C4 Planning Ready: enough to plan Recon, docs, or prompt backlog
 C5 Coding-Prompt Ready: enough to hand off to a coding agent
 ```
 
@@ -118,8 +134,6 @@ The important rule:
 A high confidence feeling does not override a hard blocker.
 ```
 
----
-
 ## What counts as a hard blocker?
 
 Implementation planning should stop when any of these are missing:
@@ -128,17 +142,31 @@ Implementation planning should stop when any of these are missing:
 - primary user
 - concrete problem
 - current workflow or workaround
-- MVP boundary
+- MVP or scope boundary
 - concrete non-goals
 - sensitive-data/risk profile when applicable
 - source truth for existing projects
 - repo reality for existing repos
+- canonical-vs-archived doc status
 - verification path
 - human approval for risky decisions
 - execution profile for the coding agent
 ```
 
----
+## Brownfield docs
+
+Existing projects often have useful but messy documentation. LEAP Charter - Brownfield Mode reconciles that documentation before implementation work depends on it.
+
+The rule is:
+
+```text
+Canonicalize forward.
+Archive backward.
+Preserve traceability.
+Never let stale docs compete with source-of-truth docs.
+```
+
+This means useful current content moves into canonical docs, old originals are preserved in an archive, and agents are told where to start.
 
 ## LEAP should feel practical
 
@@ -148,13 +176,11 @@ Use the smallest version of LEAP that controls the risk.
 
 For a tiny fix, a short LEAP brief may be enough.
 
-For a major feature, use Phase 0 and Recon.
+For project alignment or stale docs, use LEAP Charter.
 
-For a whole layer, use full LEAP.
+For a major feature or focused repo question, use LEAP Recon.
 
-For multiple agents or sensitive areas, use full LEAP plus explicit ownership and stop conditions.
-
----
+For implementation, use LEAP Prompt. Use LEAP LHS only when the work is layered, staged, or large enough to benefit from House Standard-style execution.
 
 ## The human-friendly summary
 
@@ -162,6 +188,8 @@ For multiple agents or sensitive areas, use full LEAP plus explicit ownership an
 Decide what problem matters.
 Check what is already true.
 Separate facts from guesses.
+Canonicalize current docs.
+Archive stale docs.
 Make the work small enough to verify.
 Tell the agent what not to touch.
 Tell the agent when to stop.

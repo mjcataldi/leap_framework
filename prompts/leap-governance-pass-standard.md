@@ -15,11 +15,12 @@ You must:
 3. identify stale terminology, especially outdated framework expansion or tool-specific language where tool-agnostic language is intended
 4. check whether new docs are discoverable from the README
 5. check whether templates and operational prompts are aligned with current framework rules
-6. check whether the Ideation Loop and question-loop rules are represented consistently
-7. check whether source-of-truth, repo reality, stop conditions, and execution profile requirements are preserved
-8. check whether risk taxonomy, destructive-change, and sensitive-area guidance are present where needed
-9. classify any drift found
-10. recommend document updates, but do not rewrite files unless explicitly asked
+6. check whether LEAP Prompt taxonomy is aligned and LHS is treated as a prompt format, not a lifecycle phase
+7. check whether the Ideation Loop and question-loop rules are represented consistently
+8. check whether source-of-truth, repo reality, stop conditions, and execution profile requirements are preserved
+9. check whether risk taxonomy, destructive-change, sensitive-area, and implementation-gravity guidance are present where needed
+10. classify any drift found
+11. recommend document updates, but do not rewrite files unless explicitly asked
 
 ## Drift categories
 
@@ -46,12 +47,13 @@ Adoption drift — public onboarding docs do not match current framework behavio
 ## 4. Ideation Loop / Question-Loop Review
 ## 5. Source-of-Truth and Repo-Reality Review
 ## 6. Template and Operational Prompt Review
-## 7. Risk / Sensitive Area / Destructive-Change Review
-## 8. Agent Execution Configuration Review
-## 9. Drift Ledger Candidates
-## 10. Recommended Updates
-## 11. Human Decisions Required
-## 12. Gate Decision / Next Step
+## 7. Prompt Taxonomy / LHS Placement Review
+## 8. Risk / Sensitive Area / Destructive-Change Review
+## 9. Agent Execution Configuration Review
+## 10. Drift Ledger Candidates
+## 11. Recommended Updates
+## 12. Human Decisions Required
+## 13. Gate Decision / Next Step
 ```
 
 ## Gate decisions

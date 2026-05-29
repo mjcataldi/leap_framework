@@ -6,8 +6,6 @@ This template is for **LEAP Recon only**. It should inspect the current repo, id
 
 It is not an implementation prompt.
 
----
-
 ## When to use this template
 
 Use this template when:
@@ -25,15 +23,14 @@ Do not use this template when:
 ```text
 - the product idea is still vague
 - the target user, problem, MVP, non-goals, or risks are unclear
+- docs are stale enough that source truth must be reconciled first
 - the assistant cannot inspect the repo
 - you want implementation to begin immediately
 ```
 
-If the idea is still unclear, run a LEAP Layer 0 / Phase 0 pass first.
+If the idea or source-truth baseline is still unclear, run LEAP Charter first. Use Brownfield Mode when existing docs need reconciliation.
 
----
-
-## Copy-ready prompt (COPY THIS BELOW!)
+## Copy-ready prompt
 
 ```text
 Run a LEAP Recon on this codebase.
@@ -41,8 +38,8 @@ Run a LEAP Recon on this codebase.
 Use the LEAP Framework from:
 /
 
-Target feature or functionality:
-<DESCRIBE THE FEATURE OR FUNCTIONALITY>
+Target feature, gap, risk, or architectural question:
+<DESCRIBE THE TARGET AREA>
 
 You already have access to the target codebase.
 
@@ -54,10 +51,11 @@ Do not make product, architecture, schema, auth, security, privacy, billing, or 
 Inspect the repo and return a LEAP Recon report that identifies:
 
 - current repo reality
-- source-of-truth docs and any stale, missing, or conflicting docs
-- existing functionality related to the target feature
+- source-of-truth docs and any stale, archived, missing, or conflicting docs
+- whether LEAP Charter / baseline readiness is sufficient
+- existing functionality related to the target area
 - files, routes, models, schemas, components, services, tests, configs, and dependencies likely involved
-- whether the feature touches auth, sessions, security, privacy, billing, AI behavior, data models, APIs, or user data
+- whether the target touches auth, sessions, security, privacy, billing, AI behavior, data models, APIs, or user data
 - risks, sensitive areas, and destructive-change concerns
 - recommended Build Units
 - files or areas that should not be touched
@@ -71,34 +69,33 @@ If you cannot access required files, source documents, routes, schemas, tests, o
 Return only the LEAP Recon report.
 ```
 
----
-
 ## Expected Recon output
 
 ```text
-# LEAP Recon — <Target Feature or Functionality>
+# LEAP Recon - <Target Feature, Gap, Risk, or Question>
 
 ## 1. Framework Interpretation
 ## 2. Source-of-Truth Manifest Check
-## 3. Phase 0 / Baseline Gate Check
-## 4. Repo Reality Reconciliation
-## 5. Documentation Lifecycle Review
-## 6. Existing Functionality Collision Check
-## 7. Stale Assumption Scan
-## 8. Cross-Layer Impact Scan
-## 9. Layer / Feature Boundary Review
-## 10. Generated / Refined Build Unit Inventory
-## 11. Recommended Build Sequence
-## 12. Dependency and Destructive-Change Review
-## 13. Risk Taxonomy Review
-## 14. Human Checkpoints Required
-## 15. Coding-Agent Risk Forecast
-## 16. Recommended Agent Execution Configuration
-## 17. Clarification Questions Before LEAP Prompt Generation
-## 18. Gate Decision / Next Step
+## 3. LEAP Charter / Baseline Gate Check
+## 4. Ideation Loop Residual Questions
+## 5. Repo Reality Reconciliation
+## 6. Branch / Worktree / PR Drift Review
+## 7. Documentation Lifecycle Review
+## 8. Strategic Plan Reconciliation
+## 9. Existing Functionality Collision Check
+## 10. Stale Assumption Scan
+## 11. Cross-Layer Impact Scan
+## 12. Layer / Feature Boundary Review
+## 13. Generated / Refined Build Unit Inventory
+## 14. Recommended Build Sequence
+## 15. Dependency and Destructive-Change Review
+## 16. Risk Taxonomy Review
+## 17. Human Checkpoints Required
+## 18. Coding-Agent Risk Forecast
+## 19. Recommended Agent Execution Configuration
+## 20. Clarification Questions Before LEAP Prompt Generation
+## 21. Gate Decision / Next Step
 ```
-
----
 
 ## Gate decision options
 
@@ -106,7 +103,7 @@ Use one of these gate decisions:
 
 ```text
 Generate LEAP Prompt
-Continue Phase 0
+Continue LEAP Charter
 Pressure Test Further
 Narrow Scope First
 Needs Human Decision
@@ -114,8 +111,6 @@ Reconcile Docs First
 Resolve Branch Drift First
 Do Not Build Yet
 ```
-
----
 
 ## Recommended Agent Execution Configuration section
 
@@ -138,8 +133,6 @@ If the gate decision is `Generate LEAP Prompt`, include:
 | Commit Guidance | <commit convention> | <why> |
 ```
 
----
-
 ## Stop conditions
 
 The code assistant must stop and report instead of guessing if:
@@ -148,6 +141,7 @@ The code assistant must stop and report instead of guessing if:
 - required files or source documents are missing
 - repo reality conflicts with the prompt
 - docs conflict with repo reality
+- archived docs appear to be treated as current source truth
 - existing implementation contradicts the requested feature
 - implementation would violate explicit non-goals
 - the feature requires product decisions not yet approved
@@ -159,10 +153,8 @@ The code assistant must stop and report instead of guessing if:
 - the acceptance criteria are impossible as written
 ```
 
----
-
 ## Usage note
 
-This template is intentionally lightweight. It is designed to get a user from “I want to try LEAP on this feature” to a useful repo-aware Recon pass quickly.
+This template is intentionally lightweight. It is designed to get a user from "I want to try LEAP on this feature" to a useful repo-aware Recon pass quickly.
 
-If the Recon reveals that the user, problem, MVP boundary, non-goals, or risks are unclear, escalate to LEAP Layer 0 / Phase 0 before generating an implementation prompt.
+If the Recon reveals that the user, problem, MVP boundary, non-goals, risks, or source-of-truth baseline are unclear, escalate to LEAP Charter before generating an implementation prompt.

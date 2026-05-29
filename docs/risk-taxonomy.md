@@ -4,14 +4,16 @@ LEAP uses risk categories to decide how much clarification, Recon, approval, and
 
 The taxonomy should stay lightweight. Its job is to make risk visible, not to create bureaucracy.
 
+Implementation Gravity is the amount of coordination, risk, dependency ordering, testing, documentation, and rollback concern attached to a task. Higher implementation gravity increases the chance that the implementation prompt should use LEAP LHS.
+
 ---
 
 ## Core risk categories
 
 | Risk Area | Example | Required Control |
 |---|---|---|
-| Product risk | Building the wrong workflow | Phase 0 / no-build review |
-| Source-truth risk | Agent follows stale docs | Manifest + doc lifecycle |
+| Product risk | Building the wrong workflow | LEAP Charter / no-build review |
+| Source-truth risk | Agent follows stale or archived docs | Charter reconciliation + manifest + doc lifecycle |
 | Architecture risk | Feature forced into bad structure | Recon + architecture right-sizing |
 | Data risk | Destructive migration or data loss | Human approval + rollback plan |
 | Security risk | Auth/session/permission changes | Mandatory checkpoint |
@@ -102,7 +104,7 @@ Escalate from Small Project Mode to Recon when:
 - a human decision is needed
 ```
 
-Escalate from Recon to Phase 0 when:
+Escalate from Recon to LEAP Charter when:
 
 ```text
 - the target user is unclear
@@ -112,6 +114,7 @@ Escalate from Recon to Phase 0 when:
 - no-build alternatives have not been considered
 - the feature changes product strategy
 - the proposed work is a full product disguised as a feature
+- docs need brownfield reconciliation before source truth is safe
 ```
 
 ---
