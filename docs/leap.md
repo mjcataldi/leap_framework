@@ -1,6 +1,15 @@
+<!--
+LEAP_DOC_METADATA:
+  audience: user, maintainer, agent
+  doc_type: canonical-framework-reference
+  authority: canonical
+  applies_to: leap-framework
+END_LEAP_DOC_METADATA
+-->
+
 # LEAP Framework
 
-This file represents the current canonical LEAP framework document. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
+This file represents the current canonical LEAP framework document. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
 
 ## Framework name
 
@@ -618,7 +627,7 @@ prompts/leap-prompt-standard.md
 prompts/leap-governance-pass-standard.md
 ```
 
-Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
+Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
 
 Compatibility stubs remain at:
 
@@ -646,7 +655,7 @@ Active framework and prompt files should use canonical current paths:
 - keep Charter guidance at `docs/leap-charter.md`
 - keep current operational prompts under `prompts/`
 - do not restore old versioned framework files unless there is a specific compatibility reason
-- preserve release history through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present
+- preserve release history through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present
 
 The short rule:
 

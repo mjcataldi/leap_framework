@@ -141,7 +141,7 @@ Application type and maturity:
 
 - Type: Markdown framework, prompt library, examples, and AGENTS.md adoption templates.
 - Runtime application: None discovered.
-- Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
+- Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
 - Current active branch at last repo guidance update: `add-versioning`; verify with `git status --short --branch` before work.
 
 Primary users and use cases:
@@ -165,8 +165,9 @@ Primary product/architecture docs:
 - `docs/leap-charter.md` - canonical Charter, Greenfield/Brownfield, and documentation reconciliation guidance.
 - `docs/glossary.md` - terminology source for lifecycle, prompt taxonomy, source truth, and risk terms.
 - `prompts/README.md` - prompt library routing and prompt-family guidance.
-- `docs/LEAP_AGENTS_Versioning.md` - Agent Pack metadata, manifest, tags, and managed-section guidance.
-- `docs/LEAP_AGENTS_Update_Guide.md` - AGENTS.md update status and no-overwrite workflow.
+- `docs/README.md` - documentation domain map and source-of-truth routing.
+- `docs/maintainer/agent-pack-versioning.md` - Agent Pack metadata, manifest, tags, and managed-section guidance.
+- `docs/maintainer/agent-pack-update-runbook.md` - AGENTS.md update status and no-overwrite workflow.
 
 Canonical docs:
 
@@ -182,7 +183,7 @@ Canonical docs:
 
 Archived, stale, superseded, or do-not-use docs:
 
-- Historical release context: `CHANGELOG.md` and `docs/release-history.md`. These may retain older `Phase 0` or historical lifecycle wording when describing prior releases.
+- Historical release context: `CHANGELOG.md` and `docs/maintainer/release-history.md`. These may retain older `Phase 0` or historical lifecycle wording when describing prior releases.
 - Compatibility stubs: `prompts/leap-phase-0-standard.md` and `templates/leap-phase-0-template.md`. Keep links valid, but prefer Charter files for active work.
 - Archive folder: None discovered at population time. If future docs are archived, use the LEAP Charter archive guidance before treating them as current.
 - Confirmed active stale/conflicting docs: None discovered during this population pass. Re-check with targeted `rg` searches before taxonomy or source-truth work.
@@ -319,7 +320,7 @@ Brownfield Charter expectations for this repo:
 
 - Start as discovery and reconciliation.
 - Verify current canonical docs, prompt standards, templates, and AGENTS templates before editing.
-- Preserve historical `Phase 0` references in `CHANGELOG.md` and `docs/release-history.md` when they describe older releases.
+- Preserve historical `Phase 0` references in `CHANGELOG.md` and `docs/maintainer/release-history.md` when they describe older releases.
 - Use LHS only after the documentation reorganization or taxonomy plan is clear and staged execution reduces risk.
 
 ## LEAP Recon Rules
@@ -335,7 +336,7 @@ Recon for this repo should usually inspect:
 - `docs/glossary.md`
 - `prompts/README.md`
 - relevant files in `prompts/` and `templates/`
-- `CHANGELOG.md`, `VERSION.md`, and `docs/release-history.md` when release or historical terminology is involved
+- `CHANGELOG.md`, `VERSION.md`, and `docs/maintainer/release-history.md` when release or historical terminology is involved
 
 Recon is normally investigative and non-mutating unless the user explicitly authorizes edits. It may recommend Standard LEAP Prompts or LHS prompts when staged documentation changes are warranted.
 
@@ -362,7 +363,7 @@ Use this order of truth:
 7. `prompts/README.md` and current files under `prompts/`.
 8. Current files under `templates/`.
 9. `CONTRIBUTING.md` and `VERSION.md`.
-10. `CHANGELOG.md` and `docs/release-history.md` for release history only.
+10. `CHANGELOG.md` and `docs/maintainer/release-history.md` for release history only.
 11. Archived, stale, or compatibility docs only when explicitly referenced by canonical docs.
 12. Reasonable inference from nearby patterns, clearly labeled as inference.
 
@@ -451,9 +452,9 @@ Project-specific docs to keep aligned:
 - `templates/leap-recon-template.md`
 - `templates/leap-prompt-template.md`
 - AGENTS templates under `templates/`
-- `docs/LEAP_AGENTS_Versioning.md`
-- `docs/LEAP_AGENTS_Update_Guide.md`
-- `docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md`
+- `docs/maintainer/agent-pack-versioning.md`
+- `docs/maintainer/agent-pack-update-runbook.md`
+- `docs/user/agents-clone-fork-pin.md`
 - `templates/leap-agent-pack-manifest.json`
 
 Doc classification at population time:
@@ -465,17 +466,20 @@ Doc classification at population time:
 | `docs/glossary.md` | Canonical | Term definitions. |
 | `README.md` | Canonical entry point | Repository overview and routing. |
 | `docs/00_start_here.md` | Canonical entry point | Plain-English first read. |
+| `docs/README.md` | Canonical docs map | Documentation domains and authority routing. |
+| `docs/reference/README.md` | Supporting | Current root-level reference docs map. |
 | `prompts/README.md` | Canonical supporting | Prompt-family routing. |
 | `templates/leap-agent-pack-manifest.json` | Canonical | Agent Pack version and template checksum manifest. |
-| `docs/LEAP_AGENTS_Versioning.md` | Canonical supporting | Agent Pack metadata and managed section policy. |
-| `docs/LEAP_AGENTS_Update_Guide.md` | Supporting | Update status and no-overwrite workflow. |
-| `docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md` | Supporting | Clone, fork, and pinned-version adoption. |
+| `docs/maintainer/agent-pack-versioning.md` | Canonical supporting | Agent Pack metadata and managed section policy. |
+| `docs/maintainer/agent-pack-update-runbook.md` | Supporting | Update status and no-overwrite workflow. |
+| `docs/user/agents-clone-fork-pin.md` | Supporting | Clone, fork, and pinned-version adoption. |
+| `docs/maintainer/framework-doc-governance.md` | Supporting | Documentation domain and move governance. |
 | Current `prompts/leap-*-standard.md` files except Phase 0 stub | Canonical operational prompts | Active prompt standards. |
 | Current `templates/leap-*-template.md` files except Phase 0 stub | Canonical templates | Active user request templates. |
 | `CONTRIBUTING.md` | Supporting | Contribution behavior. |
 | `VERSION.md` | Supporting | Canonical file and release-history notes. |
-| `docs/agent-profiles.md`, `docs/risk-taxonomy.md`, `docs/leap-for-humans.md`, `docs/quick-leap-brief.md` | Supporting | Adoption and risk guidance. |
-| `CHANGELOG.md`, `docs/release-history.md` | Historical plus current changelog | Historical `Phase 0` wording may be valid in old release context. |
+| `docs/agent-profiles.md`, `docs/risk-taxonomy.md`, `docs/user/leap-for-humans.md`, `docs/user/quick-leap-brief.md` | Supporting | Adoption and risk guidance. |
+| `CHANGELOG.md`, `docs/maintainer/release-history.md` | Historical plus current changelog | Historical `Phase 0` wording may be valid in old release context. |
 | `prompts/leap-phase-0-standard.md`, `templates/leap-phase-0-template.md` | Compatibility stubs | Keep for old links; do not prefer for active work. |
 
 ## Stop Conditions

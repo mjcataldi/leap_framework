@@ -15,6 +15,10 @@ All notable changes to the LEAP Framework will be documented here.
 
 - Clarified that AGENTS.md updates are notify/manual-merge only and must not overwrite downstream project or local sections automatically.
 - Clarified that Agent Pack release tags use `leap-agent-pack-vX.Y.Z` separately from framework tags.
+- Reorganized LEAP documentation into clearer user, reference, maintainer, and example domains.
+- Added `docs/README.md` as the documentation source-of-truth map.
+- Added maintainer documentation governance guidance.
+- Added compatibility stubs for moved AGENTS.md documentation paths.
 
 ## Unreleased - LEAP Prompt taxonomy and LHS clarification
 

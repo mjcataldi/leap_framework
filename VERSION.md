@@ -1,6 +1,6 @@
 # LEAP Version
 
-LEAP release versions should be managed by Git tags. If tags are missing, use Git history, `CHANGELOG.md`, and `docs/release-history.md` as the available release record until tags are created.
+LEAP release versions should be managed by Git tags. If tags are missing, use Git history, `CHANGELOG.md`, and `docs/maintainer/release-history.md` as the available release record until tags are created.
 
 LEAP AGENTS.md templates are released as a separate Agent Pack because downstream repositories copy and customize those files.
 
@@ -31,7 +31,7 @@ Release history is preserved through:
 
 ```text
 CHANGELOG.md
-docs/release-history.md
+docs/maintainer/release-history.md
 Git tags, when present
 Git commit history
 ```
