@@ -1,4 +1,4 @@
-# Global AGENTS.md — LEAP Operating Template
+# Global AGENTS.md - LEAP Operating Template
 
 ## Purpose
 
@@ -6,9 +6,15 @@ Use LEAP as the default operating model for software engineering tasks unless th
 
 LEAP is a layered, evidence-first execution model for agent-assisted software work. Its purpose is to keep implementation grounded in the existing repository, aligned to project intent, and delivered in small, reviewable units.
 
-This global file defines reusable behavior across repositories. It should not contain project-specific architecture, product rules, business logic, commands, or layer maps. Those belong in the repository-level `AGENTS.md` and project documentation.
+Current lifecycle:
 
----
+```text
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+LEAP Charter establishes or reconciles project direction, source-of-truth docs, roadmap, and implementation posture. LEAP LHS is a structured LEAP Prompt format for layered House Standard-style implementation work; it is not a mandatory lifecycle stage.
+
+This global file defines reusable behavior across repositories. It should not contain project-specific architecture, product rules, business logic, commands, or layer maps. Those belong in the repository-level `AGENTS.md` and project documentation.
 
 ## Instruction Priority
 
@@ -22,7 +28,13 @@ When working in a repository, follow instructions in this order:
 
 If instructions conflict, follow the more specific and more recent instruction unless it would create security, data-loss, or integrity risk.
 
----
+## Documentation Starting Point
+
+When present, start with `docs/00_start_here.md`.
+
+Treat canonical docs as source of truth. Treat archived docs as historical unless a current canonical document explicitly references them.
+
+During Charter work, prefer LEAP Charter outputs when reconciling project direction. Create LEAP Recon or LEAP Prompt recommendations instead of making risky implementation changes during Charter work.
 
 ## Default LEAP Work Pattern
 
@@ -36,18 +48,18 @@ For non-trivial implementation tasks, use this sequence:
 6. Implement the smallest coherent change.
 7. Add or update relevant tests.
 8. Run practical validation checks.
-9. Summarize changes, validation, risks, and follow-ups.
+9. Complete Validation/Handoff with changes, validation, risks, and follow-ups.
 
 Do not treat the task as greenfield unless the repository clearly lacks an existing implementation path.
-
----
 
 ## Reconnaissance Expectations
 
 Before editing code, inspect the repository enough to understand:
 
 - Existing project structure.
-- Relevant docs and architecture notes.
+- `docs/00_start_here.md` when present.
+- Relevant canonical docs and architecture notes.
+- Archived, stale, duplicate, or conflicting docs that should not be treated as source truth.
 - Similar implemented features.
 - Naming conventions.
 - Data contracts and validation patterns.
@@ -57,9 +69,16 @@ Before editing code, inspect the repository enough to understand:
 
 Prefer evidence from the repository over assumptions.
 
----
-
 ## LEAP Command Shortcuts
+
+When the user says:
+
+```text
+Run LEAP Charter for this project:
+[project, repo, idea, or reconciliation target]
+```
+
+treat that as a request to run the current LEAP Charter standard from `/prompts/leap-charter-standard.md`.
 
 When the user says:
 
@@ -68,24 +87,19 @@ Run LEAP Recon for the following functionality:
 [feature, layer, bugfix, workflow, or functional area]
 ```
 
-treat that as a request to run the current LEAP Recon standard.
+treat that as a request to run the current LEAP Recon standard from `/prompts/leap-recon-standard.md`.
 
-Default behavior:
+Default Recon behavior:
 
 1. Use the repository-level `AGENTS.md` first.
 2. Inspect the current repository state.
-3. Use the current LEAP Recon Standard Operational Prompt from the LEAP framework repository:
-   `/prompts/leap-recon-standard.md`
-4. Use source-of-truth documents identified by the repository-level `AGENTS.md`.
+3. Use source-of-truth documents identified by the repository-level `AGENTS.md`.
+4. Treat Brownfield Charter outputs as source-truth inputs when present.
 5. Return Recon only.
 6. Do not implement code changes.
 7. Do not generate the final LEAP implementation prompt unless the user asks after Recon.
 
-If the LEAP Recon standard or repository-level `AGENTS.md` cannot be read, stop and explain what source is unavailable.
-
-The user should not need to paste the full Recon rules when using standard AGENTS.md behavior. The shortcut above exists so the user can launch Recon with only the functionality description.
-
----
+If the LEAP standard prompt or repository-level `AGENTS.md` cannot be read, stop and explain what source is unavailable.
 
 ## Planning Standard
 
@@ -101,8 +115,6 @@ A useful plan should identify:
 - Stop conditions or decisions that require the user.
 
 Avoid excessive planning for small, obvious changes.
-
----
 
 ## Implementation Standard
 
@@ -121,8 +133,6 @@ When changing code:
 - Handle errors explicitly.
 - Preserve existing security, privacy, and auditability boundaries.
 
----
-
 ## LEAP Layer Discipline
 
 When a task references a layer, phase, milestone, or subsection:
@@ -133,25 +143,19 @@ When a task references a layer, phase, milestone, or subsection:
 - Preserve earlier layer behavior unless the task explicitly revises it.
 - Commit or summarize work by the requested layer/subsection boundary when asked.
 
-If the requested layer depends on unfinished prior work, call that out clearly and either:
-
-- implement the minimum safe prerequisite, or
-- stop and ask if the dependency changes scope materially.
-
----
+If the requested layer depends on unfinished prior work, call that out clearly and either implement the minimum safe prerequisite or stop and ask if the dependency changes scope materially.
 
 ## House Standard Prompt Behavior
 
 When the user provides a House Standard, LHS, LEAP, or Codex implementation prompt:
 
 - Treat it as the task contract.
+- Remember that LEAP LHS is a LEAP Prompt format, not a separate mandatory lifecycle stage.
 - Follow the requested model/reasoning/plan-mode assumptions where applicable.
 - Reconcile the prompt against the repository before editing.
 - Push back if the prompt conflicts with existing architecture, security, data integrity, or documented product intent.
 - Prefer staged implementation over broad rewrites.
 - Keep changes modular, testable, and documented.
-
----
 
 ## Questions and Stop Conditions
 
@@ -169,12 +173,11 @@ Stop and ask before:
 - Replacing major architecture instead of extending it.
 - Guessing business rules that materially affect user-facing behavior.
 - Implementing a security-sensitive shortcut.
+- Treating archived docs as current source truth.
 - Committing large unrelated changes.
 - Making irreversible git operations.
 
 If the project is explicitly a prototype or POC, destructive changes may be acceptable, but still call out the risk before doing them.
-
----
 
 ## Testing and Validation
 
@@ -188,39 +191,13 @@ After implementation:
 - If tests fail, investigate and report the failure honestly.
 - Do not hide known regressions.
 
-Common validation categories:
-
-- Unit tests.
-- Integration/API tests.
-- Typecheck.
-- Lint.
-- Build.
-- Formatting.
-- Migration checks.
-- Manual smoke test notes.
-
-Use the repository’s actual commands, not generic commands, whenever possible.
-
----
+Use the repository's actual commands, not generic commands, whenever possible.
 
 ## Documentation Standard
 
-Update documentation when a change affects:
+Update documentation when a change affects setup, public behavior, user workflows, API contracts, data models, environment variables, security assumptions, architecture, layer strategy, or operational commands.
 
-- Setup or local development.
-- Public behavior.
-- User workflows.
-- API contracts.
-- Data models.
-- Environment variables.
-- Security assumptions.
-- Architecture.
-- Layer strategy.
-- Operational commands.
-
-Keep docs concise and close to the changed behavior.
-
----
+Keep docs concise and close to the changed behavior. Do not let stale docs compete with canonical docs.
 
 ## Git and Commit Standard
 
@@ -235,17 +212,9 @@ When asked to commit:
 
 Preferred LEAP commit message shape:
 
-`Layer X — Short Descriptive Title`
-
-Examples:
-
-`Layer 6C — Versioning, Review, and Submitted-State Workflow`
-
-`Layer 8A — Integration Provider Contracts`
+`Layer X - Short Descriptive Title`
 
 If the user asks for sequential layer work, complete one subsection, validate it, commit it if requested, then proceed to the next subsection.
-
----
 
 ## Final Response Standard
 
@@ -255,12 +224,11 @@ At completion, summarize:
 - Files or areas touched.
 - Tests/checks run.
 - Any tests/checks not run.
+- Docs updated or needing update.
 - Risks or follow-ups.
 - Whether the work stayed within the requested layer/scope.
 
 Be direct. Do not oversell the result.
-
----
 
 ## Do Not Do
 
@@ -269,6 +237,7 @@ Do not:
 - Invent project requirements.
 - Fabricate test results.
 - Ignore existing docs.
+- Treat archived docs as current unless explicitly referenced by canonical docs.
 - Replace established architecture without cause.
 - Add dependencies casually.
 - Hide uncertainty.

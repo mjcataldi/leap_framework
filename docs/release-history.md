@@ -2,7 +2,7 @@
 
 This file summarizes historical LEAP framework versions after the repository moved to a canonical current-document model in v1.9.
 
-The active framework document is [`docs/leap.md`](leap.md). Detailed change entries remain in [`../CHANGELOG.md`](../CHANGELOG.md). Full historical framework files remain available through Git history, with the final v1.8 repository state preserved by the `leap-v1.8` tag.
+The active framework document is [`docs/leap.md`](leap.md), with LEAP Charter guidance in [`docs/leap-charter.md`](leap-charter.md). Detailed change entries remain in [`../CHANGELOG.md`](../CHANGELOG.md). Full historical framework files remain available through Git history, with the final v1.8 repository state preserved by the `leap-v1.8` tag.
 
 ## LEAP v1.9 - Repository canonicalization and prompt flattening
 
@@ -22,7 +22,8 @@ LEAP v1.9 is a repository-structure release. It keeps the v1.8 methodology intac
 
 ```text
 docs/leap.md
-prompts/leap-phase-0-standard.md
+docs/leap-charter.md
+prompts/leap-charter-standard.md
 prompts/leap-recon-standard.md
 prompts/leap-prompt-standard.md
 prompts/leap-governance-pass-standard.md

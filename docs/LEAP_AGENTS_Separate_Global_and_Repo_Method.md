@@ -1,24 +1,20 @@
-# LEAP AGENTS.md Setup — Separate Global + Repo Method
+# LEAP AGENTS.md Setup - Separate Global + Repo Method
 
 Use this method when the user wants to install LEAP in the coding agent's global instruction location and maintain a separate repository-level `AGENTS.md` file per project.
 
 For first-time evaluation inside one local repo, prefer the **Master Repo AGENTS.md local-trial method** from the main Quickstart. This separate method is best after the user is ready to make LEAP available across multiple repositories.
 
----
-
 ## Reference links
 
 Primary framework reference:
 
-- [LEAP Framework — main branch](/)
+- [LEAP Framework - main branch](/)
 
 Template links:
 
 - [Global AGENTS.md template](/templates/leap-global-AGENTS-file/AGENTS.md)
 - [Repo AGENTS.md template](/templates/leap-repo-AGENTS-file/AGENTS.md)
 - [Repository AGENTS.md Population Prompt](/templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md)
-
----
 
 ## What the user does
 
@@ -39,11 +35,9 @@ Common locations:
 | Claude Code-style user memory | `~/.claude/CLAUDE.md` or tool-supported AGENTS import | `%USERPROFILE%\.claude\CLAUDE.md` or tool-supported AGENTS import |
 | Other coding agents | Use the tool's documented global instruction location | Use the tool's documented global instruction location |
 
-The global file should stay broad. It should explain LEAP behavior, source-of-truth discipline, Recon-first thinking, stop conditions, and safe agent handoff rules.
+The global file should stay broad. It should explain LEAP behavior, Charter, source-of-truth discipline, Recon-first thinking, stop conditions, and safe agent handoff rules.
 
 Do **not** put project-specific commands, architecture, secrets, or repo details in the global file.
-
----
 
 ### 2. Install the repo / project AGENTS.md file
 
@@ -60,13 +54,12 @@ The repo AGENTS.md file is where project-specific details belong, including:
 - Local development commands.
 - Test, lint, typecheck, format, and build commands.
 - Source-of-truth docs.
+- Canonical, stale, archived, duplicate, and conflicting doc status when known.
 - Architecture notes.
 - Data model and API conventions.
 - Security and secrets rules.
 - Branch, worktree, and commit expectations.
 - LEAP-specific repo workflow rules.
-
----
 
 ### 3. Populate the repo AGENTS.md file
 
@@ -78,15 +71,18 @@ Then use this population prompt:
 templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md
 ```
 
-The prompt should update only the repository-level `AGENTS.md` file from actual repository evidence.
+The prompt should update only the repository-level `AGENTS.md` file from actual repository evidence. It should start with `docs/00_start_here.md` when present and identify canonical vs archived/stale docs where discoverable.
 
----
+### 4. Run LEAP Charter or Recon
 
-### 4. Run LEAP Recon
+After the repo AGENTS.md file is populated, run LEAP Charter first if project direction, source-truth status, docs, roadmap, or implementation posture are unclear:
 
-After the repo AGENTS.md file is populated, run Recon before asking the coding agent to implement anything.
+```text
+Run LEAP Charter for this repository.
+Use Brownfield Mode if existing docs need reconciliation.
+```
 
-Use the short launcher:
+If the project baseline is already clear, run Recon before asking the coding agent to implement anything:
 
 ```text
 Run LEAP Recon for the following functionality:
@@ -94,9 +90,7 @@ Run LEAP Recon for the following functionality:
 [DESCRIBE THE FEATURE, LAYER, BUGFIX, WORKFLOW, OR FUNCTIONAL AREA HERE]
 ```
 
-The global and repo AGENTS files should provide the operating rules for Recon. The user should not need to paste the full Recon rules when using standard AGENTS.md behavior.
-
----
+The global and repo AGENTS files should provide the operating rules for Charter and Recon. The user should not need to paste the full standard prompts when using standard AGENTS.md behavior.
 
 ## Done state
 
@@ -106,16 +100,18 @@ The project is ready for normal LEAP use when:
 - The repo-level `AGENTS.md` file exists at the repository root.
 - The repo-level `AGENTS.md` file has been populated from actual repo evidence.
 - Unknowns are marked as `TBD`, not guessed.
+- Canonical docs and archived/stale docs are identified when discoverable.
+- LEAP Charter has reconciled project direction and docs if needed.
 - A LEAP Recon pass has been run for the first functionality target.
 - The next implementation task has bounded scope, non-goals, validation expectations, and stop conditions.
-
----
 
 ## Short rule
 
 ```text
 Global AGENTS.md teaches the agent how to think with LEAP.
 Repo AGENTS.md teaches the agent how LEAP applies to this project.
+Charter establishes or reconciles source truth.
 Recon verifies reality before implementation.
 Prompt only after Recon.
+Validation/Handoff closes the loop.
 ```

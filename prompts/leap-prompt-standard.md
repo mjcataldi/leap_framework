@@ -11,7 +11,7 @@ A LEAP Prompt is a bounded coding-agent handoff contract. It must not ask the ag
 Confirm before writing the prompt:
 
 ```text
-- Phase 0 complete or not applicable
+- LEAP Charter complete or not applicable
 - Ideation Loop complete or residual questions resolved
 - Source-of-truth manifest complete
 - Recon approved
@@ -69,6 +69,8 @@ Use these sources:
 
 Do not use these sources:
 - <draft / stale / archived / superseded sources>
+
+Archived docs are historical unless a canonical document explicitly references them.
 
 If any source conflict appears, stop and report.
 
@@ -142,6 +144,7 @@ Return:
 - Stop conditions encountered
 - Docs updated or needing update
 - Follow-up required
+- Recommended next LEAP Recon / LEAP Prompt / LEAP LHS, if needed
 ```
 
 ## Reasoning-level selection guidance

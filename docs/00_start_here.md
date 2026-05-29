@@ -1,8 +1,8 @@
 # Start Here: LEAP in Plain English
 
-**LEAP — Layered Execution & Alignment Protocol** helps you avoid asking an AI coding agent to build from confusion.
+**LEAP - Layered Execution & Alignment Protocol** helps you avoid asking an AI coding agent to build from confusion.
 
-AI coding agents can move quickly. That is useful only when the idea is clear, the source documents are current, the repo state is understood, and the task is small enough to verify.
+AI coding agents can move quickly. That is useful only when the idea is clear, source documents are current, repo state is understood, and the task is small enough to verify.
 
 LEAP helps with the messy middle between:
 
@@ -16,8 +16,6 @@ and:
 "Here is a bounded implementation task an AI coding agent can safely run."
 ```
 
----
-
 ## The simple version
 
 LEAP asks:
@@ -27,6 +25,9 @@ What are we trying to build?
 Who is it for?
 What problem does it solve?
 What already exists?
+What do the current docs say?
+Which docs are canonical?
+Which docs are stale or archived?
 What should not be built?
 What could go wrong?
 What should the agent stop and ask about?
@@ -35,9 +36,7 @@ How do we prove the work is done?
 
 If those answers are unclear, LEAP keeps asking focused questions before creating an implementation prompt.
 
-Questions are not a delay. Questions are how LEAP turns a vague idea into a buildable system.
-
----
+Questions are not a delay. Questions are how LEAP turns a vague idea or messy repo into a buildable system.
 
 ## Why LEAP exists
 
@@ -45,41 +44,57 @@ People often start with a picture in their head of what a solution should be.
 
 That picture can feel complete, but the missing pieces are often connected by emotion, urgency, assumptions, or taste rather than logic and mechanisms.
 
+An existing repo can add a second problem: old docs, partial plans, duplicate roadmaps, and stale assumptions can compete with the current implementation.
+
 A coding agent cannot safely build from that.
 
 LEAP helps expose the gaps before major implementation begins.
 
----
-
-## The three LEAP stages
-
-### 1. Phase 0 Inception
-
-Use Phase 0 when the idea is still fuzzy.
-
-Phase 0 clarifies:
+## The LEAP lifecycle
 
 ```text
-- the user
-- the problem
-- the current workaround
-- the smallest useful outcome
-- non-goals
-- risks
-- simpler alternatives
-- whether this should be built at all
+LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+### 1. LEAP Charter
+
+Use LEAP Charter when the project direction or source truth needs to be established or reconciled.
+
+LEAP Charter establishes or reconciles:
+
+```text
+- project direction
+- source-of-truth docs
+- roadmap
+- documentation structure
+- implementation posture
+- prompt backlog
+- AGENTS.md guidance when applicable
+```
+
+Greenfield Mode is for brand-new projects and early-stage ideas.
+
+Brownfield Mode is for existing or mid-buildout projects. It inspects docs and repo reality, identifies gaps, canonicalizes current docs, archives stale docs, and prepares future LEAP Recon, LEAP Prompt, or LEAP LHS work.
+
+Brownfield Charter follows this rule:
+
+```text
+Canonicalize forward.
+Archive backward.
+Preserve traceability.
+Never let stale docs compete with source-of-truth docs.
 ```
 
 ### 2. LEAP Recon
 
-Use Recon when there is already a project, repo, layer, or plan.
+Use Recon when there is a focused area, gap, risk, feature, architectural question, repo, layer, or plan to investigate.
 
 Recon checks:
 
 ```text
-- what the docs say
+- what the canonical docs say
 - what the repo actually does
-- what is stale
+- what is stale or archived
 - what already exists
 - what branches or PRs may conflict
 - what shared contracts may be affected
@@ -88,9 +103,11 @@ Recon checks:
 
 ### 3. LEAP Prompt
 
-Use LEAP Prompt only after Phase 0 and/or Recon are clear enough.
+Use LEAP Prompt only after Charter and/or Recon are clear enough.
 
-A LEAP Prompt tells the coding agent:
+A LEAP Prompt produces Codex-ready instructions for analysis, documentation, implementation, or remediation.
+
+It tells the coding agent:
 
 ```text
 - the objective
@@ -104,7 +121,28 @@ A LEAP Prompt tells the coding agent:
 - what execution profile to use
 ```
 
----
+LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage, and not every LEAP Prompt is an LHS prompt.
+
+### 4. Implementation
+
+Implementation is the execution of the approved LEAP Prompt by Codex or another coding agent.
+
+The agent should build only the bounded task, follow the repo's patterns, and stop if the prompt's stop conditions are met.
+
+### 5. Validation/Handoff
+
+Validation/Handoff is the required completion step.
+
+The agent should:
+
+```text
+- verify changes
+- run or explain tests/checks
+- check whether docs need updates
+- summarize work completed
+- report deviations or stop conditions
+- recommend follow-up LEAP Recon, LEAP Prompt, or LEAP LHS work
+```
 
 ## The Ideation Loop
 
@@ -113,7 +151,7 @@ LEAP does not assume the first version of an idea is ready to build.
 It loops:
 
 ```text
-Idea → Questions → Assumptions → Pressure test → Better idea → Gate decision
+Idea -> Questions -> Assumptions -> Pressure test -> Better idea -> Gate decision
 ```
 
 The loop continues until the next safe step is clear.
@@ -128,10 +166,10 @@ Use the loop when:
 - non-goals are missing
 - risks are hand-waved
 - source truth is missing
+- docs conflict with repo reality
+- archived docs might be mistaken for current docs
 - the agent would need to guess
 ```
-
----
 
 ## The shortest useful LEAP checklist
 
@@ -143,15 +181,14 @@ Before giving work to an AI coding agent, answer:
 3. What is in scope?
 4. What is out of scope?
 5. What files/docs are source truth?
-6. What should the agent not touch?
-7. What tests/checks prove success?
-8. When should the agent stop and ask?
-9. What model/reasoning/execution profile should be used?
+6. What docs are stale, archived, or do-not-use?
+7. What should the agent not touch?
+8. What tests/checks prove success?
+9. When should the agent stop and ask?
+10. What model/reasoning/execution profile should be used?
 ```
 
-If you cannot answer these, run Phase 0 or Recon first.
-
----
+If you cannot answer these, run LEAP Charter or Recon first.
 
 ## When to use full LEAP
 
@@ -163,6 +200,7 @@ Use full LEAP for:
 - AI-heavy workflows
 - multi-file changes
 - existing repos with stale docs
+- documentation reconciliation
 - data model changes
 - API changes
 - auth/session/permission changes
@@ -180,8 +218,6 @@ Use Small Project Mode for:
 - low-risk UI cleanup
 - tasks with clear acceptance criteria
 ```
-
----
 
 ## The LEAP rule of thumb
 

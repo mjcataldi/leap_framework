@@ -1,10 +1,8 @@
 # Quick LEAP Brief
 
-Use this when the work is small enough that full Phase 0 and Recon would be heavier than the task, but you still want a safe AI coding-agent handoff.
+Use this when the work is small enough that full LEAP Charter and Recon would be heavier than the task, but you still want a safe AI coding-agent handoff.
 
-The Quick LEAP Brief is the smallest useful LEAP workflow.
-
----
+The Quick LEAP Brief is the smallest useful LEAP Prompt format.
 
 ## When to use it
 
@@ -31,16 +29,15 @@ Do not use this when the work involves:
 - destructive migrations
 - multiple branches or agents
 - stale docs or unclear source truth
+- brownfield documentation reconciliation
 ```
 
-Escalate those to Phase 0 or Recon.
-
----
+Escalate those to LEAP Charter or Recon.
 
 ## Copy-ready brief
 
 ```text
-# Quick LEAP Brief — <Task Name>
+# Quick LEAP Brief - <Task Name>
 
 ## 1. Goal
 - <What should change?>
@@ -48,6 +45,7 @@ Escalate those to Phase 0 or Recon.
 ## 2. Current State
 - <What exists now?>
 - <What files/docs are source truth?>
+- <What docs are stale, archived, or do-not-use?>
 
 ## 3. Scope
 In scope:
@@ -67,6 +65,7 @@ Files/areas not to touch:
 - Do not introduce new dependencies unless explicitly approved.
 - Do not change API/schema/auth/billing/AI behavior unless explicitly approved.
 - Preserve backwards compatibility unless explicitly told otherwise.
+- Treat archived docs as historical unless a canonical doc explicitly references them.
 
 ## 5. Verification
 Run/check:
@@ -79,6 +78,8 @@ Done means:
 Stop and ask if:
 - required files are missing
 - existing code contradicts this brief
+- docs conflict with repo reality
+- a stale or archived doc appears to be the only source for required behavior
 - the task requires touching forbidden files
 - the task requires new dependencies, migrations, auth changes, billing changes, or sensitive-data handling
 - verification cannot be run or is unclear
@@ -95,9 +96,16 @@ Stop and ask if:
 - Permissions:
 - Validation:
 - Commit Guidance:
-```
 
----
+## 8. Validation/Handoff
+Return:
+- Summary of changes
+- Files changed
+- Tests/checks run
+- Tests/checks not run
+- Docs updated or needing update
+- Follow-up LEAP Recon / LEAP Prompt / LEAP LHS recommendations
+```
 
 ## Default settings
 
@@ -117,10 +125,10 @@ Execution Mode: implement-with-brief-plan
 Scope Scale: Build Unit
 ```
 
----
+If the task is layered, staged, or large enough to require House Standard-style execution, use LEAP LHS instead of a Quick LEAP Brief.
 
 ## Escalation rule
 
 ```text
-If the brief starts needing product discovery, architecture decisions, source-truth reconciliation, or branch-drift review, stop using the Quick LEAP Brief and run Phase 0 or Recon.
+If the brief starts needing product discovery, architecture decisions, source-truth reconciliation, brownfield documentation reconciliation, or branch-drift review, stop using the Quick LEAP Brief and run LEAP Charter or Recon.
 ```

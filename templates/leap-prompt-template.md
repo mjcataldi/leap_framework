@@ -2,7 +2,7 @@
 
 Use this template after LEAP Recon has been completed and the user has answered questions or approved safe defaults.
 
-Do not use this template for vague app ideas. New projects must pass Phase 0 Inception and Recon before LEAP Prompt generation.
+Do not use this template for vague app ideas or unreconciled brownfield docs. New projects must pass LEAP Charter and Recon before LEAP Prompt generation unless the baseline is explicitly not applicable.
 
 ```text
 Generate the LEAP Prompt for <Target Layer or Task> using the current LEAP framework.
@@ -13,7 +13,7 @@ Use my answers/defaults below:
 - <answer/default 2>
 
 Preflight status:
-- Phase 0 complete or not applicable:
+- LEAP Charter complete or not applicable:
 - Ideation Loop complete or remaining questions resolved:
 - Source-of-truth manifest complete:
 - Recon approved:
@@ -30,6 +30,8 @@ Use these sources:
 
 Do not use these sources:
 - <draft / stale / archived / superseded source paths>
+
+Archived docs are historical unless a canonical document explicitly references them.
 
 Agent execution configuration:
 - Agent / Tool: <Codex / Claude Code / Cursor / other>
@@ -56,7 +58,7 @@ Implementation target:
 - Rollback/data preservation requirements:
 
 Required gate:
-- Confirm source-of-truth review is complete.
+- Confirm LEAP Charter / source-of-truth review is complete.
 - Confirm repo reality has been checked when repo access exists.
 - Confirm scope, non-goals, verification, stop conditions, and execution profile are defined.
 - Confirm the final prompt includes an explicit agent/tool, model, and reasoning level.
@@ -127,3 +129,4 @@ Every LEAP Prompt should instruct the coding agent to stop and report instead of
 - requested agent/tool is unavailable and no approved fallback is provided
 - requested model is unavailable and no approved fallback is provided
 - requested reasoning level is unavailable and no approved fallback is provided
+- archived docs appear to be treated as current source truth
