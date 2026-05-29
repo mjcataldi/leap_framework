@@ -2,17 +2,15 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
-## Unreleased - LEAP Agent Pack versioning
+## Unreleased - Dedicated LEAP Agent Pack repository
 
 ### Added
 
-- Added LEAP Agent Pack versioning guidance for distributable AGENTS.md templates.
-- Added metadata blocks and update-safe managed/project/local section markers to AGENTS.md templates.
-- Added `templates/leap-agent-pack-manifest.json` as the Agent Pack manifest.
-- Added AGENTS.md versioning, update-detection, and clone/fork/pin documentation.
+- Added references to the dedicated LEAP Agent Pack repository for AGENTS.md templates, manifests, install docs, and upgrade guidance.
 
 ### Changed
 
+- Moved distributable AGENTS.md template ownership out of the LEAP Framework repo and into `https://github.com/mjcataldi/leap_agent_pack`.
 - Clarified that AGENTS.md updates are notify/manual-merge only and must not overwrite downstream project or local sections automatically.
 - Clarified that Agent Pack release tags use `leap-agent-pack-vX.Y.Z` separately from framework tags.
 - Reorganized LEAP documentation into clearer user, reference, maintainer, and example domains.
@@ -21,6 +19,10 @@ All notable changes to the LEAP Framework will be documented here.
 - Removed unreleased moved-path stubs for AGENTS.md documentation and repointed active references to the live docs.
 - Normalized framework release-history labels to pre-1.0 `v0.1.x` versioning.
 - Clarified the current framework baseline and pre-1.0 framework tag shape.
+
+### Removed
+
+- Removed framework-local distributable AGENTS.md templates, Agent Pack manifests, and Agent Pack-specific install/versioning docs now owned by the dedicated Agent Pack repo.
 
 ## Unreleased - LEAP Prompt taxonomy and LHS clarification
 

@@ -24,7 +24,7 @@ Examples illustrate usage but are not canonical source truth.
 | Domain | Audience | Authority | Start Here |
 | --- | --- | --- | --- |
 | Root entry point | Users and agents | Entry point | [`00_start_here.md`](00_start_here.md) |
-| User docs | Downstream LEAP adopters | Supporting adoption guidance | [`user/agents-quickstart.md`](user/agents-quickstart.md) |
+| User docs | Downstream LEAP adopters | Supporting adoption guidance | [`user/leap-for-humans.md`](user/leap-for-humans.md) |
 | Reference docs | Users, maintainers, agents | Canonical or supporting reference | [`reference/README.md`](reference/README.md) |
 | Maintainer docs | LEAP Framework maintainers | Repo governance and runbooks | [`maintainer/framework-doc-governance.md`](maintainer/framework-doc-governance.md) |
 | Examples | Users and agents | Example-only | [`examples/`](examples/) |
@@ -39,9 +39,6 @@ Examples illustrate usage but are not canonical source truth.
 | [`glossary.md`](glossary.md) | Users, maintainers, agents | Canonical terminology reference |
 | [`risk-taxonomy.md`](risk-taxonomy.md) | Users, agents | Supporting reference |
 | [`agent-profiles.md`](agent-profiles.md) | Users, agents | Supporting reference |
-| [`user/agents-quickstart.md`](user/agents-quickstart.md) | Users | Adoption guide |
-| [`maintainer/agent-pack-versioning.md`](maintainer/agent-pack-versioning.md) | Maintainers, agents | Agent Pack governance |
-| [`maintainer/agent-pack-update-runbook.md`](maintainer/agent-pack-update-runbook.md) | Maintainers, agents | Update-detection runbook |
 | [`maintainer/release-history.md`](maintainer/release-history.md) | Maintainers | Historical record |
 
 ## Agent Reading Rules
@@ -53,3 +50,4 @@ Examples illustrate usage but are not canonical source truth.
 - Treat maintainer docs as LEAP Framework repository guidance only.
 - Do not treat maintainer docs as downstream project instructions unless the current repository is the LEAP Framework repository.
 - Treat examples as illustrative, not source-of-truth doctrine.
+- Use the dedicated [LEAP Agent Pack](https://github.com/mjcataldi/leap_agent_pack) repository for AGENTS.md templates, install guidance, versioning, compatibility manifests, and upgrade guidance.

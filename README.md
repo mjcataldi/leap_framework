@@ -6,7 +6,7 @@ LEAP started as a practical response to AI-assisted software delivery: coding ag
 
 The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
 
-LEAP AGENTS.md templates are distributed as a versioned **LEAP Agent Pack**. Agent Pack metadata, managed sections, and the manifest let downstream repositories detect stale LEAP guidance without overwriting project-specific instructions.
+LEAP AGENTS.md templates are distributed from the dedicated [LEAP Agent Pack](https://github.com/mjcataldi/leap_agent_pack) repository. The Agent Pack owns the Codex/AGENTS.md execution adapter so downstream projects can pin stable agent instructions independently from LEAP Framework methodology updates.
 
 ## Core idea
 
@@ -139,9 +139,7 @@ For repeatable workflows, use the operational prompt library under [`prompts/`](
 
 ### Adopt AGENTS.md
 
-- [`docs/user/agents-quickstart.md`](docs/user/agents-quickstart.md) - install and populate AGENTS.md templates
-- [`docs/user/agents-separate-global-and-repo.md`](docs/user/agents-separate-global-and-repo.md) - separate global and repo AGENTS.md setup
-- [`docs/user/agents-clone-fork-pin.md`](docs/user/agents-clone-fork-pin.md) - clone, fork, and pinned-version adoption
+Use the dedicated [LEAP Agent Pack](https://github.com/mjcataldi/leap_agent_pack) repository for AGENTS.md templates, install guidance, versioning, compatibility manifests, and upgrade guidance.
 
 ### Framework reference
 
@@ -151,8 +149,6 @@ For repeatable workflows, use the operational prompt library under [`prompts/`](
 
 ### Maintain LEAP Framework
 
-- [`docs/maintainer/agent-pack-versioning.md`](docs/maintainer/agent-pack-versioning.md) - Agent Pack metadata, manifest, tags, and managed sections
-- [`docs/maintainer/agent-pack-update-runbook.md`](docs/maintainer/agent-pack-update-runbook.md) - update detection and no-overwrite workflow
 - [`docs/maintainer/framework-doc-governance.md`](docs/maintainer/framework-doc-governance.md) - documentation domain governance
 
 ## Source-of-truth document model
@@ -185,14 +181,9 @@ docs/
   user/
     leap-for-humans.md
     quick-leap-brief.md
-    agents-quickstart.md
-    agents-separate-global-and-repo.md
-    agents-clone-fork-pin.md
   reference/
     README.md
   maintainer/
-    agent-pack-versioning.md
-    agent-pack-update-runbook.md
     release-history.md
     framework-doc-governance.md
   examples/
@@ -202,7 +193,6 @@ templates/
   leap-charter-template.md
   leap-recon-template.md
   leap-prompt-template.md
-  leap-agent-pack-manifest.json
 prompts/
   README.md
   leap-charter-standard.md

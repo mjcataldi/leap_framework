@@ -1,23 +1,21 @@
 <!--
-LEAP_AGENT_TEMPLATE:
-  schema_version: 1
-  template_id: leap-master-repo-agents
-  template_role: combined
-  agent_pack_version: 0.1.0
-  release_tag: leap-agent-pack-v0.1.0
-  template_channel: stable
+LEAP_FRAMEWORK_REPO_AGENTS:
+  purpose: repo-specific guidance for maintaining the LEAP Framework repository
   source_repo: https://github.com/mjcataldi/leap_framework
-  upstream_repo: https://github.com/mjcataldi/leap_framework
-  source_path: templates/leap-repo-AGENTS-file-complete/AGENTS.md
-  update_policy: notify
-  managed_section_version: 1
-  minimum_supported_leap_version: current
-END_LEAP_AGENT_TEMPLATE
+  agent_pack_repo: https://github.com/mjcataldi/leap_agent_pack
+  distributable_template: false
+END_LEAP_FRAMEWORK_REPO_AGENTS
 -->
 
-# LEAP Framework Repo AGENTS.md - Installed Local Trial Copy
+# LEAP Framework Repo AGENTS.md
 
-This repository-root `AGENTS.md` is an installed, repo-local copy of the LEAP Master Repo AGENTS.md local-trial template. The canonical distributable template remains at `templates/leap-repo-AGENTS-file-complete/AGENTS.md`.
+This repository-root `AGENTS.md` is repo-specific guidance for maintaining the LEAP Framework repository. It is not a distributable Agent Pack template.
+
+Canonical distributable AGENTS.md templates live in the dedicated LEAP Agent Pack repository:
+
+```text
+https://github.com/mjcataldi/leap_agent_pack
+```
 
 This file has two sections:
 
@@ -139,7 +137,7 @@ LEAP - Layered Execution & Alignment Protocol - is a documentation-first softwar
 
 Application type and maturity:
 
-- Type: Markdown framework, prompt library, examples, and AGENTS.md adoption templates.
+- Type: Markdown framework, prompt library, examples, and framework governance docs.
 - Runtime application: None discovered.
 - Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
 - Current active branch at last repo guidance update: `add-versioning`; verify with `git status --short --branch` before work.
@@ -166,8 +164,7 @@ Primary product/architecture docs:
 - `docs/glossary.md` - terminology source for lifecycle, prompt taxonomy, source truth, and risk terms.
 - `prompts/README.md` - prompt library routing and prompt-family guidance.
 - `docs/README.md` - documentation domain map and source-of-truth routing.
-- `docs/maintainer/agent-pack-versioning.md` - Agent Pack metadata, manifest, tags, and managed-section guidance.
-- `docs/maintainer/agent-pack-update-runbook.md` - AGENTS.md update status and no-overwrite workflow.
+- `https://github.com/mjcataldi/leap_agent_pack` - Agent Pack templates, manifests, install docs, and upgrade guidance.
 
 Canonical docs:
 
@@ -178,7 +175,6 @@ Canonical docs:
 - `prompts/leap-recon-standard.md` - Canonical operational Recon prompt.
 - `prompts/leap-prompt-standard.md` - Canonical operational Prompt-generation standard.
 - `prompts/leap-governance-pass-standard.md` - Canonical governance-pass standard.
-- `templates/leap-agent-pack-manifest.json` - Canonical Agent Pack manifest.
 - `templates/leap-charter-template.md`, `templates/leap-recon-template.md`, and `templates/leap-prompt-template.md` - current user-facing request templates.
 
 Archived, stale, superseded, or do-not-use docs:
@@ -198,7 +194,7 @@ Treat canonical docs as source of truth. Treat archived docs as historical unles
 - `CONTRIBUTING.md` - lightweight contribution guidance.
 - `docs/` - framework docs, adoption docs, glossary, risk guidance, and examples.
 - `prompts/` - copy-ready operational LEAP prompts.
-- `templates/` - compact request templates and AGENTS.md template files.
+- `templates/` - compact framework request templates.
 - `examples/` - assistant prompt examples.
 - Frontend path: Not applicable; no frontend application discovered.
 - Backend/API path: Not applicable; no backend service discovered.
@@ -451,11 +447,7 @@ Project-specific docs to keep aligned:
 - `templates/leap-charter-template.md`
 - `templates/leap-recon-template.md`
 - `templates/leap-prompt-template.md`
-- AGENTS templates under `templates/`
-- `docs/maintainer/agent-pack-versioning.md`
-- `docs/maintainer/agent-pack-update-runbook.md`
-- `docs/user/agents-clone-fork-pin.md`
-- `templates/leap-agent-pack-manifest.json`
+- Agent Pack repository at `https://github.com/mjcataldi/leap_agent_pack` when AGENTS.md templates, manifests, install docs, or upgrade guidance are involved.
 
 Doc classification at population time:
 
@@ -469,10 +461,6 @@ Doc classification at population time:
 | `docs/README.md` | Canonical docs map | Documentation domains and authority routing. |
 | `docs/reference/README.md` | Supporting | Current root-level reference docs map. |
 | `prompts/README.md` | Canonical supporting | Prompt-family routing. |
-| `templates/leap-agent-pack-manifest.json` | Canonical | Agent Pack version and template checksum manifest. |
-| `docs/maintainer/agent-pack-versioning.md` | Canonical supporting | Agent Pack metadata and managed section policy. |
-| `docs/maintainer/agent-pack-update-runbook.md` | Supporting | Update status and no-overwrite workflow. |
-| `docs/user/agents-clone-fork-pin.md` | Supporting | Clone, fork, and pinned-version adoption. |
 | `docs/maintainer/framework-doc-governance.md` | Supporting | Documentation domain and move governance. |
 | Current `prompts/leap-*-standard.md` files except Phase 0 stub | Canonical operational prompts | Active prompt standards. |
 | Current `templates/leap-*-template.md` files except Phase 0 stub | Canonical templates | Active user request templates. |
@@ -522,7 +510,7 @@ Project-specific stop conditions:
 - TBD - Project owner: should this repo add a formal Markdown lint command?
 - TBD - Project owner: should this repo add a Markdown link-check command or script?
 - TBD - Project owner: should this repo have CI for terminology drift and link validation?
-- TBD - Project owner: should root `AGENTS.md` remain a committed installed copy, or should future releases keep only distributable AGENTS templates under `templates/`?
+- Resolved: root `AGENTS.md` remains committed as LEAP Framework repo-specific guidance. Distributable AGENTS templates live in `https://github.com/mjcataldi/leap_agent_pack`.
 - TBD - Project owner: should `docs/99_archive/` be created now or only when real framework docs are archived?
 
 ## Completion Requirements

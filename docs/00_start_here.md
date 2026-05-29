@@ -219,13 +219,13 @@ If you cannot answer these, run LEAP Charter or Recon first.
 
 ## AGENTS.md adoption
 
-LEAP AGENTS.md templates are distributed as a versioned Agent Pack.
+LEAP AGENTS.md templates are distributed from the dedicated LEAP Agent Pack repository:
 
-Start with:
+```text
+https://github.com/mjcataldi/leap_agent_pack
+```
 
-- `docs/user/agents-quickstart.md`
-- `docs/maintainer/agent-pack-versioning.md`
-- `docs/maintainer/agent-pack-update-runbook.md`
+Use that repository for AGENTS.md templates, install guidance, versioning, compatibility manifests, and upgrade guidance.
 
 Recon may check whether an installed downstream `AGENTS.md` file is current, outdated, pinned, forked, unversioned, malformed, missing, or non-LEAP. AGENTS updates are notify/manual-merge only; LEAP should not overwrite project-specific or local override sections automatically.
 
