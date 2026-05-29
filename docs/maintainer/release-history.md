@@ -1,12 +1,12 @@
 # LEAP Release History
 
-This file summarizes historical LEAP framework versions after the repository moved to a canonical current-document model in v1.9.
+This file summarizes historical LEAP framework versions after the repository moved to a canonical current-document model in v0.1.9.
 
-The active framework document is [`docs/leap.md`](leap.md), with LEAP Charter guidance in [`docs/leap-charter.md`](leap-charter.md). Detailed change entries remain in [`../CHANGELOG.md`](../CHANGELOG.md). Full historical framework files remain available through Git history, with the final v1.8 repository state preserved by the `leap-v1.8` tag.
+The active framework document is [`docs/leap.md`](../leap.md), with LEAP Charter guidance in [`docs/leap-charter.md`](../leap-charter.md). Detailed change entries remain in [`CHANGELOG.md`](../../CHANGELOG.md). Full historical framework files remain available through Git history. Release tags should be created for future framework and Agent Pack releases, but the current remote did not expose historical tags during the Agent Pack versioning pass.
 
-## LEAP v1.9 - Repository canonicalization and prompt flattening
+## LEAP v0.1.9 - Repository canonicalization and prompt flattening
 
-LEAP v1.9 is a repository-structure release. It keeps the v1.8 methodology intact while simplifying the active repository surface.
+LEAP v0.1.9 is a repository-structure release. It keeps the v0.1.8 methodology intact while simplifying the active repository surface.
 
 ### What changed
 
@@ -16,7 +16,7 @@ LEAP v1.9 is a repository-structure release. It keeps the v1.8 methodology intac
 - Removed nested historical prompt directories from the active repository.
 - Added this release history document.
 - Added `VERSION.md` as a small current-version marker.
-- Preserved v1.8 history with the `leap-v1.8` Git tag.
+- Preserved v0.1.8 history through Git history. A `leap-v0.1.8` tag may be added later if historical tag reconstruction is needed.
 
 ### Current canonical files
 
@@ -29,9 +29,9 @@ prompts/leap-prompt-standard.md
 prompts/leap-governance-pass-standard.md
 ```
 
-## LEAP v1.8 - Adoption and ideation hardening
+## LEAP v0.1.8 - Adoption and ideation hardening
 
-LEAP v1.8 made the framework easier to understand and apply, especially for users beginning with vague product intent.
+LEAP v0.1.8 made the framework easier to understand and apply, especially for users beginning with vague product intent.
 
 ### Added
 
@@ -59,9 +59,9 @@ LEAP v1.8 made the framework easier to understand and apply, especially for user
 - Added Build Unit sizing heuristics and red flags.
 - Added agent failure-mode guidance.
 
-## LEAP v1.7 - Codex execution configuration hardening
+## LEAP v0.1.7 - Codex execution configuration hardening
 
-LEAP v1.7 closed a handoff gap by requiring coding-agent prompts to include explicit model and reasoning-level guidance.
+LEAP v0.1.7 closed a handoff gap by requiring coding-agent prompts to include explicit model and reasoning-level guidance.
 
 ### Added
 
@@ -71,7 +71,7 @@ LEAP v1.7 closed a handoff gap by requiring coding-agent prompts to include expl
 - Added execution fields for model, reasoning level, execution mode, scope scale, repository, branch/worktree, permissions, validation, and commit guidance.
 - Added reasoning-level guidance for Low, Medium, High, and Extended execution settings.
 - Added model/reasoning prompt-readiness blockers to stop conditions.
-- Added v1.7 operational prompts for Phase 0, Recon, implementation, and governance.
+- Added v0.1.7 operational prompts for Phase 0, Recon, implementation, and governance.
 
 ### Changed
 
@@ -79,9 +79,9 @@ LEAP v1.7 closed a handoff gap by requiring coding-agent prompts to include expl
 - Updated prompt-library documentation to distinguish process tier from reasoning level.
 - Updated glossary terminology for execution configuration, model, reasoning level, execution mode, scope scale, and prompt drift.
 
-## LEAP v1.6 - Adversarial gate hardening
+## LEAP v0.1.6 - Adversarial gate hardening
 
-LEAP v1.6 made the framework more willing to block unsafe implementation and less likely to turn vague intent into polished coding prompts.
+LEAP v0.1.6 made the framework more willing to block unsafe implementation and less likely to turn vague intent into polished coding prompts.
 
 ### Added
 
@@ -93,16 +93,16 @@ LEAP v1.6 made the framework more willing to block unsafe implementation and les
 - Added Parallel-Agent Preflight and collision-zone rules.
 - Added Small Project Mode.
 - Added Thinking Extended as a model-selection tier between Standard and Pro Standard.
-- Added v1.6 operational prompts for Phase 0, Recon, implementation, and governance.
+- Added v0.1.6 operational prompts for Phase 0, Recon, implementation, and governance.
 
 ### Changed
 
 - Updated templates to use readiness gates, source-of-truth manifests, doc lifecycle status, drift review, and stricter stop conditions.
 - Tightened blockers around missing non-goals, stale docs, unresolved source conflicts, unknown repo reality, branch drift, missing verification, and missing stop conditions.
 
-## LEAP v1.5 - Gate-based inception and agent-safe prompting
+## LEAP v0.1.5 - Gate-based inception and agent-safe prompting
 
-LEAP v1.5 hardened the v1.4 lifecycle with clearer gates, stronger source-of-truth rules, and safer coding-agent handoffs.
+LEAP v0.1.5 hardened the v0.1.4 lifecycle with clearer gates, stronger source-of-truth rules, and safer coding-agent handoffs.
 
 ### Added
 
@@ -129,7 +129,7 @@ LEAP v1.5 hardened the v1.4 lifecycle with clearer gates, stronger source-of-tru
 - Added agent stop-condition requirements.
 - Added stronger human-checkpoint rules for high-risk decisions.
 - Added source-of-truth ownership and stale-document governance rules.
-- Added v1.5 operational prompts for Phase 0, Recon, implementation, and governance.
+- Added v0.1.5 operational prompts for Phase 0, Recon, implementation, and governance.
 
 ### Changed
 
@@ -139,9 +139,9 @@ LEAP v1.5 hardened the v1.4 lifecycle with clearer gates, stronger source-of-tru
 - Updated Recon expectations to include stale-assumption scans, source-of-truth ownership, branch/worktree drift, and human checkpoint triggers.
 - Updated Prompt expectations to require objective, scope, constraints, non-goals, verification, stop conditions, and explicit output requirements.
 
-## LEAP v1.4 - Phase 0 inception and no-build gate
+## LEAP v0.1.4 - Phase 0 inception and no-build gate
 
-LEAP v1.4 changed the lifecycle by adding mandatory project inception before Recon for new projects and major product-direction changes.
+LEAP v0.1.4 changed the lifecycle by adding mandatory project inception before Recon for new projects and major product-direction changes.
 
 ### Added
 
@@ -165,9 +165,9 @@ LEAP v1.4 changed the lifecycle by adding mandatory project inception before Rec
 - Updated Recon and Prompt templates to require Phase 0/source-of-truth readiness before implementation planning.
 - Expanded glossary terminology for Phase 0, clarity threshold, no-build gate, documentation bootstrap, and approval gate.
 
-## LEAP v1.3 - Living architecture governance
+## LEAP v0.1.3 - Living architecture governance
 
-LEAP v1.3 extended LEAP from a layer implementation workflow into a living architecture governance system.
+LEAP v0.1.3 extended LEAP from a layer implementation workflow into a living architecture governance system.
 
 ### Added
 
@@ -186,9 +186,9 @@ LEAP v1.3 extended LEAP from a layer implementation workflow into a living archi
 - Updated LEAP Recon output expectations to include strategic reconciliation, cross-layer impacts, and execution log expectations.
 - Updated LEAP Prompt expectations to include strategic reconciliation policy, execution log policy, cross-layer impact policy, and post-implementation reconciliation.
 
-## LEAP v1.2 - Source-of-truth and pressure-test hardening
+## LEAP v0.1.2 - Source-of-truth and pressure-test hardening
 
-LEAP v1.2 strengthened the original two-stage model by requiring source grounding and repo reality review before implementation planning.
+LEAP v0.1.2 strengthened the original two-stage model by requiring source grounding and repo reality review before implementation planning.
 
 ### Added
 
@@ -203,13 +203,13 @@ LEAP v1.2 strengthened the original two-stage model by requiring source groundin
 
 ### Changed
 
-- Updated the README to point to LEAP v1.2 as current at the time.
+- Updated the README to point to LEAP v0.1.2 as current at the time.
 - Updated Recon and Prompt templates for source-of-truth workflow.
 - Expanded glossary terminology.
 
-## LEAP v1.1 - Initial repository version
+## LEAP v0.1.1 - Initial repository version
 
-LEAP v1.1 was the first repository-backed version of the framework.
+LEAP v0.1.1 was the first repository-backed version of the framework.
 
 ### Added
 

@@ -4,7 +4,9 @@
 
 LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
 
-The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
+The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
+
+LEAP AGENTS.md templates are distributed as a versioned **LEAP Agent Pack**. Agent Pack metadata, managed sections, and the manifest let downstream repositories detect stale LEAP guidance without overwriting project-specific instructions.
 
 ## Core idea
 
@@ -114,24 +116,44 @@ Canonical framework document: [`docs/leap.md`](docs/leap.md).
 
 Charter reference: [`docs/leap-charter.md`](docs/leap-charter.md).
 
-Historical versions are preserved through Git tags, Git history, [`CHANGELOG.md`](CHANGELOG.md), and [`docs/release-history.md`](docs/release-history.md).
+Historical versions are preserved through Git history, [`CHANGELOG.md`](CHANGELOG.md), [`docs/maintainer/release-history.md`](docs/maintainer/release-history.md), and release tags when present.
 
 ## Quick start
 
-Start here:
+### Start here
 
 - [`docs/00_start_here.md`](docs/00_start_here.md) - the plain-English front door
-- [`docs/leap-charter.md`](docs/leap-charter.md) - Charter modes and brownfield documentation reconciliation
-- [`docs/leap-for-humans.md`](docs/leap-for-humans.md) - the simple explanation of how LEAP thinks
-- [`docs/quick-leap-brief.md`](docs/quick-leap-brief.md) - the smallest useful LEAP workflow
+- [`docs/README.md`](docs/README.md) - documentation map
 
-For a new software project, major new product direction, or existing project that needs documentation reconciliation, start with [`templates/leap-charter-template.md`](templates/leap-charter-template.md).
+### Use LEAP
+
+- [`docs/user/leap-for-humans.md`](docs/user/leap-for-humans.md) - the simple explanation of how LEAP thinks
+- [`docs/user/quick-leap-brief.md`](docs/user/quick-leap-brief.md) - the smallest useful LEAP workflow
+- [`templates/leap-charter-template.md`](templates/leap-charter-template.md) - start a new product, major direction, or brownfield reconciliation
 
 After Charter is approved, use [`templates/leap-recon-template.md`](templates/leap-recon-template.md) to request a Recon pass for the first focused area, target layer, feature, risk, or architectural question.
 
 After Recon is approved, use [`templates/leap-prompt-template.md`](templates/leap-prompt-template.md) to generate the final implementation, documentation, analysis, or remediation prompt.
 
 For repeatable workflows, use the operational prompt library under [`prompts/`](prompts/).
+
+### Adopt AGENTS.md
+
+- [`docs/user/agents-quickstart.md`](docs/user/agents-quickstart.md) - install and populate AGENTS.md templates
+- [`docs/user/agents-separate-global-and-repo.md`](docs/user/agents-separate-global-and-repo.md) - separate global and repo AGENTS.md setup
+- [`docs/user/agents-clone-fork-pin.md`](docs/user/agents-clone-fork-pin.md) - clone, fork, and pinned-version adoption
+
+### Framework reference
+
+- [`docs/leap.md`](docs/leap.md) - canonical current framework document
+- [`docs/leap-charter.md`](docs/leap-charter.md) - Charter modes and brownfield documentation reconciliation
+- [`docs/reference/README.md`](docs/reference/README.md) - current reference index
+
+### Maintain LEAP Framework
+
+- [`docs/maintainer/agent-pack-versioning.md`](docs/maintainer/agent-pack-versioning.md) - Agent Pack metadata, manifest, tags, and managed sections
+- [`docs/maintainer/agent-pack-update-runbook.md`](docs/maintainer/agent-pack-update-runbook.md) - update detection and no-overwrite workflow
+- [`docs/maintainer/framework-doc-governance.md`](docs/maintainer/framework-doc-governance.md) - documentation domain governance
 
 ## Source-of-truth document model
 
@@ -154,14 +176,25 @@ CONTRIBUTING.md
 VERSION.md
 docs/
   00_start_here.md
+  README.md
   leap-charter.md
-  leap-for-humans.md
-  quick-leap-brief.md
   leap.md
-  release-history.md
   glossary.md
   agent-profiles.md
   risk-taxonomy.md
+  user/
+    leap-for-humans.md
+    quick-leap-brief.md
+    agents-quickstart.md
+    agents-separate-global-and-repo.md
+    agents-clone-fork-pin.md
+  reference/
+    README.md
+  maintainer/
+    agent-pack-versioning.md
+    agent-pack-update-runbook.md
+    release-history.md
+    framework-doc-governance.md
   examples/
     small-build-unit.md
     full-layer-recon.md
@@ -169,6 +202,7 @@ templates/
   leap-charter-template.md
   leap-recon-template.md
   leap-prompt-template.md
+  leap-agent-pack-manifest.json
 prompts/
   README.md
   leap-charter-standard.md

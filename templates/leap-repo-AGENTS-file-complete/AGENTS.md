@@ -1,3 +1,20 @@
+<!--
+LEAP_AGENT_TEMPLATE:
+  schema_version: 1
+  template_id: leap-master-repo-agents
+  template_role: combined
+  agent_pack_version: 0.1.0
+  release_tag: leap-agent-pack-v0.1.0
+  template_channel: stable
+  source_repo: https://github.com/mjcataldi/leap_framework
+  upstream_repo: https://github.com/mjcataldi/leap_framework
+  source_path: templates/leap-repo-AGENTS-file-complete/AGENTS.md
+  update_policy: notify
+  managed_section_version: 1
+  minimum_supported_leap_version: current
+END_LEAP_AGENT_TEMPLATE
+-->
+
 # Master Repo AGENTS.md - LEAP Local Trial Template
 
 Use this single-file template when you want to test LEAP inside one local repository before installing a global AGENTS.md system-wide.
@@ -12,6 +29,8 @@ When this file is placed at the root of a repository as `AGENTS.md`, the code as
 Populate only the editable repository section during repo onboarding.
 
 ---
+
+<!-- LEAP_MANAGED_SECTION_BEGIN -->
 
 <!-- LEAP_MASTER_GLOBAL_SECTION_START: DO NOT EDIT DURING REPO POPULATION -->
 
@@ -98,7 +117,11 @@ Stop and ask before destructive data changes, auth/security changes, public cont
 
 <!-- LEAP_MASTER_GLOBAL_SECTION_END -->
 
+<!-- LEAP_MANAGED_SECTION_END -->
+
 ---
+
+<!-- LEAP_PROJECT_SECTION_BEGIN -->
 
 <!-- LEAP_MASTER_REPO_SECTION_START: EDIT THIS SECTION ONLY DURING REPO POPULATION -->
 
@@ -334,3 +357,14 @@ Project-specific stop conditions:
 A task is complete when the requested behavior is implemented, relevant checks were run or explained, docs were updated if needed, risks and follow-ups are called out, and Validation/Handoff includes follow-up LEAP Recon, LEAP Prompt, or LEAP LHS recommendations when needed.
 
 <!-- LEAP_MASTER_REPO_SECTION_END -->
+
+<!-- LEAP_PROJECT_SECTION_END -->
+
+<!-- LEAP_LOCAL_OVERRIDES_BEGIN -->
+
+<!--
+Optional local team or developer-specific notes go here.
+Keep durable project guidance in the editable repository section above.
+-->
+
+<!-- LEAP_LOCAL_OVERRIDES_END -->

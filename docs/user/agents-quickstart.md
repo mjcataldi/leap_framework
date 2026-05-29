@@ -1,3 +1,12 @@
+<!--
+LEAP_DOC_METADATA:
+  audience: user
+  doc_type: adoption-guide
+  authority: supporting
+  applies_to: downstream-projects
+END_LEAP_DOC_METADATA
+-->
+
 # LEAP AGENTS.md Quickstart
 
 Use this starter guide to add LEAP to a local repository with the least possible friction.
@@ -9,9 +18,11 @@ This Quickstart defaults to the **Master Repo AGENTS.md local-trial method**. Th
 
 This lets users test LEAP inside one local repository before installing anything system-wide.
 
+LEAP AGENTS.md templates are distributed as a versioned **LEAP Agent Pack**. Keep the metadata block and section markers when copying a template so future LEAP Recon runs can detect stale managed guidance without overwriting project-specific content.
+
 For users who prefer the traditional two-file approach, see:
 
-- [Separate Global + Repo AGENTS.md Method](/docs/LEAP_AGENTS_Separate_Global_and_Repo_Method.md)
+- [Separate Global + Repo AGENTS.md Method](/docs/user/agents-separate-global-and-repo.md)
 
 ## User Actions
 
@@ -32,6 +43,14 @@ This file intentionally combines two scopes:
 
 This is the recommended starter method because it lets the user test LEAP in one repository without changing global system behavior.
 
+Preserve:
+
+- the `LEAP_AGENT_TEMPLATE` metadata block
+- the `LEAP_MANAGED_SECTION_*` markers
+- the `LEAP_PROJECT_SECTION_*` markers
+- the `LEAP_LOCAL_OVERRIDES_*` markers
+- the legacy `LEAP_MASTER_*` markers in the combined template
+
 ### 2. Populate the editable repo section
 
 Open the repository in the user's coding agent or code editor.
@@ -40,6 +59,8 @@ Then use the [Master Repo AGENTS.md population prompt](/templates/leap-repo-AGEN
 
 The prompt instructs the code assistant to:
 
+- Preserve Agent Pack metadata.
+- Preserve managed, project, local override, and compatibility markers.
 - Preserve the locked global section.
 - Preserve the section boundary markers.
 - Update only the editable repository section.
@@ -49,6 +70,16 @@ The prompt instructs the code assistant to:
 - Mark unknowns as `TBD` instead of guessing.
 
 The output of this step should be a populated repository-root `AGENTS.md` file.
+
+### 2a. Check future updates
+
+Future LEAP Recon runs may compare the installed AGENTS.md metadata against the Agent Pack manifest:
+
+```text
+templates/leap-agent-pack-manifest.json
+```
+
+Updates are notify/manual-merge only. LEAP should not automatically overwrite the managed section, and it must preserve project and local override sections by default.
 
 ### 3. Run LEAP Charter or Recon
 
@@ -76,6 +107,7 @@ Only after Recon is accepted should the user generate a final LEAP Prompt for im
 The project is ready for normal LEAP use when:
 
 - The Master Repo `AGENTS.md` file exists at the repository root.
+- The Agent Pack metadata block is still present.
 - The locked global section is still intact.
 - The editable repository section has been populated from actual repo evidence.
 - Unknowns are marked as `TBD`, not guessed.
@@ -83,6 +115,12 @@ The project is ready for normal LEAP use when:
 - LEAP Charter has reconciled project direction and docs if needed.
 - A LEAP Recon pass has been run for the first functionality target.
 - The next implementation task has bounded scope, non-goals, validation expectations, and stop conditions.
+
+## Agent Pack links
+
+- [AGENTS.md Versioning](/docs/maintainer/agent-pack-versioning.md)
+- [AGENTS.md Update Guide](/docs/maintainer/agent-pack-update-runbook.md)
+- [Clone, Fork, and Pin Guide](/docs/user/agents-clone-fork-pin.md)
 
 ## Short rule
 
@@ -106,8 +144,8 @@ Useful starting points:
 
 - [Start Here](/docs/00_start_here.md)
 - [LEAP Charter](/docs/leap-charter.md)
-- [LEAP for Humans](/docs/leap-for-humans.md)
-- [Quick LEAP Brief](/docs/quick-leap-brief.md)
+- [LEAP for Humans](/docs/user/leap-for-humans.md)
+- [Quick LEAP Brief](/docs/user/quick-leap-brief.md)
 - [Current LEAP Framework Document](/docs/leap.md)
 - [LEAP Charter Template](/templates/leap-charter-template.md)
 - [LEAP Recon Template](/templates/leap-recon-template.md)
@@ -120,4 +158,4 @@ AGENTS.md local-trial template links:
 
 Optional advanced setup:
 
-- [Separate Global + Repo AGENTS.md Method](/docs/LEAP_AGENTS_Separate_Global_and_Repo_Method.md)
+- [Separate Global + Repo AGENTS.md Method](/docs/user/agents-separate-global-and-repo.md)

@@ -30,6 +30,8 @@ Source-of-truth manifest:
 - Gap register path:
 - Migration map path:
 - Stale / archived / do-not-use docs:
+- AGENTS.md path:
+- AGENTS.md Agent Pack status: current / outdated / outdated with local changes / pinned / unversioned LEAP-style / non-LEAP / missing / forked-custom / malformed / unknown
 
 Solution/system overview:
 - Solution name:
@@ -71,6 +73,7 @@ Required gate:
 - Treat archived docs as historical unless a canonical doc explicitly references them.
 - Inspect repo reality before implementation planning when repo access exists.
 - Search for already-existing functionality before recommending new work.
+- Check AGENTS.md Agent Pack metadata, managed/project/local markers, and manifest status when AGENTS.md exists or adoption is in scope.
 - Recommend an explicit Agent Execution Configuration before LEAP Prompt generation.
 - Recommend LHS only when implementation gravity warrants staged execution.
 - Keep Recon investigative and non-mutating unless I explicitly authorize changes.

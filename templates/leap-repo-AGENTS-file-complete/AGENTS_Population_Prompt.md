@@ -25,6 +25,8 @@ Populate only the editable repository section so this repo has accurate project-
 Do not modify:
 - The locked global section.
 - The section boundary markers.
+- The `LEAP_AGENT_TEMPLATE` metadata block.
+- The `LEAP_MANAGED_SECTION_*`, `LEAP_PROJECT_SECTION_*`, or `LEAP_LOCAL_OVERRIDES_*` markers.
 - Application code.
 - Tests.
 - Product docs.
@@ -34,13 +36,14 @@ Do not modify:
 Before editing:
 1. Inspect the existing repository structure.
 2. Read the full root `AGENTS.md` file.
-3. Treat the locked global section as read-only LEAP behavior.
-4. Treat the editable repository section as the repo-specific AGENTS.md template to populate.
-5. Start with docs/00_start_here.md when present.
-6. Identify available source-of-truth documents, such as README files, docs, architecture notes, package files, build files, compose files, infrastructure files, test configuration, and CI files.
-7. Classify docs as canonical, supporting, stale, conflicting, duplicate, archived, or unknown when evidence supports it.
-8. Infer only what the repository evidence supports.
-9. Do not invent commands, architecture, services, credentials, environments, workflows, business rules, or deployment assumptions.
+3. Check whether the AGENTS.md file has LEAP Agent Pack metadata.
+4. Treat the locked global section as read-only LEAP behavior.
+5. Treat the editable repository section as the repo-specific AGENTS.md template to populate.
+6. Start with docs/00_start_here.md when present.
+7. Identify available source-of-truth documents, such as README files, docs, architecture notes, package files, build files, compose files, infrastructure files, test configuration, and CI files.
+8. Classify docs as canonical, supporting, stale, conflicting, duplicate, archived, or unknown when evidence supports it.
+9. Infer only what the repository evidence supports.
+10. Do not invent commands, architecture, services, credentials, environments, workflows, business rules, or deployment assumptions.
 
 Update only the editable repository section with:
 - Project name and purpose.
@@ -72,8 +75,12 @@ Update only the editable repository section with:
 
 Rules:
 - Preserve the combined master AGENTS.md structure.
+- Preserve Agent Pack metadata.
+- Preserve managed, project, local override, and compatibility markers.
 - Preserve the locked global section exactly.
 - Preserve all section boundary markers exactly.
+- Update project-specific content in the editable repository section only.
+- Do not overwrite local overrides.
 - Keep the repo section concise, practical, and useful to a coding agent.
 - Prefer verified repository evidence over assumptions.
 - If something is unknown, mark it as `TBD` and include the exact question the project owner should answer.
@@ -85,11 +92,12 @@ Rules:
 - Do not remove useful repo-template sections unless they clearly do not apply.
 
 After editing, return a short completion report with:
-1. Confirmation that the locked global section was not changed.
-2. Sections populated in the editable repo section.
-3. Evidence used.
-4. Unknowns left as `TBD`.
-5. Any contradictions or stale-doc risks found.
-6. Any recommended LEAP Charter Brownfield reconciliation.
-7. Recommended next LEAP Recon, LEAP Prompt, or LEAP LHS target.
+1. Confirmation that Agent Pack metadata and section markers were preserved.
+2. Confirmation that the locked global section was not changed.
+3. Sections populated in the editable repo section.
+4. Evidence used.
+5. Unknowns left as `TBD`.
+6. Any contradictions or stale-doc risks found.
+7. Any recommended LEAP Charter Brownfield reconciliation.
+8. Recommended next LEAP Recon, LEAP Prompt, or LEAP LHS target.
 ```

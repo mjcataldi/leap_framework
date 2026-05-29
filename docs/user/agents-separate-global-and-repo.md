@@ -4,6 +4,8 @@ Use this method when the user wants to install LEAP in the coding agent's global
 
 For first-time evaluation inside one local repo, prefer the **Master Repo AGENTS.md local-trial method** from the main Quickstart. This separate method is best after the user is ready to make LEAP available across multiple repositories.
 
+Both templates are part of the versioned LEAP Agent Pack. Preserve the `LEAP_AGENT_TEMPLATE` metadata block and managed/project/local section markers when copying or populating them.
+
 ## Reference links
 
 Primary framework reference:
@@ -15,6 +17,9 @@ Template links:
 - [Global AGENTS.md template](/templates/leap-global-AGENTS-file/AGENTS.md)
 - [Repo AGENTS.md template](/templates/leap-repo-AGENTS-file/AGENTS.md)
 - [Repository AGENTS.md Population Prompt](/templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md)
+- [AGENTS.md Versioning](/docs/maintainer/agent-pack-versioning.md)
+- [AGENTS.md Update Guide](/docs/maintainer/agent-pack-update-runbook.md)
+- [Clone, Fork, and Pin Guide](/docs/user/agents-clone-fork-pin.md)
 
 ## What the user does
 
@@ -39,6 +44,8 @@ The global file should stay broad. It should explain LEAP behavior, Charter, sou
 
 Do **not** put project-specific commands, architecture, secrets, or repo details in the global file.
 
+The global file has a LEAP-managed section and a local overrides section. Future updates may propose changes to the managed section, but local overrides should never be overwritten automatically.
+
 ### 2. Install the repo / project AGENTS.md file
 
 Download the repo-level LEAP `AGENTS.md` template and place it at the root of the project repository:
@@ -61,6 +68,8 @@ The repo AGENTS.md file is where project-specific details belong, including:
 - Branch, worktree, and commit expectations.
 - LEAP-specific repo workflow rules.
 
+The repo file has a LEAP-managed section, a project section, and a local overrides section. Populate the project section from repository evidence. Preserve local overrides during future updates.
+
 ### 3. Populate the repo AGENTS.md file
 
 Open the repository in the user's coding agent or code editor.
@@ -72,6 +81,8 @@ templates/leap-repo-AGENTS-file/AGENTS_Population_Prompt.md
 ```
 
 The prompt should update only the repository-level `AGENTS.md` file from actual repository evidence. It should start with `docs/00_start_here.md` when present and identify canonical vs archived/stale docs where discoverable.
+
+It should preserve Agent Pack metadata and section markers. If the installed template is unversioned, run a LEAP Recon before migrating it to the current Agent Pack.
 
 ### 4. Run LEAP Charter or Recon
 
@@ -98,6 +109,7 @@ The project is ready for normal LEAP use when:
 
 - The global AGENTS.md or equivalent global instruction file is installed.
 - The repo-level `AGENTS.md` file exists at the repository root.
+- Agent Pack metadata and section markers are still present.
 - The repo-level `AGENTS.md` file has been populated from actual repo evidence.
 - Unknowns are marked as `TBD`, not guessed.
 - Canonical docs and archived/stale docs are identified when discoverable.

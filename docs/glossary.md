@@ -99,6 +99,30 @@ The Layered House Standard prompt format used for staged implementation work.
 
 Use LEAP LHS when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt, and LEAP LHS is not a mandatory lifecycle stage.
 
+## LEAP Agent Pack
+
+The versioned release unit for distributable LEAP AGENTS.md templates.
+
+The Agent Pack includes template metadata, managed section conventions, update policy, and a manifest. It lets downstream projects detect stale LEAP guidance without overwriting project-specific instructions.
+
+## Agent Pack Manifest
+
+The JSON source of truth for an Agent Pack release.
+
+The manifest records the Agent Pack version, release tag, source repo, upstream repo, template list, template paths, checksums, update policy, and migration notes.
+
+## AGENTS.md Managed Section
+
+The LEAP-owned portion of an AGENTS.md file.
+
+Managed sections may be updated only after user approval. Project sections should be preserved by default, and local override sections should never be overwritten by LEAP updates.
+
+## AGENTS.md Update Status
+
+The status assigned by LEAP Recon when comparing a downstream AGENTS.md file to the selected Agent Pack manifest.
+
+Supported statuses include Current, Outdated, Outdated with local changes, Pinned, Unversioned LEAP-style file, Non-LEAP AGENTS.md, Missing AGENTS.md, Forked/custom source, and Unknown or malformed metadata.
+
 ## Prompt Family
 
 The set of LEAP Prompt types used for different kinds of agent-ready work.

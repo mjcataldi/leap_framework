@@ -1,3 +1,12 @@
+<!--
+LEAP_DOC_METADATA:
+  audience: user
+  doc_type: entrypoint
+  authority: entry-point
+  applies_to: leap-framework
+END_LEAP_DOC_METADATA
+-->
+
 # Start Here: LEAP in Plain English
 
 **LEAP - Layered Execution & Alignment Protocol** helps you avoid asking an AI coding agent to build from confusion.
@@ -207,6 +216,18 @@ Before giving work to an AI coding agent, answer:
 ```
 
 If you cannot answer these, run LEAP Charter or Recon first.
+
+## AGENTS.md adoption
+
+LEAP AGENTS.md templates are distributed as a versioned Agent Pack.
+
+Start with:
+
+- `docs/user/agents-quickstart.md`
+- `docs/maintainer/agent-pack-versioning.md`
+- `docs/maintainer/agent-pack-update-runbook.md`
+
+Recon may check whether an installed downstream `AGENTS.md` file is current, outdated, pinned, forked, unversioned, malformed, missing, or non-LEAP. AGENTS updates are notify/manual-merge only; LEAP should not overwrite project-specific or local override sections automatically.
 
 ## When to use full LEAP
 

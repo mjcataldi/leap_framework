@@ -1,3 +1,22 @@
+<!--
+LEAP_AGENT_TEMPLATE:
+  schema_version: 1
+  template_id: leap-repo-agents
+  template_role: repo
+  agent_pack_version: 0.1.0
+  release_tag: leap-agent-pack-v0.1.0
+  template_channel: stable
+  source_repo: https://github.com/mjcataldi/leap_framework
+  upstream_repo: https://github.com/mjcataldi/leap_framework
+  source_path: templates/leap-repo-AGENTS-file/AGENTS.md
+  update_policy: notify
+  managed_section_version: 1
+  minimum_supported_leap_version: current
+END_LEAP_AGENT_TEMPLATE
+-->
+
+<!-- LEAP_MANAGED_SECTION_BEGIN -->
+
 # Repository AGENTS.md - LEAP Project Template
 
 ## Project Identity
@@ -25,6 +44,10 @@ LEAP Charter establishes or reconciles project direction, source-of-truth docs, 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
 
 LEAP Prompt is the instruction artifact family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts. Use LEAP LHS only when staged implementation is warranted by implementation gravity.
+
+<!-- LEAP_MANAGED_SECTION_END -->
+
+<!-- LEAP_PROJECT_SECTION_BEGIN -->
 
 ## Documentation Starting Point
 
@@ -368,3 +391,14 @@ Final response should include:
 - Tests/checks run.
 - Tests/checks not run.
 - Known risks or follow-ups.
+
+<!-- LEAP_PROJECT_SECTION_END -->
+
+<!-- LEAP_LOCAL_OVERRIDES_BEGIN -->
+
+<!--
+Optional local team or developer-specific notes go here.
+Keep durable project guidance in the project section above.
+-->
+
+<!-- LEAP_LOCAL_OVERRIDES_END -->

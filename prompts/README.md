@@ -57,8 +57,8 @@ Use the current adoption docs first when onboarding new users:
 ```text
 docs/00_start_here.md
 docs/leap-charter.md
-docs/leap-for-humans.md
-docs/quick-leap-brief.md
+docs/user/leap-for-humans.md
+docs/user/quick-leap-brief.md
 docs/agent-profiles.md
 docs/risk-taxonomy.md
 ```

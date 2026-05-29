@@ -19,8 +19,9 @@ You must:
 7. check whether the Ideation Loop and question-loop rules are represented consistently
 8. check whether source-of-truth, repo reality, stop conditions, and execution profile requirements are preserved
 9. check whether risk taxonomy, destructive-change, sensitive-area, and implementation-gravity guidance are present where needed
-10. classify any drift found
-11. recommend document updates, but do not rewrite files unless explicitly asked
+10. check whether AGENTS.md templates have Agent Pack metadata, managed/project/local markers, and manifest alignment
+11. classify any drift found
+12. recommend document updates, but do not rewrite files unless explicitly asked
 
 ## Drift categories
 
@@ -34,6 +35,7 @@ Branch drift — active branches or PRs conflict
 Prompt drift — prompts assume stale files, old decisions, missing agent/tool, missing model, or missing reasoning level
 Terminology drift — old terms remain after framework language changed
 Adoption drift — public onboarding docs do not match current framework behavior
+Agent Pack drift — AGENTS.md template metadata, managed sections, manifest, tags, or update guidance disagree
 ```
 
 ## Required output
@@ -50,10 +52,11 @@ Adoption drift — public onboarding docs do not match current framework behavio
 ## 7. Prompt Taxonomy / LHS Placement Review
 ## 8. Risk / Sensitive Area / Destructive-Change Review
 ## 9. Agent Execution Configuration Review
-## 10. Drift Ledger Candidates
-## 11. Recommended Updates
-## 12. Human Decisions Required
-## 13. Gate Decision / Next Step
+## 10. Agent Pack / AGENTS.md Versioning Review
+## 11. Drift Ledger Candidates
+## 12. Recommended Updates
+## 13. Human Decisions Required
+## 14. Gate Decision / Next Step
 ```
 
 ## Gate decisions

@@ -1,3 +1,12 @@
+<!--
+LEAP_DOC_METADATA:
+  audience: user, maintainer, agent
+  doc_type: canonical-charter-reference
+  authority: canonical
+  applies_to: leap-framework
+END_LEAP_DOC_METADATA
+-->
+
 # LEAP Charter
 
 LEAP Charter is the official project-alignment front door for LEAP. It replaces the active use of the older "Phase 0" label.
