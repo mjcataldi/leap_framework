@@ -18,7 +18,7 @@ All notable changes to the LEAP Framework will be documented here.
 - Reorganized LEAP documentation into clearer user, reference, maintainer, and example domains.
 - Added `docs/README.md` as the documentation source-of-truth map.
 - Added maintainer documentation governance guidance.
-- Added compatibility stubs for moved AGENTS.md documentation paths.
+- Removed unreleased moved-path stubs for AGENTS.md documentation and repointed active references to the live docs.
 
 ## Unreleased - LEAP Prompt taxonomy and LHS clarification
 
