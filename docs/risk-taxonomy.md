@@ -4,6 +4,8 @@ LEAP uses risk categories to decide how much clarification, Recon, approval, and
 
 The taxonomy should stay lightweight. Its job is to make risk visible, not to create bureaucracy.
 
+Implementation Gravity is the amount of coordination, risk, dependency ordering, testing, documentation, and rollback concern attached to a task. Higher implementation gravity increases the chance that the implementation prompt should use LEAP LHS.
+
 ---
 
 ## Core risk categories

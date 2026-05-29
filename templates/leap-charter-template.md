@@ -36,6 +36,7 @@ Charter settings:
   Canonicalize forward. Archive backward. Preserve traceability. Never let stale docs compete with source-of-truth docs.
 - Do not generate runtime implementation changes unless I explicitly ask.
 - Capture runtime work as follow-up LEAP Recon, LEAP Prompt, or LEAP LHS recommendations.
+- Use LHS only when staged repo/docs work is warranted by implementation gravity. Charter does not use LHS by default.
 
 Required Charter workflow:
 1. Intake classification.
@@ -94,3 +95,5 @@ If more information is needed, ask the next discovery round instead of producing
 ## LEAP LHS note
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is useful when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
+
+Greenfield Charter should usually avoid LHS during early product shaping, naming, ideation, MVP definition, or strategic discovery. Brownfield Charter may use or recommend LHS only after the reconciliation plan is clear and the repo-changing documentation work needs staged execution, commit boundaries, tests/docs checks, or source-truth validation.

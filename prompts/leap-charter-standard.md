@@ -12,6 +12,8 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard.
 
+Charter should remain lightweight when it is doing product shaping, naming, ideation, MVP definition, strategic discovery, or source-truth classification. Charter may recommend a follow-up LHS prompt when implementation gravity is high. Brownfield Charter may itself use LHS only after the reconciliation plan is clear and the staged repo-changing documentation work needs ordered phases, tests/docs checks, migration maps, AGENTS updates, prompt backlog updates, archive moves, or link/source-truth validation.
+
 ## Required behavior
 
 You must:
@@ -25,7 +27,7 @@ You must:
 7. pressure test whether software or custom implementation is needed
 8. use readiness gates C0-C5 instead of fake-precision clarity scores
 9. block implementation planning when hard blockers remain
-10. identify downstream LEAP Recon, LEAP Prompt, or LEAP LHS recommendations
+10. identify downstream LEAP Recon, LEAP Prompt, or LEAP LHS recommendations, using LHS only when staged implementation is warranted
 11. end with a gate decision
 
 ## Greenfield Mode
@@ -44,7 +46,7 @@ Greenfield Mode should help create or organize:
 - Initial layer plan.
 - Initial prompt backlog.
 - AGENTS.md guidance if applicable.
-- First recommended LEAP Recon or LEAP LHS sequence.
+- First recommended LEAP Recon or prompt sequence. Recommend LHS only when staged repo/docs foundation work is actually needed.
 
 Greenfield Mode should not overbuild. It should create enough structure to start safely and intentionally.
 

@@ -2,6 +2,15 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## Unreleased - LEAP Prompt taxonomy and LHS clarification
+
+### Changed
+
+- Clarified that LEAP LHS is a structured implementation-prompt format within the LEAP Prompt family, not a mandatory lifecycle phase.
+- Updated lifecycle language to use `LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff`.
+- Added guidance for when Charter, Recon, and implementation prompts should or should not use LHS.
+- Added LHS decision rules based on implementation gravity, staged execution, tests, docs, compatibility risk, and commit boundaries.
+
 ## Unreleased - LEAP Charter and brownfield reconciliation
 
 ### Added

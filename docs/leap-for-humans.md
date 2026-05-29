@@ -41,7 +41,7 @@ LEAP helps uncover those missing details before implementation begins.
 LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
 ```
 
-LEAP Charter establishes or reconciles the project direction, source-of-truth docs, roadmap, and implementation posture.
+LEAP Charter establishes or reconciles the project direction, source-of-truth docs, roadmap, baseline assumptions, and implementation posture.
 
 LEAP Recon investigates a focused area, gap, risk, feature, or architectural question.
 
@@ -52,6 +52,10 @@ Implementation is the execution of the approved LEAP Prompt by Codex or another 
 Validation/Handoff is the required completion step where Codex verifies changes, checks docs/tests, summarizes work, and recommends follow-up prompts.
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
+
+LEAP Prompt is a family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts.
+
+Use LHS when the implementation has enough gravity to need staged execution: multiple files or system areas, dependency order, tests and docs, phased commits, rollback risk, architecture/data/workflow changes, named-layer work, follow-up work, or explicit acceptance criteria. Do not use LHS for pure analysis, early brainstorming, one-file edits, small copy/doc fixes, obvious quick bugs, or ceremony that does not reduce risk.
 
 ## Questions are the source of answers
 

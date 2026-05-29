@@ -12,7 +12,7 @@ The active repository presents the current canonical LEAP framework document and
 People often begin with a feeling for what they want built.
 LEAP turns that feeling into a testable delivery path.
 
-LEAP Charter establishes or reconciles project direction, source-of-truth docs, roadmap, and implementation posture.
+LEAP Charter establishes or reconciles project direction, source-of-truth docs, roadmap, baseline assumptions, and implementation posture.
 LEAP Recon investigates a focused area, gap, risk, feature, or architectural question.
 LEAP Prompt produces Codex-ready instructions for analysis, documentation, implementation, or remediation.
 Implementation executes the approved prompt in the repository.
@@ -23,6 +23,27 @@ Validation/Handoff verifies changes, checks docs/tests, summarizes work, and rec
 
 ```text
 LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
+```
+
+Relationship model:
+
+```text
+LEAP Framework
+  |-- LEAP Charter
+  |   |-- Greenfield Mode
+  |   `-- Brownfield Mode
+  |-- LEAP Recon
+  |   `-- Investigation / discovery / pressure testing
+  |-- LEAP Prompt
+  |   |-- Charter Prompt
+  |   |-- Recon Prompt
+  |   |-- Standard Implementation Prompt
+  |   |-- Fix Prompt
+  |   |-- Refactor Prompt
+  |   |-- Governance Prompt
+  |   |-- Validation Prompt
+  |   `-- LHS Prompt
+  `-- Validation / Handoff
 ```
 
 ### LEAP Charter
@@ -55,6 +76,8 @@ LEAP Prompt converts approved Charter and Recon findings into Codex-ready instru
 A valid LEAP Prompt includes objective, current repo reality, source-of-truth instructions, scope, non-goals, constraints, implementation sequence, verification, stop conditions, branch/worktree/commit instructions, source-of-truth update policy, completion report format, and a required Agent Execution Configuration block.
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard. Use it when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
+
+Use LHS when implementation gravity is high: staged changes, dependency order, multi-area work, tests plus docs, phased commits, architecture/data/workflow changes, rollback risk, named-layer work, follow-up work, or explicit acceptance criteria. Do not use LHS for pure analysis, early brainstorming, one-file edits, small copy/doc fixes, obvious quick bugs, or ceremony that does not reduce risk.
 
 ### Implementation
 

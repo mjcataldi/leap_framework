@@ -8,6 +8,8 @@ Definition:
 The initial solution-alignment process used to establish or reconcile a project before implementation begins or continues.
 ```
 
+LEAP Charter establishes or reconciles the project direction, source-of-truth documents, roadmap, baseline assumptions, and implementation posture before deeper Recon or implementation prompt generation.
+
 ## Lifecycle
 
 The current LEAP lifecycle is:
@@ -26,13 +28,15 @@ Lifecycle terms:
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard. Use LEAP LHS when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
 
+Charter does not use LHS by default. Charter may recommend a follow-up LHS prompt, and it may itself use LHS only when Charter has moved from discovery into staged repo-changing documentation work.
+
 ## Charter Modes
 
 ### LEAP Charter - Greenfield Mode
 
 Used for brand-new projects, early-stage ideas, or solutions that do not yet have a stable repo, roadmap, architecture, or documentation structure.
 
-Greenfield Mode should create enough structure to start safely and intentionally. It should not overbuild.
+Greenfield Mode should create enough structure to start safely and intentionally. It should not overbuild. Greenfield Charter should usually avoid LHS when it is doing early product shaping, naming, ideation, MVP definition, or strategic discovery.
 
 It should help create or organize:
 
@@ -46,7 +50,7 @@ It should help create or organize:
 - Initial layer plan.
 - Initial prompt backlog.
 - AGENTS.md guidance if applicable.
-- First recommended LEAP Recon or LEAP LHS sequence.
+- First recommended LEAP Recon or prompt sequence. Recommend LHS only when staged repo/docs foundation work is actually needed.
 
 ### LEAP Charter - Brownfield Mode
 
@@ -65,7 +69,9 @@ Brownfield Mode should:
 9. Produce a migration map for legacy documentation.
 10. Prepare future LEAP Recon, LEAP Prompt, and LEAP LHS work.
 
-Brownfield Mode may update documentation, organization, naming, and planning artifacts directly. It should generally avoid runtime implementation changes unless explicitly requested. Code, schema, API, UI, auth, workflow, or infrastructure changes should normally be captured as follow-up LEAP Prompts or LHS phases.
+Brownfield Mode may update documentation, organization, naming, and planning artifacts directly. It should generally avoid runtime implementation changes unless explicitly requested. Code, schema, API, UI, auth, workflow, or infrastructure changes should normally be captured as follow-up LEAP Prompts or LHS prompts.
+
+Brownfield Charter should usually begin as a non-mutating discovery/reconciliation pass. It may use LHS after the plan is clear when it needs to reorganize documentation, absorb legacy docs into canonical docs, archive stale docs, create a migration map, update AGENTS templates, update prompt backlogs, or validate links and source-of-truth references.
 
 ## Documentation Reconciliation Policy
 

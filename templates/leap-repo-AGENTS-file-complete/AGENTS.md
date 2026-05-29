@@ -35,6 +35,8 @@ LEAP Prompt produces Codex-ready instructions for analysis, documentation, imple
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
 
+LEAP Prompt is the instruction artifact family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts. Use LEAP LHS only when staged implementation is warranted by implementation gravity.
+
 Validation/Handoff is the required completion step where Codex verifies changes, checks docs/tests, summarizes work, and recommends follow-up prompts.
 
 ## Instruction Priority
@@ -56,6 +58,8 @@ When present, start with `docs/00_start_here.md`.
 Treat canonical docs as source of truth. Treat archived docs as historical unless a current canonical document explicitly references them.
 
 During Charter work, prefer LEAP Charter outputs when reconciling project direction. Create LEAP Recon or LEAP Prompt recommendations instead of making risky implementation changes during Charter work.
+
+Use LEAP Recon outputs for focused investigation findings. Use LEAP LHS only when the task needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination. Do not treat LHS as a mandatory stage after every LEAP Prompt.
 
 ## Default Work Pattern
 
@@ -113,6 +117,8 @@ Project summary:
 ## Documentation Starting Point
 
 Start with `docs/00_start_here.md` when present.
+
+LEAP Prompt is the instruction artifact family. Use LEAP Recon outputs for focused investigation findings. Use LEAP LHS only when the task needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination. Do not treat LHS as a mandatory stage after every LEAP Prompt.
 
 Primary product/architecture docs:
 

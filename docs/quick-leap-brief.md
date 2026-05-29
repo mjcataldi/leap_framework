@@ -2,7 +2,7 @@
 
 Use this when the work is small enough that full LEAP Charter and Recon would be heavier than the task, but you still want a safe AI coding-agent handoff.
 
-The Quick LEAP Brief is the smallest useful LEAP Prompt format.
+The Quick LEAP Brief is the smallest useful LEAP Prompt format for low-gravity implementation work.
 
 ## When to use it
 
@@ -125,7 +125,9 @@ Execution Mode: implement-with-brief-plan
 Scope Scale: Build Unit
 ```
 
-If the task is layered, staged, or large enough to require House Standard-style execution, use LEAP LHS instead of a Quick LEAP Brief.
+If the task has higher implementation gravity, use LEAP LHS instead of a Quick LEAP Brief. LHS is appropriate when two or more are true: the task touches more than 3 files, affects more than one system area, has dependency order, needs tests and docs, should be committed in phases, has rollback risk, changes architecture/data contracts/user workflows, is part of a named layer, may generate follow-up work, or needs explicit acceptance criteria.
+
+Do not use LHS for pure analysis, early brainstorming, one-file edits, small copy/doc fixes, quick bugs with obvious scope, or work where the extra structure would not reduce risk.
 
 ## Escalation rule
 

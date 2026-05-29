@@ -16,13 +16,90 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 Lifecycle terms:
 
-- **LEAP Charter:** Establishes or reconciles the project direction, source-of-truth docs, roadmap, and implementation posture.
+- **LEAP Charter:** Establishes or reconciles the project direction, source-of-truth documents, roadmap, baseline assumptions, and implementation posture.
 - **LEAP Recon:** Investigates a focused area, gap, risk, feature, or architectural question.
 - **LEAP Prompt:** Produces Codex-ready instructions for analysis, documentation, implementation, or remediation.
 - **Implementation:** The execution of the approved LEAP Prompt by Codex or another coding agent.
 - **Validation/Handoff:** The required completion step where Codex verifies changes, checks docs/tests, summarizes work, and recommends follow-up prompts.
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard. Use it when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
+
+---
+
+## Relationship model
+
+```text
+LEAP Framework
+  |-- LEAP Charter
+  |   |-- Greenfield Mode
+  |   `-- Brownfield Mode
+  |
+  |-- LEAP Recon
+  |   `-- Investigation / discovery / pressure testing
+  |
+  |-- LEAP Prompt
+  |   |-- Charter Prompt
+  |   |-- Recon Prompt
+  |   |-- Standard Implementation Prompt
+  |   |-- Fix Prompt
+  |   |-- Refactor Prompt
+  |   |-- Governance Prompt
+  |   |-- Validation Prompt
+  |   `-- LHS Prompt
+  |
+  `-- Validation / Handoff
+```
+
+## Prompt family and LHS usage
+
+LEAP Prompt is the broad category of Codex-ready or agent-ready instruction artifacts generated from Charter, Recon, user intent, or approved implementation scope.
+
+LEAP LHS is the **Layered House Standard** prompt format used for staged implementation work. It is part of the LEAP Prompt family, not a separate lifecycle phase.
+
+| Prompt Type | Purpose | Use LHS? |
+| --- | --- | --- |
+| Charter Prompt | Establish or reconcile direction, docs, roadmap, baseline | Sometimes |
+| Recon Prompt | Investigate focused risk, repo reality, or implementation uncertainty | Usually no |
+| Standard Implementation Prompt | Small or medium implementation change | Sometimes no |
+| Fix Prompt | Specific bug or remediation | Usually no |
+| Refactor Prompt | Larger structural change | Often yes |
+| Governance Prompt | Repo/process/source-of-truth cleanup | Sometimes |
+| Validation Prompt | Verify tests/docs/acceptance and summarize handoff | Usually no |
+| LHS Prompt | Staged implementation sequence | Yes |
+
+### Implementation Gravity
+
+Implementation Gravity is the amount of coordination, risk, dependency ordering, testing, documentation, and rollback concern attached to a task. Higher implementation gravity increases the likelihood that the task should use LHS.
+
+Use LHS when two or more of these are true:
+
+```text
+- The task touches more than 3 files.
+- The task affects more than one system area.
+- The task has dependency order.
+- The task needs tests and docs.
+- The task should be committed in phases.
+- The task has meaningful rollback risk.
+- The task changes architecture, data contracts, or user workflows.
+- The task is part of a named layer.
+- The task may generate follow-up work.
+- The task needs explicit acceptance criteria.
+```
+
+Do not use LHS when:
+
+```text
+- The work is pure analysis.
+- The work is early brainstorming.
+- The work is a one-file edit.
+- The work is a small copy/doc fix.
+- The work is a quick bug fix with obvious scope.
+- The work would add ceremony without reducing risk.
+```
+
+Charter does not use LHS by default. Greenfield Charter should usually avoid LHS during early product shaping, naming, ideation, MVP definition, or strategic discovery. Greenfield Charter may use LHS when it is creating a staged repo/docs foundation. Brownfield Charter should usually begin as a non-mutating discovery/reconciliation pass; it may use or generate LHS only after the plan is clear and the work needs staged documentation changes, archive moves, migration maps, AGENTS updates, prompt backlog updates, or link/source-truth validation.
+
+Recon usually should not use LHS. Recon should normally answer what is true, what is broken, what the risks are, and what should happen next. Recon may recommend LHS prompts, but should not mutate runtime code or broad repo structure unless explicitly authorized.
 
 ---
 
@@ -159,7 +236,7 @@ Full Charter guidance lives in [`docs/leap-charter.md`](leap-charter.md).
 
 Greenfield Mode is used for brand-new projects, early-stage ideas, or solutions that do not yet have a stable repo, roadmap, architecture, or documentation structure.
 
-It should help create or organize product mission, target users, MVP boundary, strategic goals, initial architecture direction, data model assumptions, roadmap, layer plan, prompt backlog, AGENTS.md guidance if applicable, and the first recommended Recon or LHS sequence.
+It should help create or organize product mission, target users, MVP boundary, strategic goals, initial architecture direction, data model assumptions, roadmap, layer plan, prompt backlog, AGENTS.md guidance if applicable, and the first recommended Recon or prompt sequence. It should recommend LHS only when staged repo/docs foundation work is actually needed.
 
 Greenfield Mode should not overbuild. It should create enough structure to start safely and intentionally.
 
@@ -178,7 +255,7 @@ Preserve traceability.
 Never let stale docs compete with source-of-truth docs.
 ```
 
-Brownfield outputs should include document inventory, source-of-truth recommendation, gap register, migration map, reconciliation notes, prompt backlog recommendations, and next LEAP Recon/Prompt/LHS sequence.
+Brownfield outputs should include document inventory, source-of-truth recommendation, gap register, migration map, reconciliation notes, prompt backlog recommendations, and next LEAP Recon/Prompt/LHS sequence. Brownfield Charter may use LHS only after the reconciliation plan is clear and the repo-changing documentation work needs staged execution.
 
 ---
 
@@ -480,19 +557,20 @@ LEAP should guard against:
 ```text
 # <Solution> - LEAP Prompt - <Target Layer or Task>
 
-## 1. Agent Execution Configuration
-## 2. Objective
-## 3. Current Repo Reality
-## 4. Source-of-Truth Instructions
-## 5. Scope
-## 6. Non-Goals
-## 7. Constraints
-## 8. Implementation Sequence
-## 9. Verification
-## 10. Stop Conditions
-## 11. Branch / Worktree / Commit Instructions
-## 12. Source-of-Truth Update Policy
-## 13. Completion Report Format
+## 1. Prompt Type and LHS Decision
+## 2. Agent Execution Configuration
+## 3. Objective
+## 4. Current Repo Reality
+## 5. Source-of-Truth Instructions
+## 6. Scope
+## 7. Non-Goals
+## 8. Constraints
+## 9. Implementation Sequence
+## 10. Verification
+## 11. Stop Conditions
+## 12. Branch / Worktree / Commit Instructions
+## 13. Source-of-Truth Update Policy
+## 14. Completion Report Format
 ```
 
 ### Validation/Handoff output

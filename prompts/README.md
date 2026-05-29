@@ -12,6 +12,23 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard.
 
+## LEAP Prompt family
+
+LEAP Prompt is the broad category of Codex-ready or agent-ready instruction artifacts generated from Charter, Recon, user intent, or approved implementation scope.
+
+| Prompt Type | Purpose | Use LHS? |
+| --- | --- | --- |
+| Charter Prompt | Establish or reconcile direction, docs, roadmap, baseline | Sometimes |
+| Recon Prompt | Investigate focused risk, repo reality, or implementation uncertainty | Usually no |
+| Standard Implementation Prompt | Small or medium implementation change | Sometimes no |
+| Fix Prompt | Specific bug or remediation | Usually no |
+| Refactor Prompt | Larger structural change | Often yes |
+| Governance Prompt | Repo/process/source-of-truth cleanup | Sometimes |
+| Validation Prompt | Verify tests/docs/acceptance and summarize handoff | Usually no |
+| LHS Prompt | Staged implementation sequence | Yes |
+
+Use Quick LEAP Brief or a standard implementation prompt for low-gravity work. Use LHS when implementation gravity is high enough to need staged execution, commit boundaries, tests and docs, multi-area coordination, compatibility checks, rollback awareness, or explicit acceptance criteria.
+
 ## Prompt categories
 
 ```text
@@ -76,6 +93,8 @@ An implementation prompt is not agent-ready unless it includes an explicit agent
 ### LEAP LHS prompts
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. Use it when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
+
+Do not use LHS for pure analysis, early brainstorming, one-file edits, small copy/doc fixes, quick bugs with obvious scope, or work where ceremony would not reduce risk.
 
 ### Governance prompts
 

@@ -18,7 +18,7 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 The initial solution-alignment process used to establish or reconcile a project before implementation begins or continues.
 
-LEAP Charter establishes or reconciles the project direction, source-of-truth docs, roadmap, and implementation posture.
+LEAP Charter establishes or reconciles the project direction, source-of-truth documents, roadmap, baseline assumptions, and implementation posture before deeper Recon or implementation prompt generation.
 
 LEAP Charter replaces the active use of the older "Phase 0" label. Historical release notes may still use the older term.
 
@@ -26,13 +26,17 @@ LEAP Charter replaces the active use of the older "Phase 0" label. Historical re
 
 Used for brand-new projects, early-stage ideas, or solutions that do not yet have a stable repo, roadmap, architecture, or documentation structure.
 
-Greenfield Mode should help create or organize product mission, target users, MVP boundary, strategic goals, architecture direction, data model assumptions, roadmap, layer plan, prompt backlog, AGENTS.md guidance when applicable, and the first recommended LEAP Recon or LEAP LHS sequence.
+Greenfield Mode should help create or organize product mission, target users, MVP boundary, strategic goals, architecture direction, data model assumptions, roadmap, layer plan, prompt backlog, AGENTS.md guidance when applicable, and the first recommended LEAP Recon or prompt sequence. It should recommend LHS only when staged repo/docs foundation work is actually needed.
+
+Also called Greenfield Charter.
 
 ## LEAP Charter - Brownfield Mode
 
 Used for existing or mid-buildout projects where LEAP needs to inspect the repo, reconcile documentation, identify gaps, establish source-of-truth docs, and prepare future LEAP Recon, LEAP Prompt, or LHS work.
 
 Brownfield Mode may update documentation, organization, naming, and planning artifacts directly. Runtime implementation changes should normally become follow-up LEAP Prompts or LEAP LHS prompts unless explicitly requested.
+
+Also called Brownfield Charter.
 
 ## Documentation Reconciliation Policy
 
@@ -69,11 +73,13 @@ LEAP Recon investigates a focused area, gap, risk, feature, or architectural que
 
 ## LEAP Prompt
 
-The final prompt artifact given to Codex or another coding agent.
+The broad category of Codex-ready or agent-ready instruction artifacts generated from Charter, Recon, user intent, or approved implementation scope.
 
 LEAP Prompt produces Codex-ready instructions for analysis, documentation, implementation, or remediation.
 
 A LEAP Prompt must be a bounded task packet with objective, scope, constraints, verification, stop conditions, and explicit Agent Execution Configuration.
+
+LEAP Prompt types include Charter Prompt, Recon Prompt, Standard Implementation Prompt, Fix Prompt, Refactor Prompt, Governance Prompt, Validation Prompt, and LHS Prompt.
 
 ## Implementation
 
@@ -89,9 +95,28 @@ Validation/Handoff should report files changed, tests/checks run, tests/checks n
 
 ## LEAP LHS
 
-A structured LEAP Prompt format for layered implementation work using the House Standard.
+The Layered House Standard prompt format used for staged implementation work.
 
 Use LEAP LHS when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt, and LEAP LHS is not a mandatory lifecycle stage.
+
+## Prompt Family
+
+The set of LEAP Prompt types used for different kinds of agent-ready work.
+
+Prompt family members include:
+
+- Charter Prompt
+- Recon Prompt
+- Standard Implementation Prompt
+- Fix Prompt
+- Refactor Prompt
+- Governance Prompt
+- Validation Prompt
+- LHS Prompt
+
+## Implementation Gravity
+
+The amount of coordination, risk, dependency ordering, testing, documentation, and rollback concern attached to a task. Higher implementation gravity increases the likelihood that the task should use LHS.
 
 ## Solution
 

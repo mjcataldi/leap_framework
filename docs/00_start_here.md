@@ -56,6 +56,8 @@ LEAP helps expose the gaps before major implementation begins.
 LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handoff
 ```
 
+LEAP Prompt is the family of agent-ready instruction artifacts. LEAP LHS is one format inside that family, used only when staged implementation is worth the structure.
+
 ### 1. LEAP Charter
 
 Use LEAP Charter when the project direction or source truth needs to be established or reconciled.
@@ -66,6 +68,7 @@ LEAP Charter establishes or reconciles:
 - project direction
 - source-of-truth docs
 - roadmap
+- baseline assumptions
 - documentation structure
 - implementation posture
 - prompt backlog
@@ -122,6 +125,21 @@ It tells the coding agent:
 ```
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage, and not every LEAP Prompt is an LHS prompt.
+
+LEAP Prompt is a family of prompt types:
+
+```text
+- Charter Prompt
+- Recon Prompt
+- Standard Implementation Prompt
+- Fix Prompt
+- Refactor Prompt
+- Governance Prompt
+- Validation Prompt
+- LHS Prompt
+```
+
+Use LHS only when implementation gravity is high enough to justify staged execution: multi-file or multi-area work, dependency order, tests and docs, phased commits, rollback risk, architecture/data/workflow changes, named-layer work, follow-up work, or explicit acceptance criteria.
 
 ### 4. Implementation
 

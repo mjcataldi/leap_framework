@@ -63,6 +63,9 @@ Populate the AGENTS.md file with:
 - LEAP Recon expectations for this repo.
 - LEAP Prompt / implementation handoff expectations for this repo.
 - LEAP LHS expectations if layered House Standard-style work is likely.
+- Guidance that LEAP Prompt is the instruction artifact family.
+- Guidance that LEAP LHS is used only when staged implementation is warranted by implementation gravity.
+- Guidance not to treat LHS as a mandatory stage after every LEAP Prompt.
 - Security, secrets, and data-handling rules.
 - Coding conventions and architectural constraints.
 - Branch, worktree, PR, and commit conventions.

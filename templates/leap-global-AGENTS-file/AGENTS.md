@@ -14,6 +14,8 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 LEAP Charter establishes or reconciles project direction, source-of-truth docs, roadmap, and implementation posture. LEAP LHS is a structured LEAP Prompt format for layered House Standard-style implementation work; it is not a mandatory lifecycle stage.
 
+LEAP Prompt is the instruction artifact family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts. Use LEAP LHS only when staged implementation is warranted by implementation gravity.
+
 This global file defines reusable behavior across repositories. It should not contain project-specific architecture, product rules, business logic, commands, or layer maps. Those belong in the repository-level `AGENTS.md` and project documentation.
 
 ## Instruction Priority
@@ -151,6 +153,7 @@ When the user provides a House Standard, LHS, LEAP, or Codex implementation prom
 
 - Treat it as the task contract.
 - Remember that LEAP LHS is a LEAP Prompt format, not a separate mandatory lifecycle stage.
+- Do not convert every LEAP Prompt into LHS. Use LHS when the task needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination.
 - Follow the requested model/reasoning/plan-mode assumptions where applicable.
 - Reconcile the prompt against the repository before editing.
 - Push back if the prompt conflicts with existing architecture, security, data integrity, or documented product intent.

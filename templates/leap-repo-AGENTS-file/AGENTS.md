@@ -24,6 +24,8 @@ LEAP Charter establishes or reconciles project direction, source-of-truth docs, 
 
 LEAP LHS is a structured LEAP Prompt format for layered implementation work using the House Standard. It is not a mandatory lifecycle stage.
 
+LEAP Prompt is the instruction artifact family. It includes Charter, Recon, standard implementation, fix, refactor, governance, validation, and LHS prompts. Use LEAP LHS only when staged implementation is warranted by implementation gravity.
+
 ## Documentation Starting Point
 
 Start with `docs/00_start_here.md` when present.
@@ -50,6 +52,8 @@ Archived, stale, superseded, or do-not-use docs:
 Treat canonical docs as source of truth. Treat archived docs as historical unless a current canonical document explicitly references them.
 
 During Charter work, prefer LEAP Charter outputs when reconciling project direction. Create LEAP Recon or LEAP Prompt recommendations instead of making risky implementation changes during Charter work.
+
+Use LEAP Recon outputs for focused investigation findings. Use LEAP LHS only when the task needs staged implementation, commit boundaries, tests, docs, compatibility checks, rollback awareness, or multi-area coordination. Do not treat LHS as a mandatory stage after every LEAP Prompt.
 
 Read the relevant docs before implementing layer, architecture, workflow, data model, or user-facing changes.
 

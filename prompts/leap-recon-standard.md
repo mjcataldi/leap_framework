@@ -4,6 +4,8 @@ Run LEAP Recon using the current LEAP framework.
 
 Recon investigates a focused area, gap, risk, feature, or architectural question. It is the source-of-truth, repo-reality, drift, dependency, risk, execution-configuration, and implementation-safety pass before prompt generation. It is not the coding-agent prompt.
 
+Recon is normally investigative and non-mutating unless the user explicitly authorizes changes. Recon may recommend LHS prompts, but it should not default to LHS and should not mutate runtime code or broad repo structure unless explicitly authorized.
+
 Current lifecycle:
 
 ```text
@@ -31,7 +33,8 @@ You must:
 15. identify human checkpoints
 16. distinguish LEAP process tier from agent execution configuration
 17. recommend the explicit agent/tool, model, reasoning level, execution mode, validation, and commit posture when prompt generation is allowed
-18. end with a gate decision
+18. recommend LHS only when implementation gravity warrants staged execution
+19. end with a gate decision
 
 ## Brownfield Charter inputs
 

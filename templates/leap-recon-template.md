@@ -72,6 +72,8 @@ Required gate:
 - Inspect repo reality before implementation planning when repo access exists.
 - Search for already-existing functionality before recommending new work.
 - Recommend an explicit Agent Execution Configuration before LEAP Prompt generation.
+- Recommend LHS only when implementation gravity warrants staged execution.
+- Keep Recon investigative and non-mutating unless I explicitly authorize changes.
 - If docs and repo reality conflict, report the conflict before generating a coding-agent prompt.
 - If branch/worktree/PR drift affects ownership or merge order, require resolution before prompt generation.
 - If agent/tool, model, or reasoning level is missing, recommend safe defaults based on scope, ambiguity, and implementation risk.
@@ -139,3 +141,7 @@ Tiny local fix: 50-60%, if no shared contracts are touched
 ```
 
 Hard blockers override confidence impressions.
+
+## LHS note
+
+Recon usually should not use LHS. Recon may recommend an LHS prompt, but should not default to LHS and should not mutate runtime code or broad repo structure unless explicitly authorized.
