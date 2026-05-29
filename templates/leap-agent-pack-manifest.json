@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "agent_pack_version": "0.1.0",
+  "release_tag": "leap-agent-pack-v0.1.0",
+  "channel": "stable",
+  "source_repo": "https://github.com/mjcataldi/leap_framework",
+  "upstream_repo": "https://github.com/mjcataldi/leap_framework",
+  "source_commit": null,
+  "source_commit_note": "Set to the release commit SHA when this Agent Pack is tagged.",
+  "changelog_path": "CHANGELOG.md",
+  "checksum_scope": {
+    "normalization": "UTF-8 text with CRLF normalized to LF before hashing.",
+    "template_sha256": "Full template file content.",
+    "managed_section_sha256": "Content from LEAP_MANAGED_SECTION_BEGIN through LEAP_MANAGED_SECTION_END, including markers."
+  },
+  "templates": [
+    {
+      "template_id": "leap-global-agents",
+      "template_role": "global",
+      "path": "templates/leap-global-AGENTS-file/AGENTS.md",
+      "install_target": "global AGENTS.md location",
+      "managed_section_version": 1,
+      "template_sha256": "995d94b6ee22593bf7b5bab297f1c13a5fcae7a65dabc10beb198c0f59c52908",
+      "managed_section_sha256": "3bd8aaaea2d4a19e4b15676d545ad4028c0f9260dcb8563be3f6d6a99f1e18f8",
+      "update_policy": "notify"
+    },
+    {
+      "template_id": "leap-repo-agents",
+      "template_role": "repo",
+      "path": "templates/leap-repo-AGENTS-file/AGENTS.md",
+      "install_target": "AGENTS.md",
+      "managed_section_version": 1,
+      "template_sha256": "0dbcb3b60468d9b54cef83ec266489b4b6a181be47eca241299699933fdd54fc",
+      "managed_section_sha256": "2f013c7d8ab0edf43e7d489def04e5ec2ee0f4c9aec4db17307b8d6e10251a93",
+      "update_policy": "notify"
+    },
+    {
+      "template_id": "leap-master-repo-agents",
+      "template_role": "combined",
+      "path": "templates/leap-repo-AGENTS-file-complete/AGENTS.md",
+      "install_target": "AGENTS.md",
+      "managed_section_version": 1,
+      "template_sha256": "c51f45f212b6d8ec17cd7a2691f141535d42d3c792c2e2ab173d23aa2553d167",
+      "managed_section_sha256": "5f5554cad18be5d14067d23850dcdf9ebab9850d45cec110319e36c5487df080",
+      "update_policy": "notify"
+    }
+  ],
+  "migration_required": false,
+  "migration_notes": []
+}

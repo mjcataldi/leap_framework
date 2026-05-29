@@ -208,6 +208,18 @@ Before giving work to an AI coding agent, answer:
 
 If you cannot answer these, run LEAP Charter or Recon first.
 
+## AGENTS.md adoption
+
+LEAP AGENTS.md templates are distributed as a versioned Agent Pack.
+
+Start with:
+
+- `docs/LEAP_AGENTS_Quickstart.md`
+- `docs/LEAP_AGENTS_Versioning.md`
+- `docs/LEAP_AGENTS_Update_Guide.md`
+
+Recon may check whether an installed downstream `AGENTS.md` file is current, outdated, pinned, forked, unversioned, malformed, missing, or non-LEAP. AGENTS updates are notify/manual-merge only; LEAP should not overwrite project-specific or local override sections automatically.
+
 ## When to use full LEAP
 
 Use full LEAP for:

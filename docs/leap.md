@@ -1,6 +1,6 @@
 # LEAP Framework
 
-This file represents the current canonical LEAP framework document. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
+This file represents the current canonical LEAP framework document. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
 
 ## Framework name
 
@@ -23,6 +23,23 @@ Lifecycle terms:
 - **Validation/Handoff:** The required completion step where Codex verifies changes, checks docs/tests, summarizes work, and recommends follow-up prompts.
 
 LEAP LHS is not a mandatory lifecycle stage. It is a structured LEAP Prompt format for layered implementation work using the House Standard. Use it when work is layered, staged, or large enough to require House Standard-style execution. Not every LEAP Prompt is an LHS prompt.
+
+---
+
+## AGENTS.md and Agent Pack governance
+
+LEAP AGENTS.md templates are distributed as a versioned **LEAP Agent Pack**. The Agent Pack gives downstream repositories stable template IDs, metadata, managed sections, and a manifest that can be inspected during LEAP Recon.
+
+Agent Pack governance rules:
+
+- Keep distributable AGENTS.md templates under `templates/`.
+- Treat repository-root `AGENTS.md` files as installed downstream copies, not canonical templates.
+- Use `templates/leap-agent-pack-manifest.json` as the current Agent Pack source of truth.
+- Use `leap-agent-pack-vX.Y.Z` tags for Agent Pack releases.
+- Use notify/manual-merge updates only; never overwrite project or local sections automatically.
+- Treat AGENTS.md version detection as LEAP Recon work.
+
+AGENTS.md setup is LEAP adoption setup, not a new lifecycle phase. Do not reintroduce Phase 0 for AGENTS installation; use LEAP Charter for project direction and source-truth reconciliation.
 
 ---
 
@@ -601,13 +618,22 @@ prompts/leap-prompt-standard.md
 prompts/leap-governance-pass-standard.md
 ```
 
-Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
+Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
 
 Compatibility stubs remain at:
 
 ```text
 prompts/leap-phase-0-standard.md
 templates/leap-phase-0-template.md
+```
+
+Current Agent Pack files:
+
+```text
+templates/leap-agent-pack-manifest.json
+templates/leap-global-AGENTS-file/AGENTS.md
+templates/leap-repo-AGENTS-file/AGENTS.md
+templates/leap-repo-AGENTS-file-complete/AGENTS.md
 ```
 
 ---
@@ -620,7 +646,7 @@ Active framework and prompt files should use canonical current paths:
 - keep Charter guidance at `docs/leap-charter.md`
 - keep current operational prompts under `prompts/`
 - do not restore old versioned framework files unless there is a specific compatibility reason
-- preserve release history through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`
+- preserve release history through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present
 
 The short rule:
 

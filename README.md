@@ -4,7 +4,9 @@
 
 LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
 
-The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
+The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
+
+LEAP AGENTS.md templates are distributed as a versioned **LEAP Agent Pack**. Agent Pack metadata, managed sections, and the manifest let downstream repositories detect stale LEAP guidance without overwriting project-specific instructions.
 
 ## Core idea
 
@@ -114,7 +116,7 @@ Canonical framework document: [`docs/leap.md`](docs/leap.md).
 
 Charter reference: [`docs/leap-charter.md`](docs/leap-charter.md).
 
-Historical versions are preserved through Git tags, Git history, [`CHANGELOG.md`](CHANGELOG.md), and [`docs/release-history.md`](docs/release-history.md).
+Historical versions are preserved through Git history, [`CHANGELOG.md`](CHANGELOG.md), [`docs/release-history.md`](docs/release-history.md), and release tags when present.
 
 ## Quick start
 
@@ -132,6 +134,13 @@ After Charter is approved, use [`templates/leap-recon-template.md`](templates/le
 After Recon is approved, use [`templates/leap-prompt-template.md`](templates/leap-prompt-template.md) to generate the final implementation, documentation, analysis, or remediation prompt.
 
 For repeatable workflows, use the operational prompt library under [`prompts/`](prompts/).
+
+For AGENTS.md adoption and versioning, start here:
+
+- [`docs/LEAP_AGENTS_Quickstart.md`](docs/LEAP_AGENTS_Quickstart.md) - install and populate AGENTS.md templates
+- [`docs/LEAP_AGENTS_Versioning.md`](docs/LEAP_AGENTS_Versioning.md) - Agent Pack metadata, manifest, tags, and managed sections
+- [`docs/LEAP_AGENTS_Update_Guide.md`](docs/LEAP_AGENTS_Update_Guide.md) - update detection and no-overwrite workflow
+- [`docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md`](docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md) - clone, fork, and pinned-version adoption
 
 ## Source-of-truth document model
 
@@ -162,6 +171,10 @@ docs/
   glossary.md
   agent-profiles.md
   risk-taxonomy.md
+  LEAP_AGENTS_Quickstart.md
+  LEAP_AGENTS_Versioning.md
+  LEAP_AGENTS_Update_Guide.md
+  LEAP_AGENTS_Clone_Fork_Pin_Guide.md
   examples/
     small-build-unit.md
     full-layer-recon.md
@@ -169,6 +182,7 @@ templates/
   leap-charter-template.md
   leap-recon-template.md
   leap-prompt-template.md
+  leap-agent-pack-manifest.json
 prompts/
   README.md
   leap-charter-standard.md

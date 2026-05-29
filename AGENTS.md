@@ -1,6 +1,23 @@
-# Master Repo AGENTS.md - LEAP Local Trial Template
+<!--
+LEAP_AGENT_TEMPLATE:
+  schema_version: 1
+  template_id: leap-master-repo-agents
+  template_role: combined
+  agent_pack_version: 0.1.0
+  release_tag: leap-agent-pack-v0.1.0
+  template_channel: stable
+  source_repo: https://github.com/mjcataldi/leap_framework
+  upstream_repo: https://github.com/mjcataldi/leap_framework
+  source_path: templates/leap-repo-AGENTS-file-complete/AGENTS.md
+  update_policy: notify
+  managed_section_version: 1
+  minimum_supported_leap_version: current
+END_LEAP_AGENT_TEMPLATE
+-->
 
-Use this single-file template when you want to test LEAP inside one local repository before installing a global AGENTS.md system-wide.
+# LEAP Framework Repo AGENTS.md - Installed Local Trial Copy
+
+This repository-root `AGENTS.md` is an installed, repo-local copy of the LEAP Master Repo AGENTS.md local-trial template. The canonical distributable template remains at `templates/leap-repo-AGENTS-file-complete/AGENTS.md`.
 
 This file has two sections:
 
@@ -12,6 +29,8 @@ When this file is placed at the root of a repository as `AGENTS.md`, the code as
 Populate only the editable repository section during repo onboarding.
 
 ---
+
+<!-- LEAP_MANAGED_SECTION_BEGIN -->
 
 <!-- LEAP_MASTER_GLOBAL_SECTION_START: DO NOT EDIT DURING REPO POPULATION -->
 
@@ -98,7 +117,11 @@ Stop and ask before destructive data changes, auth/security changes, public cont
 
 <!-- LEAP_MASTER_GLOBAL_SECTION_END -->
 
+<!-- LEAP_MANAGED_SECTION_END -->
+
 ---
+
+<!-- LEAP_PROJECT_SECTION_BEGIN -->
 
 <!-- LEAP_MASTER_REPO_SECTION_START: EDIT THIS SECTION ONLY DURING REPO POPULATION -->
 
@@ -118,8 +141,8 @@ Application type and maturity:
 
 - Type: Markdown framework, prompt library, examples, and AGENTS.md adoption templates.
 - Runtime application: None discovered.
-- Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git tags, Git history, `CHANGELOG.md`, and `docs/release-history.md`.
-- Current active branch at population time: `leap_charter`; verify with `git status --short --branch` before work.
+- Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git history, `CHANGELOG.md`, `docs/release-history.md`, and release tags when present.
+- Current active branch at last repo guidance update: `add-versioning`; verify with `git status --short --branch` before work.
 
 Primary users and use cases:
 
@@ -142,6 +165,8 @@ Primary product/architecture docs:
 - `docs/leap-charter.md` - canonical Charter, Greenfield/Brownfield, and documentation reconciliation guidance.
 - `docs/glossary.md` - terminology source for lifecycle, prompt taxonomy, source truth, and risk terms.
 - `prompts/README.md` - prompt library routing and prompt-family guidance.
+- `docs/LEAP_AGENTS_Versioning.md` - Agent Pack metadata, manifest, tags, and managed-section guidance.
+- `docs/LEAP_AGENTS_Update_Guide.md` - AGENTS.md update status and no-overwrite workflow.
 
 Canonical docs:
 
@@ -152,6 +177,7 @@ Canonical docs:
 - `prompts/leap-recon-standard.md` - Canonical operational Recon prompt.
 - `prompts/leap-prompt-standard.md` - Canonical operational Prompt-generation standard.
 - `prompts/leap-governance-pass-standard.md` - Canonical governance-pass standard.
+- `templates/leap-agent-pack-manifest.json` - Canonical Agent Pack manifest.
 - `templates/leap-charter-template.md`, `templates/leap-recon-template.md`, and `templates/leap-prompt-template.md` - current user-facing request templates.
 
 Archived, stale, superseded, or do-not-use docs:
@@ -425,6 +451,10 @@ Project-specific docs to keep aligned:
 - `templates/leap-recon-template.md`
 - `templates/leap-prompt-template.md`
 - AGENTS templates under `templates/`
+- `docs/LEAP_AGENTS_Versioning.md`
+- `docs/LEAP_AGENTS_Update_Guide.md`
+- `docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md`
+- `templates/leap-agent-pack-manifest.json`
 
 Doc classification at population time:
 
@@ -436,6 +466,10 @@ Doc classification at population time:
 | `README.md` | Canonical entry point | Repository overview and routing. |
 | `docs/00_start_here.md` | Canonical entry point | Plain-English first read. |
 | `prompts/README.md` | Canonical supporting | Prompt-family routing. |
+| `templates/leap-agent-pack-manifest.json` | Canonical | Agent Pack version and template checksum manifest. |
+| `docs/LEAP_AGENTS_Versioning.md` | Canonical supporting | Agent Pack metadata and managed section policy. |
+| `docs/LEAP_AGENTS_Update_Guide.md` | Supporting | Update status and no-overwrite workflow. |
+| `docs/LEAP_AGENTS_Clone_Fork_Pin_Guide.md` | Supporting | Clone, fork, and pinned-version adoption. |
 | Current `prompts/leap-*-standard.md` files except Phase 0 stub | Canonical operational prompts | Active prompt standards. |
 | Current `templates/leap-*-template.md` files except Phase 0 stub | Canonical templates | Active user request templates. |
 | `CONTRIBUTING.md` | Supporting | Contribution behavior. |
@@ -484,7 +518,7 @@ Project-specific stop conditions:
 - TBD - Project owner: should this repo add a formal Markdown lint command?
 - TBD - Project owner: should this repo add a Markdown link-check command or script?
 - TBD - Project owner: should this repo have CI for terminology drift and link validation?
-- TBD - Project owner: should root `AGENTS.md` remain a local-trial untracked file, or be committed as repo guidance?
+- TBD - Project owner: should root `AGENTS.md` remain a committed installed copy, or should future releases keep only distributable AGENTS templates under `templates/`?
 - TBD - Project owner: should `docs/99_archive/` be created now or only when real framework docs are archived?
 
 ## Completion Requirements
@@ -492,3 +526,14 @@ Project-specific stop conditions:
 A task is complete when the requested behavior is implemented, relevant checks were run or explained, docs were updated if needed, risks and follow-ups are called out, and Validation/Handoff includes follow-up LEAP Recon, LEAP Prompt, or LEAP LHS recommendations when needed.
 
 <!-- LEAP_MASTER_REPO_SECTION_END -->
+
+<!-- LEAP_PROJECT_SECTION_END -->
+
+<!-- LEAP_LOCAL_OVERRIDES_BEGIN -->
+
+<!--
+Optional local team or developer-specific notes go here.
+Keep durable project guidance in the editable repository section above.
+-->
+
+<!-- LEAP_LOCAL_OVERRIDES_END -->

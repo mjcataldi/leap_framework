@@ -1,3 +1,22 @@
+<!--
+LEAP_AGENT_TEMPLATE:
+  schema_version: 1
+  template_id: leap-global-agents
+  template_role: global
+  agent_pack_version: 0.1.0
+  release_tag: leap-agent-pack-v0.1.0
+  template_channel: stable
+  source_repo: https://github.com/mjcataldi/leap_framework
+  upstream_repo: https://github.com/mjcataldi/leap_framework
+  source_path: templates/leap-global-AGENTS-file/AGENTS.md
+  update_policy: notify
+  managed_section_version: 1
+  minimum_supported_leap_version: current
+END_LEAP_AGENT_TEMPLATE
+-->
+
+<!-- LEAP_MANAGED_SECTION_BEGIN -->
+
 # Global AGENTS.md - LEAP Operating Template
 
 ## Purpose
@@ -249,3 +268,14 @@ Do not:
 - Commit secrets or `.env` files.
 - Treat AI-generated assumptions as source of truth.
 - Continue past a serious unresolved ambiguity.
+
+<!-- LEAP_MANAGED_SECTION_END -->
+
+<!-- LEAP_LOCAL_OVERRIDES_BEGIN -->
+
+<!--
+Optional local user or machine-specific notes go here.
+Do not add project-specific repository rules to the global template.
+-->
+
+<!-- LEAP_LOCAL_OVERRIDES_END -->

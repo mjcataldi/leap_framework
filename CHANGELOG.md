@@ -2,6 +2,20 @@
 
 All notable changes to the LEAP Framework will be documented here.
 
+## Unreleased - LEAP Agent Pack versioning
+
+### Added
+
+- Added LEAP Agent Pack versioning guidance for distributable AGENTS.md templates.
+- Added metadata blocks and update-safe managed/project/local section markers to AGENTS.md templates.
+- Added `templates/leap-agent-pack-manifest.json` as the Agent Pack manifest.
+- Added AGENTS.md versioning, update-detection, and clone/fork/pin documentation.
+
+### Changed
+
+- Clarified that AGENTS.md updates are notify/manual-merge only and must not overwrite downstream project or local sections automatically.
+- Clarified that Agent Pack release tags use `leap-agent-pack-vX.Y.Z` separately from framework tags.
+
 ## Unreleased - LEAP Prompt taxonomy and LHS clarification
 
 ### Changed
@@ -72,7 +86,7 @@ LEAP Charter -> LEAP Recon -> LEAP Prompt -> Implementation -> Validation/Handof
 
 LEAP v1.9 is a repository-structure release. It does not change the Ideation Loop, readiness gates, source-of-truth discipline, risk taxonomy, or agent execution configuration semantics from v1.8.
 
-Historical version visibility is preserved through Git tags, Git history, this changelog, and `docs/release-history.md`.
+Historical version visibility is preserved through Git history, this changelog, `docs/release-history.md`, and release tags when present.
 
 ## LEAP v1.8 — Adoption and ideation hardening
 

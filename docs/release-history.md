@@ -2,7 +2,7 @@
 
 This file summarizes historical LEAP framework versions after the repository moved to a canonical current-document model in v1.9.
 
-The active framework document is [`docs/leap.md`](leap.md), with LEAP Charter guidance in [`docs/leap-charter.md`](leap-charter.md). Detailed change entries remain in [`../CHANGELOG.md`](../CHANGELOG.md). Full historical framework files remain available through Git history, with the final v1.8 repository state preserved by the `leap-v1.8` tag.
+The active framework document is [`docs/leap.md`](leap.md), with LEAP Charter guidance in [`docs/leap-charter.md`](leap-charter.md). Detailed change entries remain in [`../CHANGELOG.md`](../CHANGELOG.md). Full historical framework files remain available through Git history. Release tags should be created for future framework and Agent Pack releases, but the current remote did not expose historical tags during the Agent Pack versioning pass.
 
 ## LEAP v1.9 - Repository canonicalization and prompt flattening
 
@@ -16,7 +16,7 @@ LEAP v1.9 is a repository-structure release. It keeps the v1.8 methodology intac
 - Removed nested historical prompt directories from the active repository.
 - Added this release history document.
 - Added `VERSION.md` as a small current-version marker.
-- Preserved v1.8 history with the `leap-v1.8` Git tag.
+- Preserved v1.8 history through Git history. A `leap-v1.8` tag may be added later if historical tag reconstruction is needed.
 
 ### Current canonical files
 

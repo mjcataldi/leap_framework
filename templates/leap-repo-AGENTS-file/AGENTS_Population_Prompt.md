@@ -33,15 +33,18 @@ Scope:
 - Update only the repository-level AGENTS.md file unless I explicitly approve another file change.
 - Do not modify any global AGENTS.md file or system-wide instruction file.
 - Do not perform product implementation work.
+- Preserve the `LEAP_AGENT_TEMPLATE` metadata block.
+- Preserve `LEAP_MANAGED_SECTION_*`, `LEAP_PROJECT_SECTION_*`, and `LEAP_LOCAL_OVERRIDES_*` markers.
 
 Before editing:
 1. Inspect the existing repository structure.
 2. Read the existing repository-level AGENTS.md template.
-3. Start with docs/00_start_here.md when present.
-4. Identify available source-of-truth documents, such as README files, docs, architecture notes, package files, build files, compose files, infrastructure files, test configuration, and CI files.
-5. Classify docs as canonical, supporting, stale, conflicting, duplicate, archived, or unknown when evidence supports it.
-6. Infer only what the repository evidence supports.
-7. Do not invent commands, architecture, services, credentials, environments, workflows, business rules, or deployment assumptions.
+3. Check whether the AGENTS.md file has LEAP Agent Pack metadata.
+4. Start with docs/00_start_here.md when present.
+5. Identify available source-of-truth documents, such as README files, docs, architecture notes, package files, build files, compose files, infrastructure files, test configuration, and CI files.
+6. Classify docs as canonical, supporting, stale, conflicting, duplicate, archived, or unknown when evidence supports it.
+7. Infer only what the repository evidence supports.
+8. Do not invent commands, architecture, services, credentials, environments, workflows, business rules, or deployment assumptions.
 
 Populate the AGENTS.md file with:
 - Project name and purpose.
@@ -73,6 +76,9 @@ Populate the AGENTS.md file with:
 
 Rules:
 - Preserve the intent of the LEAP repository AGENTS.md template.
+- Preserve Agent Pack metadata and section markers.
+- Update project-specific content in the project section.
+- Do not overwrite local overrides.
 - Keep the file concise, practical, and useful to a coding agent.
 - Prefer verified repository evidence over assumptions.
 - If something is unknown, mark it as TBD and include the exact question the project owner should answer.
@@ -83,10 +89,11 @@ Rules:
 - Do not remove useful template sections unless they clearly do not apply.
 
 After editing, return a short completion report with:
-1. Sections populated.
-2. Evidence used.
-3. Unknowns left as TBD.
-4. Any contradictions or stale-doc risks found.
-5. Any recommended LEAP Charter Brownfield reconciliation.
-6. Recommended next LEAP Recon, LEAP Prompt, or LEAP LHS target.
+1. Confirmation that Agent Pack metadata and section markers were preserved.
+2. Sections populated.
+3. Evidence used.
+4. Unknowns left as TBD.
+5. Any contradictions or stale-doc risks found.
+6. Any recommended LEAP Charter Brownfield reconciliation.
+7. Recommended next LEAP Recon, LEAP Prompt, or LEAP LHS target.
 ```

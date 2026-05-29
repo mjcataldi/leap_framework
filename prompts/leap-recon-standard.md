@@ -27,14 +27,15 @@ You must:
 9. inspect branch, PR, and worktree drift when available
 10. search for already-existing functionality before recommending new work
 11. detect stale assumptions, stale docs, stale prompts, and stale layer claims
-12. identify cross-layer impacts and downstream assumptions
-13. evaluate risk, sensitive areas, and destructive-change implications
-14. define or refine Build Units only after the above checks
-15. identify human checkpoints
-16. distinguish LEAP process tier from agent execution configuration
-17. recommend the explicit agent/tool, model, reasoning level, execution mode, validation, and commit posture when prompt generation is allowed
-18. recommend LHS only when implementation gravity warrants staged execution
-19. end with a gate decision
+12. check AGENTS.md Agent Pack metadata, managed/project/local markers, and manifest status when AGENTS.md exists or adoption is in scope
+13. identify cross-layer impacts and downstream assumptions
+14. evaluate risk, sensitive areas, and destructive-change implications
+15. define or refine Build Units only after the above checks
+16. identify human checkpoints
+17. distinguish LEAP process tier from agent execution configuration
+18. recommend the explicit agent/tool, model, reasoning level, execution mode, validation, and commit posture when prompt generation is allowed
+19. recommend LHS only when implementation gravity warrants staged execution
+20. end with a gate decision
 
 ## Brownfield Charter inputs
 
@@ -77,6 +78,8 @@ If these are missing and source truth is unclear, use the gate decision `Reconci
 - Migration map path:
 - Stale / archived docs:
 - Do-not-use docs:
+- AGENTS.md path:
+- AGENTS.md Agent Pack status:
 - Open branches / PRs affecting this work:
 - Repo reality summary:
 - Known doc-code conflicts:
