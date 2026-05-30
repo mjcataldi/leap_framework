@@ -20,7 +20,7 @@ The initial solution-alignment process used to establish or reconcile a project 
 
 LEAP Charter establishes or reconciles the project direction, source-of-truth documents, roadmap, baseline assumptions, and implementation posture before deeper Recon or implementation prompt generation.
 
-LEAP Charter replaces the active use of the older "Phase 0" label. Historical release notes may still use the older term.
+LEAP Charter replaces the active use of the older "Phase 0" label. Compatibility stubs may still mention the older term, but active framework docs should use Charter terminology.
 
 ## LEAP Charter - Greenfield Mode
 

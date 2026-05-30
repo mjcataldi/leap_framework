@@ -30,7 +30,8 @@ This guide defines how LEAP Framework documentation should be organized.
 - Canonical docs define current framework behavior.
 - Supporting docs explain or apply canonical behavior.
 - Runbooks describe repeatable maintenance procedures.
-- Historical docs preserve release context.
+- Release notes should focus on current/unreleased changes and the current baseline.
+- Older version detail should live in Git history and release tags instead of active docs.
 - Example-only docs are not source truth.
 
 ## Maintenance Rules
@@ -40,3 +41,4 @@ This guide defines how LEAP Framework documentation should be organized.
 - Maintainer docs must not be used as downstream project instructions by default.
 - Old paths should receive compatibility stubs when moved after public or agent-facing references exist.
 - Docs moves require README and changelog updates.
+- Do not restore older release-note detail or versioned historical docs unless there is a specific compatibility reason.

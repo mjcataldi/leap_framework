@@ -1,6 +1,6 @@
 # LEAP Version
 
-LEAP release versions should be managed by Git tags. If tags are missing, use Git history, `CHANGELOG.md`, and `docs/maintainer/release-history.md` as the available release record until tags are created.
+LEAP release versions should be managed by Git tags. Keep active release notes focused on current/unreleased changes and the current baseline; use Git history and release tags for older version detail.
 
 LEAP AGENTS.md templates are released from the separate LEAP Agent Pack repository because downstream repositories copy and customize those files.
 
@@ -9,7 +9,7 @@ Current framework baseline:
 ```text
 Version: 0.1.9
 Release tag: leap-v0.1.9
-Status: historical baseline; current branch changes remain unreleased
+Status: current baseline; current branch changes remain unreleased
 ```
 
 Current Agent Pack:
@@ -36,11 +36,10 @@ Canonical Charter reference:
 docs/leap-charter.md
 ```
 
-Release history is preserved through:
+Release context is preserved through:
 
 ```text
 CHANGELOG.md
-docs/maintainer/release-history.md
 Git tags, when present
 Git commit history
 ```

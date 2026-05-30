@@ -4,7 +4,7 @@
 
 LEAP started as a practical response to AI-assisted software delivery: coding agents can move quickly, but speed is only useful when the idea is clear, the source truth is current, the repo reality is understood, and the implementation task is bounded.
 
-The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
+The active repository presents the current canonical LEAP framework document and current operational prompts without versioned filenames. Older version detail is intentionally kept out of active docs unless it applies to the current framework; use Git history, release notes, and release tags for older context.
 
 LEAP AGENTS.md templates are distributed from the dedicated [LEAP Agent Pack](https://github.com/mjcataldi/leap_agent_pack) repository. The Agent Pack owns the Codex/AGENTS.md execution adapter so downstream projects can pin stable agent instructions independently from LEAP Framework methodology updates.
 
@@ -116,7 +116,7 @@ Canonical framework document: [`docs/leap.md`](docs/leap.md).
 
 Charter reference: [`docs/leap-charter.md`](docs/leap-charter.md).
 
-Historical versions are preserved through Git history, [`CHANGELOG.md`](CHANGELOG.md), [`docs/maintainer/release-history.md`](docs/maintainer/release-history.md), and release tags when present.
+Older version detail is preserved through Git history, [`CHANGELOG.md`](CHANGELOG.md), [`docs/maintainer/release-history.md`](docs/maintainer/release-history.md), and release tags when present. Active docs should stay focused on the current framework baseline.
 
 ## Quick start
 

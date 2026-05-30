@@ -139,7 +139,7 @@ Application type and maturity:
 
 - Type: Markdown framework, prompt library, examples, and framework governance docs.
 - Runtime application: None discovered.
-- Current repository model: Canonical current docs and flattened current prompt files; historical versions are preserved through Git history, `CHANGELOG.md`, `docs/maintainer/release-history.md`, and release tags when present.
+- Current repository model: Canonical current docs and flattened current prompt files; older version detail should stay out of active docs unless it applies to the current framework. Use Git history, release notes, and release tags for older context.
 - Current active branch at last repo guidance update: `add-versioning`; verify with `git status --short --branch` before work.
 
 Primary users and use cases:
@@ -179,7 +179,7 @@ Canonical docs:
 
 Archived, stale, superseded, or do-not-use docs:
 
-- Historical release context: `CHANGELOG.md` and `docs/maintainer/release-history.md`. These may retain older `Phase 0` or historical lifecycle wording when describing prior releases.
+- Release notes policy: `CHANGELOG.md` and `docs/maintainer/release-history.md` should stay focused on current/unreleased changes, the current baseline, and release-notes policy. Do not retain older version-by-version detail in active docs unless the user explicitly asks for it.
 - Compatibility stubs: `prompts/leap-phase-0-standard.md` and `templates/leap-phase-0-template.md`. Keep links valid, but prefer Charter files for active work.
 - Archive folder: None discovered at population time. If future docs are archived, use the LEAP Charter archive guidance before treating them as current.
 - Confirmed active stale/conflicting docs: None discovered during this population pass. Re-check with targeted `rg` searches before taxonomy or source-truth work.
@@ -189,8 +189,8 @@ Treat canonical docs as source of truth. Treat archived docs as historical unles
 ## Repository Layout
 
 - `README.md` - repository front door and quick-start routing.
-- `CHANGELOG.md` - current unreleased changes plus historical release notes.
-- `VERSION.md` - canonical current-file and release-history notes.
+- `CHANGELOG.md` - current unreleased changes plus current baseline notes.
+- `VERSION.md` - canonical current-file and release notes policy.
 - `CONTRIBUTING.md` - lightweight contribution guidance.
 - `docs/` - framework docs, adoption docs, glossary, risk guidance, and examples.
 - `prompts/` - copy-ready operational LEAP prompts.
@@ -316,7 +316,7 @@ Brownfield Charter expectations for this repo:
 
 - Start as discovery and reconciliation.
 - Verify current canonical docs, prompt standards, templates, and AGENTS templates before editing.
-- Preserve historical `Phase 0` references in `CHANGELOG.md` and `docs/maintainer/release-history.md` when they describe older releases.
+- Do not preserve older `Phase 0` release-note detail in active docs by default. Use Git history and release tags for older release context unless the user explicitly asks for a historical reconstruction.
 - Use LHS only after the documentation reorganization or taxonomy plan is clear and staged execution reduces risk.
 
 ## LEAP Recon Rules
@@ -332,7 +332,7 @@ Recon for this repo should usually inspect:
 - `docs/glossary.md`
 - `prompts/README.md`
 - relevant files in `prompts/` and `templates/`
-- `CHANGELOG.md`, `VERSION.md`, and `docs/maintainer/release-history.md` when release or historical terminology is involved
+- `CHANGELOG.md`, `VERSION.md`, and `docs/maintainer/release-history.md` when current release policy or baseline terminology is involved
 
 Recon is normally investigative and non-mutating unless the user explicitly authorizes edits. It may recommend Standard LEAP Prompts or LHS prompts when staged documentation changes are warranted.
 
@@ -359,7 +359,7 @@ Use this order of truth:
 7. `prompts/README.md` and current files under `prompts/`.
 8. Current files under `templates/`.
 9. `CONTRIBUTING.md` and `VERSION.md`.
-10. `CHANGELOG.md` and `docs/maintainer/release-history.md` for release history only.
+10. `CHANGELOG.md` and `docs/maintainer/release-history.md` for current release notes and release policy only.
 11. Archived, stale, or compatibility docs only when explicitly referenced by canonical docs.
 12. Reasonable inference from nearby patterns, clearly labeled as inference.
 
@@ -375,7 +375,7 @@ Project-specific architecture constraints:
 - Keep current operational prompts as flattened files under `prompts/`.
 - Preserve compatibility stubs for old Phase 0 paths unless the user explicitly requests removal and a migration plan.
 - Keep examples and templates aligned with canonical lifecycle language.
-- Keep release history historical; do not rewrite old release sections just to modernize terminology.
+- Keep release notes streamlined; remove older version-by-version detail from active docs unless it is explicitly needed for compatibility or current decision-making.
 
 ## Data and Migration Rules
 
@@ -467,7 +467,7 @@ Doc classification at population time:
 | `CONTRIBUTING.md` | Supporting | Contribution behavior. |
 | `VERSION.md` | Supporting | Canonical file and release-history notes. |
 | `docs/agent-profiles.md`, `docs/risk-taxonomy.md`, `docs/user/leap-for-humans.md`, `docs/user/quick-leap-brief.md` | Supporting | Adoption and risk guidance. |
-| `CHANGELOG.md`, `docs/maintainer/release-history.md` | Historical plus current changelog | Historical `Phase 0` wording may be valid in old release context. |
+| `CHANGELOG.md`, `docs/maintainer/release-history.md` | Current release notes and release policy | Older version detail belongs in Git history and release tags unless explicitly needed. |
 | `prompts/leap-phase-0-standard.md`, `templates/leap-phase-0-template.md` | Compatibility stubs | Keep for old links; do not prefer for active work. |
 
 ## Stop Conditions
@@ -491,7 +491,7 @@ Project-specific stop conditions:
 - A task would modify files outside the explicitly approved scope.
 - A task requires runtime code, tests, product docs, or configuration changes during AGENTS population.
 - Active docs conflict on the current lifecycle, prompt taxonomy, Charter/Brownfield policy, or LHS placement.
-- A proposed change would remove compatibility stubs or historical release terminology without an approved migration plan.
+- A proposed change would remove compatibility stubs without an approved migration plan.
 - A proposed change would invent setup, test, build, deployment, service, or credential assumptions not supported by repo evidence.
 - A proposed change would add dependencies, generated navigation, CI, docs-build tooling, or external services without explicit approval.
 - A task requires deleting, moving, or archiving docs without a Brownfield reconciliation plan.
